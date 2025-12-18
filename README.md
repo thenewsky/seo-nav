@@ -28,24 +28,22 @@ open index.html
 
 ## 添加新链接
 
-### 使用自动化工具
+### 使用Cursor命令（推荐）
 
-我们提供了标准化的工具来添加新链接：
+在Cursor中输入 `@add-seo-links` 然后提供链接列表：
 
-```bash
-# 检查重复链接
-./add-seo-links.sh --check-duplicates
-
-# 添加单个链接
-./add-seo-links.sh --url "https://example.com" \
-                   --name "示例工具" \
-                   --category "SEO工具/关键词研究"
-
-# 批量添加链接
-./add-seo-links.sh --file links.txt
+```
+网站收集
+- 工具地址：
+  - https://example.com/ 工具描述
+- 域名注册：
+  - https://domain.com/ 域名工具
 ```
 
-详细使用说明请查看 [ADD_LINKS_GUIDE.md](./ADD_LINKS_GUIDE.md)
+详细使用说明请查看：
+- [COMMAND_GUIDE.md](./COMMAND_GUIDE.md) - 完整命令使用指南
+- [QUICK_START.md](./QUICK_START.md) - 快速开始指南
+- [ADD_LINKS_GUIDE.md](./ADD_LINKS_GUIDE.md) - 详细操作指南
 
 ### 手动添加
 
@@ -61,10 +59,15 @@ open index.html
 ```
 seo-nav/
 ├── index.html              # 主页面
-├── add-seo-links.sh        # 添加链接自动化脚本
+├── .cursorrules            # Cursor命令规范
+├── add-seo-links.md        # 命令文件
+├── .cursor/                # Cursor配置目录
+│   └── commands.json       # 命令配置
+├── .rules/                 # 规则文件目录
 ├── .seo-nav-rules.md       # 操作规范文档
-├── ADD_LINKS_GUIDE.md      # 使用指南
-├── links-example.txt       # 链接文件示例
+├── COMMAND_GUIDE.md         # 命令使用指南
+├── QUICK_START.md          # 快速开始指南
+├── ADD_LINKS_GUIDE.md      # 详细操作指南
 └── .github/
     └── workflows/
         └── deploy.yml      # GitHub Pages部署配置

@@ -3,61 +3,75 @@
 ## 快速开始
 
 ### 命令名称
-`add-seo-links` - 标准化添加新链接到SEO导航站的工具
+`@add-seo-links` - 使用Cursor命令添加新链接到SEO导航站
 
 ### 基本用法
 
-#### 1. 检查重复链接
-```bash
-./add-seo-links.sh --check-duplicates
+#### 在Cursor中使用
+
+1. **输入命令**：在Cursor中输入 `@add-seo-links`
+
+2. **提供链接列表**：
+```
+网站收集
+- 工具地址：
+  - https://example.com/ 工具描述
+- 域名注册：
+  - https://domain.com/ 域名工具
 ```
 
-#### 2. 添加单个链接
-```bash
-./add-seo-links.sh --url "https://example.com" \
-                   --name "示例工具" \
-                   --category "SEO工具/关键词研究"
-```
-
-#### 3. 批量添加链接
-```bash
-./add-seo-links.sh --file links.txt
-```
-
-#### 4. 预览模式（不实际修改）
-```bash
-./add-seo-links.sh --url "https://example.com" \
-                   --name "示例工具" \
-                   --dry-run
-```
+3. **系统自动执行**：
+   - 创建Git分支
+   - 添加链接到index.html
+   - 检查重复和质量
+   - 提交并合并到main
+   - 创建release分支和tag
 
 ## 完整流程
 
 ### 步骤1: 准备链接列表
-创建链接文件 `links.txt`，格式如下：
+
+整理要添加的链接，支持以下格式：
+
+**格式1: 结构化列表**
 ```
-https://example.com|示例工具|SEO工具/关键词研究
-https://another.com|另一个工具|SEO工具/网站分析
+网站收集
+- 工具地址：
+  - https://example.com/ 工具描述
+- 域名注册：
+  - https://domain.com/ 域名工具
 ```
 
-### 步骤2: 检查重复
-```bash
-./add-seo-links.sh --check-duplicates
+**格式2: 简单列表**
+```
+- https://example.com/ 工具描述
+- https://domain.com/ 域名工具
 ```
 
-### 步骤3: 执行添加
-```bash
-./add-seo-links.sh --file links.txt
+**格式3: 带分类说明**
+```
+工具地址：
+- https://example.com/ 工具描述
+- https://another.com/ 另一个工具
+
+域名注册：
+- https://domain.com/ 域名工具
 ```
 
-脚本会自动：
-1. 创建功能分支 `feature/add-links-YYYYMMDD`
-2. 添加链接到 `index.html`（需要手动编辑）
-3. 检查重复链接
-4. 提交更改
-5. 合并到 `main` 分支
-6. 创建 `release/vX.Y` 分支
-7. 打版本tag `vX.Y.Z`
+### 步骤2: 使用Cursor命令
+
+在Cursor中输入 `@add-seo-links`，然后粘贴链接列表。
+
+系统会自动执行：
+1. 创建稳定版本分支 `stable-v1.X`（可选）
+2. 创建开发分支 `feature/add-links-YYYYMMDD`
+3. 添加链接到 `index.html` 的合适分类
+4. 检查重复链接
+5. 验证格式和结构
+6. 提交更改到开发分支
+7. 合并到 `main` 分支
+8. 创建 `release/vX.Y` 分支
+9. 打版本tag `vX.Y.Z`
 
 ## 分类说明
 
@@ -71,7 +85,19 @@ https://another.com|另一个工具|SEO工具/网站分析
 - **AI工具** - AI相关工具
 - **开发工具** - 开发辅助工具
 
+### 链接分类规则
+
+- **社区/论坛** → SEO社区/学习资源
+- **关键词工具** → SEO工具/关键词研究
+- **流量分析** → SEO工具/网站分析
+- **竞争分析** → SEO工具/竞争分析
+- **教程/学习** → SEO教程/最佳实践
+- **域名相关** → 域名工具
+- **AI相关** → AI工具
+- **开发辅助** → 开发工具
+
 ### 添加新分类
+
 如果现有分类不合适，可以在 `index.html` 中创建新分类：
 ```html
 <tr>
@@ -107,7 +133,7 @@ https://another.com|另一个工具|SEO工具/网站分析
 
 ## 手动编辑指南
 
-由于HTML结构复杂，脚本可能无法完全自动添加链接。需要手动编辑时：
+如果需要手动编辑 `index.html`：
 
 ### 1. 找到目标分类
 在 `index.html` 中搜索分类名称，如：`SEO工具/关键词研究`
@@ -145,7 +171,7 @@ https://another.com|另一个工具|SEO工具/网站分析
 ## 故障排查
 
 ### 问题：发现重复链接
-**解决**：运行检查命令，手动删除重复项，保留更具体的名称
+**解决**：系统会自动检查并提示，手动删除重复项，保留更具体的名称
 
 ### 问题：表格结构被破坏
 **解决**：确保每行4个 `<td>`，检查 `rowspan` 值是否正确
@@ -156,40 +182,47 @@ https://another.com|另一个工具|SEO工具/网站分析
 ## 示例场景
 
 ### 场景1: 添加单个新工具
-```bash
-# 1. 检查重复
-./add-seo-links.sh --check-duplicates
 
-# 2. 手动编辑 index.html 添加链接
+在Cursor中输入：
+```
+@add-seo-links
 
-# 3. 提交和发布
-./add-seo-links.sh --url "https://newtool.com" \
-                   --name "新工具" \
-                   --category "SEO工具/关键词研究"
+工具地址：
+- https://newtool.com/ 新工具
 ```
 
-### 场景2: 批量添加多个链接
-```bash
-# 1. 准备链接文件
-cat > links.txt << EOF
-https://tool1.com|工具1|SEO工具/关键词研究
-https://tool2.com|工具2|SEO工具/网站分析
-EOF
+系统会自动：
+1. 创建分支
+2. 添加到合适分类
+3. 检查重复
+4. 提交并合并
 
-# 2. 执行添加
-./add-seo-links.sh --file links.txt
+### 场景2: 批量添加多个链接
+
+在Cursor中输入：
+```
+@add-seo-links
+
+网站收集
+- 工具地址：
+  - https://tool1.com/ 工具1
+  - https://tool2.com/ 工具2
+- 域名注册：
+  - https://domain.com/ 域名工具
 ```
 
 ## 相关文件
 
+- `.cursorrules` - 完整命令规范
+- `.cursor/commands.json` - 命令配置
+- `.rules/` - 规则文件目录
+- `COMMAND_GUIDE.md` - 命令使用指南
+- `QUICK_START.md` - 快速开始指南
 - `.seo-nav-rules.md` - 详细规则文档
-- `add-seo-links.sh` - 自动化脚本
-- `links-example.txt` - 链接文件格式示例
 - `index.html` - 导航站主文件
 
 ## 获取帮助
 
-```bash
-./add-seo-links.sh --help
-```
-
+- 查看 [COMMAND_GUIDE.md](./COMMAND_GUIDE.md) 了解完整使用说明
+- 查看 [QUICK_START.md](./QUICK_START.md) 快速开始
+- 查看 `.cursorrules` 了解命令规范
