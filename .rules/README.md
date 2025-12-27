@@ -26,17 +26,22 @@
 
 ## 使用方法
 
-### 在Cursor中使用
+### 在Cursor中使用命令
 
-使用 `@spec` 命令串联所有规则：
+使用 `@add-links` 命令来执行完整的添加链接流程：
 
 ```
-@spec add-seo-links
-@rules .rules/01-prepare-branches.md
-@rules .rules/02-add-links.md
-@rules .rules/03-check-quality.md
-@rules .rules/04-commit-merge.md
+@add-links
 ```
+
+然后提供链接列表，例如：
+
+```
+- https://example.com/ 工具描述
+- https://domain.com/ 域名工具
+```
+
+命令会自动按照 `.rules/` 目录下的规则文件执行所有步骤。
 
 ### 单独使用某个规则
 
@@ -46,27 +51,10 @@
 @rules .rules/02-add-links.md
 ```
 
-## 命令名称
+## 命令文件
 
-**`add-seo-links`** - 向SEO导航站添加新链接的完整流程
-
-## 输入格式
-
-用户提供链接列表，格式如下：
-
-```
-网站收集
-- 工具地址：
-  - https://example.com/ 工具描述
-- 域名注册：
-  - https://domain.com/ 域名工具
-```
-
-## 输出
-
-- 更新后的 index.html
-- Git提交记录
-- Release分支和Tag
+完整的命令说明和使用方法请参考：
+- [.cursor/commands/add-links.md](../.cursor/commands/add-links.md)
 
 ## 注意事项
 
@@ -74,4 +62,4 @@
 2. 规则文件使用Markdown格式
 3. 每个规则文件应包含清晰的步骤和验证清单
 4. 规则之间应保持逻辑连贯
-
+5. 通过 `@add-links` 命令使用时，会自动按顺序执行所有规则
