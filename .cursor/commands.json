@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "commands": {
+    "add-seo-links": {
+      "description": "向SEO导航站添加新链接的标准化流程",
+      "category": "SEO工具",
+      "file": ".cursorrules",
+      "rules": [
+        ".rules/01-prepare-branches.md",
+        ".rules/02-add-links.md",
+        ".rules/03-check-quality.md",
+        ".rules/04-commit-merge.md"
+      ],
+      "usage": "输入 @add-seo-links 然后提供链接列表",
+      "example": "网站收集\n- 工具地址：\n  - https://example.com/ 工具描述",
+      "relatedFiles": [
+        ".cursorrules",
+        "COMMAND_GUIDE.md",
+        "QUICK_START.md",
+        "add-seo-links.md"
+      ]
+    }
+  },
+  "metadata": {
+    "lastUpdated": "2024-12-18",
+    "author": "SEO导航站项目"
+  }
+}

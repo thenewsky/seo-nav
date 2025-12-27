@@ -172,7 +172,10 @@ A: 在添加链接时，如果链接已存在，会更新描述或跳过。
 ## 相关文件
 
 - `.cursorrules` - Cursor命令规范
+- `.cursor/commands.json` - 命令配置文件
 - `.rules/` - 规则文件目录
 - `.seo-nav-rules.md` - 详细操作规范
-- `add-seo-links.sh` - Shell脚本（可选）
+- `COMMAND_GUIDE.md` - 本使用指南
+- `QUICK_START.md` - 快速开始指南
+- `ADD_LINKS_GUIDE.md` - 详细操作指南
 
