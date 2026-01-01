@@ -1,0 +1,243 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 龙马金渐变 -->
+    <linearGradient id="dragonGold" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#B8860B" stop-opacity="1"/>
+      <stop offset="33%" stop-color="#DAA520" stop-opacity="1"/>
+      <stop offset="66%" stop-color="#FFD700" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FFA500" stop-opacity="1"/>
+    </linearGradient>
+
+    <linearGradient id="accentGold" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DAA520" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FFA500" stop-opacity="1"/>
+    </linearGradient>
+
+    <radialGradient id="glowGold" cx="50%" cy="30%">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="4" result="offsetBlur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.15"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" fill="#FFFFFF"/>
+
+  <g filter="url(#shadow)">
+    <!-- ========== 龙头区域 ========== -->
+
+    <!-- 龙头主曲线 - S型上部 -->
+    <path d="
+      M 140 155
+      C 140 110, 175 75, 230 70
+      C 285 65, 325 85, 340 125
+      C 348 150, 343 175, 328 195
+      L 295 230
+      "
+      fill="none"
+      stroke="url(#dragonGold)"
+      stroke-width="42"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- 龙角 - 左侧几何化 -->
+    <g opacity="0.95">
+      <path d="M 220 55 L 200 25 L 195 20 M 200 25 L 185 28"
+            stroke="#FFD700"
+            stroke-width="8"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+      <path d="M 215 48 L 205 30"
+            stroke="#FFD700"
+            stroke-width="6"
+            stroke-linecap="round"/>
+    </g>
+
+    <!-- 龙角 - 右侧几何化 -->
+    <g opacity="0.95">
+      <path d="M 245 50 L 265 20 L 270 15 M 265 20 L 280 23"
+            stroke="#FFD700"
+            stroke-width="8"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+      <path d="M 250 45 L 260 27"
+            stroke="#FFD700"
+            stroke-width="6"
+            stroke-linecap="round"/>
+    </g>
+
+    <!-- 龙眼 -->
+    <circle cx="235" cy="95" r="8" fill="#B8860B"/>
+    <circle cx="237" cy="93" r="3" fill="#FFFFFF" opacity="0.9"/>
+
+    <!-- 龙须 - 流动线条 -->
+    <g opacity="0.75">
+      <path d="M 250 125 Q 285 135, 315 130"
+            fill="none"
+            stroke="#DAA520"
+            stroke-width="4"
+            stroke-linecap="round"/>
+      <path d="M 252 140 Q 280 152, 305 155"
+            fill="none"
+            stroke="#DAA520"
+            stroke-width="3"
+            stroke-linecap="round"/>
+      <path d="M 255 155 Q 275 165, 295 168"
+            fill="none"
+            stroke="#DAA520"
+            stroke-width="2.5"
+            stroke-linecap="round"/>
+    </g>
+
+    <!-- ========== S型身躯 ========== -->
+
+    <!-- 主S曲线 -->
+    <path d="
+      M 295 230
+      C 280 245, 270 265, 265 285
+      C 260 305, 258 325, 260 345
+      C 262 365, 268 385, 278 405
+      L 295 435
+      C 310 465, 330 490, 355 510
+      C 380 530, 410 545, 445 548
+      "
+      fill="none"
+      stroke="url(#dragonGold)"
+      stroke-width="46"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- 龙鳞纹理 - 上半身 -->
+    <g opacity="0.4" stroke="#DAA520" stroke-width="2" fill="none">
+      <path d="M 260 245 Q 275 250, 285 245" stroke-linecap="round"/>
+      <path d="M 255 265 Q 270 272, 280 267" stroke-linecap="round"/>
+      <path d="M 252 285 Q 265 293, 275 289" stroke-linecap="round"/>
+      <path d="M 250 305 Q 262 314, 272 310" stroke-linecap="round"/>
+      <path d="M 251 325 Q 263 334, 273 331" stroke-linecap="round"/>
+    </g>
+
+    <!-- 马鬃纹理 - 下半身 -->
+    <g opacity="0.35" stroke="#FFA500" stroke-width="2.5">
+      <line x1="280" y1="415" x2="295" y2="445" stroke-linecap="round"/>
+      <line x1="290" y1="430" x2="305" y2="460" stroke-linecap="round"/>
+      <line x1="305" y1="450" x2="318" y2="478" stroke-linecap="round"/>
+      <line x1="320" y1="470" x2="332" y2="495" stroke-linecap="round"/>
+      <line x1="338" y1="490" x2="348" y2="512" stroke-linecap="round"/>
+    </g>
+
+    <!-- ========== 马尾区域 ========== -->
+
+    <!-- 马尾基础曲线 -->
+    <path d="
+      M 445 548
+      C 465 550, 482 545, 492 535
+      "
+      fill="none"
+      stroke="url(#dragonGold)"
+      stroke-width="38"
+      stroke-linecap="round"
+    />
+
+    <!-- 马尾飘逸层 - 第1层（最外层） -->
+    <path d="M 455 560 Q 475 575, 485 595 Q 490 610, 488 625 Q 485 640, 480 655"
+          fill="none"
+          stroke="#B8860B"
+          stroke-width="12"
+          stroke-linecap="round"
+          opacity="0.85"/>
+
+    <!-- 马尾飘逸层 - 第2层 -->
+    <path d="M 465 565 Q 482 582, 490 602 Q 494 618, 492 632 Q 490 645, 486 658"
+          fill="none"
+          stroke="#DAA520"
+          stroke-width="9"
+          stroke-linecap="round"
+          opacity="0.8"/>
+
+    <!-- 马尾飘逸层 - 第3层 -->
+    <path d="M 472 568 Q 487 585, 493 605 Q 496 620, 495 633 Q 493 645, 490 656"
+          fill="none"
+          stroke="#FFD700"
+          stroke-width="7"
+          stroke-linecap="round"
+          opacity="0.75"/>
+
+    <!-- 马尾飘逸层 - 第4层 -->
+    <path d="M 478 570 Q 490 587, 495 606 Q 497 620, 496 632 Q 495 643, 493 653"
+          fill="none"
+          stroke="#FFA500"
+          stroke-width="5"
+          stroke-linecap="round"
+          opacity="0.7"/>
+
+    <!-- 马尾飘逸层 - 第5层（最内层） -->
+    <path d="M 483 572 Q 492 588, 496 605 Q 498 617, 497 628 Q 496 638, 495 648"
+          fill="none"
+          stroke="#FFA500"
+          stroke-width="3"
+          stroke-linecap="round"
+          opacity="0.65"/>
+
+    <!-- 马尾细节流动线 -->
+    <g opacity="0.45" stroke="#DAA520" stroke-width="1.5">
+      <path d="M 460 580 Q 465 605, 463 630" stroke-linecap="round"/>
+      <path d="M 468 585 Q 472 610, 471 635" stroke-linecap="round"/>
+      <path d="M 476 590 Q 479 615, 478 638" stroke-linecap="round"/>
+      <path d="M 485 595 Q 487 618, 486 640" stroke-linecap="round"/>
+    </g>
+
+    <!-- ========== 上升箭头 ========== -->
+    <g transform="translate(410, 45)">
+      <path d="M -7 85 L -9 135 L 9 135 L 7 85 Z"
+            fill="url(#accentGold)"/>
+      <path d="M 0 -2 L -28 60 L -10 60 L -10 83 L 10 83 L 10 60 L 28 60 Z"
+            fill="url(#accentGold)"/>
+    </g>
+
+    <!-- ========== 数据点增长曲线 ========== -->
+    <g opacity="0.5">
+      <circle cx="430" cy="220" r="3.5" fill="#DAA520"/>
+      <circle cx="445" cy="185" r="4" fill="#FFD700"/>
+      <circle cx="462" cy="145" r="4.5" fill="#FFD700"/>
+      <circle cx="478" cy="105" r="4" fill="#FFA500"/>
+      <path d="M 430 220 Q 445 185, 462 145 Q 470 125, 478 105"
+            fill="none"
+            stroke="#DAA520"
+            stroke-width="2"
+            opacity="0.4"
+            stroke-linecap="round"/>
+    </g>
+
+    <!-- 能量线条 -->
+    <g opacity="0.32" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round">
+      <line x1="365" y1="155" x2="385" y2="148"/>
+      <line x1="372" y1="170" x2="395" y2="162"/>
+    </g>
+
+    <!-- 光晕效果 -->
+    <ellipse cx="280" cy="240" rx="200" ry="240" fill="url(#glowGold)"/>
+  </g>
+
+  <!-- 底部文字标识（极简） -->
+  <g opacity="0.15">
+    <text x="256" y="495"
+          font-family="-apple-system, system-ui, sans-serif"
+          font-size="16"
+          font-weight="300"
+          letter-spacing="5"
+          text-anchor="middle"
+          fill="#B8860B">龙马精神</text>
+  </g>
+</svg>
