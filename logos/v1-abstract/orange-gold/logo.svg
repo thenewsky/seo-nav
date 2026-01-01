@@ -1,0 +1,69 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 橙金渐变 -->
+    <linearGradient id="orangeGold" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#E67E22" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#F39C12" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#F1C40F" stop-opacity="1"/>
+    </linearGradient>
+
+    <linearGradient id="accentGold" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F39C12" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#F1C40F" stop-opacity="1"/>
+    </linearGradient>
+
+    <radialGradient id="glow" cx="50%" cy="30%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.5"/>
+      <feOffset dx="0" dy="3"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.12"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" fill="#FFFFFF"/>
+
+  <g filter="url(#shadow)">
+    <path d="M 145 138 C 145 95, 185 60, 245 60 C 305 60, 350 90, 360 135 C 365 155, 358 175, 340 192 C 322 209, 295 220, 260 232 L 230 243 C 205 252, 185 262, 170 275 C 155 288, 148 305, 148 325 C 148 360, 175 390, 220 400 C 240 405, 262 406, 285 402"
+      fill="none" stroke="url(#orangeGold)" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <path d="M 360 368 C 360 410, 320 445, 260 445 C 200 445, 155 415, 145 370 C 140 350, 147 330, 165 313 C 183 296, 210 285, 245 273 L 275 262 C 300 253, 320 243, 335 230 C 350 217, 357 200, 357 180 C 357 145, 330 115, 285 105 C 265 100, 243 99, 220 103"
+      fill="none" stroke="url(#orangeGold)" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <path d="M 240 45 L 235 25 M 250 40 L 255 20" stroke="#F1C40F" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+    <path d="M 265 455 Q 270 465, 275 475 M 255 458 Q 260 468, 265 478 M 245 460 Q 250 470, 255 480" stroke="#E67E22" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+
+    <g transform="translate(385, 60)">
+      <path d="M -7 70 L -9 115 L 9 115 L 7 70 Z" fill="url(#accentGold)"/>
+      <path d="M 0 -2 L -26 52 L -9 52 L -9 68 L 9 68 L 9 52 L 26 52 Z" fill="url(#accentGold)"/>
+    </g>
+
+    <g opacity="0.45">
+      <circle cx="408" cy="205" r="3.2" fill="#E67E22"/>
+      <circle cx="420" cy="180" r="3.6" fill="#F39C12"/>
+      <circle cx="435" cy="150" r="4" fill="#F1C40F"/>
+      <circle cx="448" cy="120" r="3.4" fill="#F1C40F"/>
+      <path d="M 408 205 Q 420 180, 435 150 Q 442 135, 448 120" fill="none" stroke="#F39C12" stroke-width="1.8" opacity="0.35" stroke-linecap="round"/>
+    </g>
+
+    <g opacity="0.28" stroke="#F1C40F" stroke-width="2" stroke-linecap="round">
+      <line x1="350" y1="145" x2="365" y2="138"/>
+      <line x1="355" y1="158" x2="372" y2="150"/>
+    </g>
+
+    <ellipse cx="256" cy="180" rx="180" ry="200" fill="url(#glow)"/>
+  </g>
+
+  <g opacity="0.18">
+    <text x="256" y="488" font-family="-apple-system, system-ui, sans-serif" font-size="18" font-weight="300" letter-spacing="4.5" text-anchor="middle" fill="#E67E22">龙马精神</text>
+  </g>
+</svg>

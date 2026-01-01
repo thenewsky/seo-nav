@@ -1,0 +1,71 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="warmOrange" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#D35400"/>
+      <stop offset="50%" stop-color="#E67E22"/>
+      <stop offset="100%" stop-color="#F39C12"/>
+    </linearGradient>
+
+    <!-- 龙鳞纹理图案 -->
+    <pattern id="dragonScale" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 Q 5 5, 10 10 Q 15 5, 10 0 M 0 10 Q 5 15, 10 10 M 10 10 Q 15 15, 20 10"
+            fill="none" stroke="#F39C12" stroke-width="0.8" opacity="0.3"/>
+    </pattern>
+
+    <!-- 马鬃纹理图案 -->
+    <pattern id="horseHair" x="0" y="0" width="15" height="30" patternUnits="userSpaceOnUse">
+      <line x1="5" y1="0" x2="8" y2="30" stroke="#D35400" stroke-width="1.5" opacity="0.25"/>
+      <line x1="10" y1="0" x2="6" y2="30" stroke="#E67E22" stroke-width="1.2" opacity="0.2"/>
+    </pattern>
+
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.5"/>
+      <feOffset dx="0" dy="3"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.12"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" fill="#FFFFFF"/>
+
+  <g filter="url(#shadow)">
+    <!-- S字母上半部分 - 带龙鳞纹理 -->
+    <path d="M 145 138 C 145 95, 185 60, 245 60 C 305 60, 350 90, 360 135 C 365 155, 358 175, 340 192 C 322 209, 295 220, 260 232 L 230 243 C 205 252, 185 262, 170 275 C 155 288, 148 305, 148 325 C 148 360, 175 390, 220 400 C 240 405, 262 406, 285 402"
+      fill="url(#dragonScale)" stroke="url(#warmOrange)" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- S字母下半部分 - 带马鬃纹理 -->
+    <path d="M 360 368 C 360 410, 320 445, 260 445 C 200 445, 155 415, 145 370 C 140 350, 147 330, 165 313 C 183 296, 210 285, 245 273 L 275 262 C 300 253, 320 243, 335 230 C 350 217, 357 200, 357 180 C 357 145, 330 115, 285 105 C 265 100, 243 99, 220 103"
+      fill="url(#horseHair)" stroke="url(#warmOrange)" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- 龙纹装饰细节 -->
+    <g opacity="0.4">
+      <circle cx="250" cy="80" r="8" fill="none" stroke="#F39C12" stroke-width="2"/>
+      <circle cx="270" cy="90" r="6" fill="none" stroke="#F39C12" stroke-width="1.5"/>
+      <path d="M 240 100 Q 245 95, 250 100" fill="none" stroke="#F39C12" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- 马纹装饰细节 -->
+    <g opacity="0.35">
+      <path d="M 250 430 Q 245 435, 250 440 M 255 432 Q 260 437, 255 442"
+            stroke="#D35400" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M 265 425 Q 270 420, 275 425" fill="none" stroke="#E67E22" stroke-width="2"/>
+    </g>
+
+    <!-- 上升箭头 -->
+    <g transform="translate(385, 60)">
+      <path d="M -7 70 L -9 115 L 9 115 L 7 70 Z" fill="#F39C12"/>
+      <path d="M 0 -2 L -26 52 L -9 52 L -9 68 L 9 68 L 9 52 L 26 52 Z" fill="#F39C12"/>
+    </g>
+
+    <!-- 数据点 -->
+    <g opacity="0.45">
+      <circle cx="408" cy="205" r="3.2" fill="#E67E22"/>
+      <circle cx="420" cy="180" r="3.6" fill="#F39C12"/>
+      <circle cx="435" cy="150" r="4" fill="#F39C12"/>
+      <circle cx="448" cy="120" r="3.4" fill="#F39C12"/>
+      <path d="M 408 205 Q 420 180, 435 150 Q 442 135, 448 120" fill="none" stroke="#E67E22" stroke-width="1.8" opacity="0.35" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <text x="256" y="488" font-family="system-ui, sans-serif" font-size="18" font-weight="300" letter-spacing="4.5" text-anchor="middle" fill="#D35400" opacity="0.18">龙马精神</text>
+</svg>
