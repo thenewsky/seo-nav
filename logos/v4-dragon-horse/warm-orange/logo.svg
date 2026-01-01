@@ -31,7 +31,6 @@
     </filter>
   </defs>
 
-  <rect width="512" height="512" fill="#FFFFFF"/>
 
   <g filter="url(#shadow)">
     <!-- ========== 龙头区域 ========== -->

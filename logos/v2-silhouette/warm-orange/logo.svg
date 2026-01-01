@@ -24,7 +24,6 @@
     </filter>
   </defs>
 
-  <rect width="512" height="512" fill="#FFFFFF"/>
 
   <g filter="url(#shadow)">
     <!-- 龙形剪影 - 上方环绕 -->

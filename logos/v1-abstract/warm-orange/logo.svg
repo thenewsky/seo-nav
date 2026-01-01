@@ -30,7 +30,6 @@
     </filter>
   </defs>
 
-  <rect width="512" height="512" fill="#FFFFFF"/>
 
   <g filter="url(#shadow)">
     <!-- S字母主体 - 龙形曲线（上半部分更具龙的蜿蜒感） -->
