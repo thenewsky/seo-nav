@@ -1,6 +1,10 @@
-# SEO导航站
+# S 计划
 
-一个简洁美观的SEO工具导航网站，帮助SEO从业者快速访问常用工具和资源。
+用 AI 做网站、应用或智能体，满足有付费意愿的需求。
+
+Use AI to build websites, apps, or agents that meet needs people are willing to pay for.
+
+收集发现需求、研究关键词、建站与经营产品的常用工具和资源。
 
 ## 功能特性
 
@@ -10,21 +14,43 @@
 - 🎓 SEO学习资源和社区
 - 🔗 域名工具和AI工具
 - 💻 开发辅助工具
+- 🧭 翻石地图：调研方法、工具目录、发布社区、流量与收入榜单、App 数据与软件市场
 
 ## 快速开始
 
 ### 查看网站
-访问 [GitHub Pages](https://your-username.github.io/seo-nav/) 查看在线版本
+访问 [GitHub Pages](https://thenewsky.github.io/seo-nav/) 查看在线版本
 
 ### 本地运行
 ```bash
 # 克隆仓库
-git clone <repository-url>
+git clone git@github.com:thenewsky/seo-nav.git
 cd seo-nav
 
-# 直接用浏览器打开
-open index.html
+# 启动本地预览（仅监听本机）
+python3 -m http.server 8765 --bind 127.0.0.1
 ```
+
+打开 <http://127.0.0.1:8765/> 查看首页，点击「翻石地图」进入专题；也可以直接访问 <http://127.0.0.1:8765/discover/>。
+
+### 翻石地图
+
+- [专题页面](./discover/index.html)：以彼得·林奇「翻石头最多的人，赢得游戏。」的译文作为副标题，出处为 [PBS FRONTLINE 原始访谈](https://www.pbs.org/wgbh/pages/frontline/shows/betting/pros/lynch.html)。沿用首页的四列分类表格、字体和链接样式，通过浏览器的 `⌘F` / `Ctrl+F` 查找。
+- [内容数据](./discover/sites.json)：网站名称、入口、用途、观察重点和必要口径的统一来源。
+- 最前面的「调研方法」收录 R01 刘小排翻石头、R02 老布AI图像站实操、R03 哥飞Stripe流量估收入、R04 子木从选品到营销，均链接到生财有术或哥飞社群原帖，阅读需相应权限。
+- 「流量与商业榜单」包含 Toolify 收入榜与 Indie Hackers 收入排序入口；「App 数据与榜单」单独收录 Sensor Tower、点点数据、七麦数据和 Data.ai。Data.ai 已被 Sensor Tower 收购，保留原入口并注明现状。
+
+更新内容后，在仓库根目录生成静态页面和Markdown：
+
+```bash
+node tools/build-discover.mjs
+# 检查网页和Markdown是否与内容数据一致（不写文件）
+node tools/build-discover.mjs --check
+```
+
+专题使用预生成HTML，完整列表直接显示，关闭JavaScript仍可阅读正文和访问外链。所有站内路径使用相对链接，适用于GitHub Pages的仓库子路径。All Things AI的官网未核对，暂不提供外链；seo.box来源访问榜不作为真实营收排名。
+
+首页与专题共同使用`assets/navigation.css`和`assets/navigation.js`，统一表格、链接悬停效果及favicon加载。首页第一行「专题导航」提供翻石地图入口。
 
 ## 添加新链接
 
@@ -59,6 +85,16 @@ open index.html
 ```
 seo-nav/
 ├── index.html              # 主页面
+├── assets/
+│   ├── navigation.css     # 首页与子页共用的导航样式
+│   └── navigation.js      # 共用的favicon加载
+├── discover/               # 翻石地图二级页面
+│   ├── sites.json          # 内容数据
+│   ├── index.template.html # 页面模板
+│   ├── index.html          # 生成的静态页面
+│   ├── sites.md            # 生成的Markdown清单
+│   └── styles.css          # 专题样式
+├── tools/build-discover.mjs # 零依赖内容生成器
 ├── .cursorrules            # Cursor命令规范
 ├── add-seo-links.md        # 命令文件
 ├── .cursor/                # Cursor配置目录

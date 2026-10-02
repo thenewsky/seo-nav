@@ -1,0 +1,138 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #f5f5f5;
+  padding: 20px;
+  margin: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+}
+
+h1 {
+  color: #333;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+  display: inline-block;
+}
+
+.page-slogan {
+  color: #888;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+  margin: -10px 0 20px;
+}
+
+table {
+  width: 98%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+tr {
+  height: 50px;
+}
+
+th {
+  text-align: center;
+  background: #f0f7ff;
+  color: #1890ff;
+  font-weight: 600;
+  border: 1px solid #e8e8e8;
+  padding: 8px;
+  width: 120px;
+  vertical-align: middle;
+}
+
+td {
+  text-align: center;
+  width: 220px;
+  border: 1px solid #e8e8e8;
+  padding: 5px;
+}
+
+td a,
+.page-links a {
+  color: #333;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  transition: all 0.2s;
+}
+
+td a:hover,
+.page-links a:hover {
+  color: #1890ff;
+  background: #e6f7ff;
+  border-radius: 3px;
+}
+
+td a img,
+.page-links a img {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+td a:focus-visible,
+.page-links a:focus-visible,
+.tool-table-wrap:focus-visible {
+  outline: 2px solid #1890ff;
+  outline-offset: 2px;
+}
+
+.page-links {
+  text-align: center;
+  margin: -6px 0 12px;
+}
+
+.tool-table-wrap {
+  width: 98%;
+  margin: 0 auto;
+  overflow-x: auto;
+  border-radius: 4px;
+}
+
+.tool-table-wrap table {
+  width: 100%;
+  min-width: 760px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 16px 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  td a,
+  .page-links a {
+    transition: none;
+  }
+}

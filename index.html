@@ -3,96 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SEO 导航站</title>
+  <title>S 计划</title>
   <!-- Favicon - 多尺寸支持 (透明背景 v1-abstract/orange-gold) -->
   <link rel="icon" type="image/svg+xml" href="logo.svg?v=2">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=2">
   <link rel="apple-touch-icon" sizes="192x192" href="favicon-192.png?v=2">
-  <style type="text/css">
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: #f5f5f5;
-      padding: 20px;
-      height: 100vh;
-      overflow: hidden;
-    }
-    .header {
-      text-align: center;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-    }
-    .logo {
-      height: 40px;
-      width: 40px;
-      display: inline-block;
-    }
-    h1 {
-      color: #333;
-      font-size: 24px;
-      font-weight: 500;
-      margin: 0;
-      display: inline-block;
-    }
-    table {
-      width: 98%;
-      border-collapse: collapse;
-      margin: 0 auto;
-      background: white;
-      border-radius: 4px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    }
-    tr {
-      height: 50px;
-    }
-    th {
-      text-align: center;
-      background: #f0f7ff;
-      color: #1890ff;
-      font-weight: 600;
-      border: 1px solid #e8e8e8;
-      padding: 8px;
-      width: 120px;
-      vertical-align: middle;
-    }
-    td {
-      text-align: center;
-      width: 220px;
-      border: 1px solid #e8e8e8;
-      padding: 5px;
-    }
-    td a {
-      color: #333;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 8px;
-      transition: all 0.2s;
-    }
-    td a:hover {
-      color: #1890ff;
-      background: #e6f7ff;
-      border-radius: 3px;
-    }
-    td a img {
-      width: 16px;
-      height: 16px;
-      display: inline-block;
-      vertical-align: middle;
-      border-radius: 2px;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/navigation.css">
+  <script src="assets/navigation.js" defer></script>
 </head>
 <body>
   <div class="header">
-    <img src="logo.svg?v=2" alt="SEO导航站Logo" class="logo">
-    <h1>SEO 导航站</h1>
+    <img src="logo.svg?v=2" alt="S 计划标志" class="logo">
+    <h1>S 计划</h1>
   </div>
+  <p class="page-slogan">
+    用 AI 做网站、应用或智能体，满足有付费意愿的需求。<br>
+    <span lang="en">Use AI to build websites, apps, or agents that meet needs people are willing to pay for.</span>
+  </p>
+  <div class="tool-table-wrap" role="region" aria-label="S 计划工具列表" tabindex="0">
   <table>
+    <tr>
+      <th rowspan="1">专题导航</th>
+      <td><a href="discover/" target="_blank" rel="noopener noreferrer" title="翻石头最多的人，赢得游戏。——彼得·林奇"><img src="logo.svg?v=2" alt="">翻石地图</a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
     <tr>
       <th rowspan="1">域名工具</th>
       <td><a href="https://namebeta.com/zh" target="_blank">Namebeta</a></td>
@@ -213,42 +150,7 @@
       <td></td>
     </tr>
   </table>
-  <script>
-    // 为所有链接添加favicon
-    function getDomain(url) {
-      try {
-        const urlObj = new URL(url);
-        return urlObj.hostname.replace('www.', '');
-      } catch (e) {
-        return url.replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
-      }
-    }
-    
-    function addFavicon(link) {
-      const url = link.getAttribute('href');
-      if (!url || !url.startsWith('http')) return;
-      
-      const domain = getDomain(url);
-      const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=32`;
-      
-      const img = document.createElement('img');
-      img.src = faviconUrl;
-      img.alt = '';
-      img.loading = 'lazy';
-      img.onerror = function() {
-        // 如果Google favicon失败，尝试直接获取网站favicon
-        this.src = `https://${domain}/favicon.ico`;
-        this.onerror = function() {
-          this.style.display = 'none';
-        };
-      };
-      
-      link.insertBefore(img, link.firstChild);
-    }
-    
-    // 为所有链接添加favicon
-    document.querySelectorAll('td a[href^="http"]').forEach(addFavicon);
-  </script>
+  </div>
+
 </body>
 </html>
-

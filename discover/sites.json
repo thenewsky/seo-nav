@@ -1,0 +1,181 @@
+{
+  "updated": "2026-10-02",
+  "groups": [
+    {"id": "methods", "label": "调研方法", "description": "先读前人的观察框架与实操复盘，再带着问题看榜单和产品。原文来自生财有术与哥飞社群，阅读需相应权限。"},
+    {"id": "directories", "label": "AI工具目录", "description": "从类目和具体任务入手，认识AI工具的用途与产品方向。"},
+    {"id": "launch", "label": "产品发布与社区", "description": "看开发者发布了什么，以及用户如何讨论、使用和反馈。"},
+    {"id": "signals", "label": "流量与商业榜单", "description": "从榜单和报告寻找产品线索，留意指标与统计口径。"},
+    {"id": "apps", "label": "App 数据与榜单", "description": "按国家、商店和类目看应用下载、收入与排名，认识移动产品生意。"},
+    {"id": "marketplaces", "label": "应用与软件市场", "description": "浏览软件、模型和应用演示，理解不同产品的交付方式。"}
+  ],
+  "sites": [
+    {
+      "id": "research-r01", "name": "R01 刘小排：翻石头", "url": "https://scys.com/deepsea/2001/note/5021", "group": "methods", "source_key": "scys:5021",
+      "summary": "带着问题认识产品：用户、需求、评价、获客、收入，以及自己能否做。",
+      "observe": "原文：【生财认知】翻石头：独立开发者的日常修行（2024-11-05）。用文章的问题清单研究一个产品，记录证据与未知。",
+      "note": "经验框架，需结合真实用户和收入证据核对。", "featured": false
+    },
+    {
+      "id": "research-r02", "name": "R02 老布：AI 图像站实操", "url": "https://scys.com/deepsea/2001/note/4077", "group": "methods", "source_key": "scys:4077",
+      "summary": "沿着榜单、对标站、页面与关键词做拆解，记录获客尝试和成本教训。",
+      "observe": "原文：AI 图像站：从找词、拆解对标到流量获取的实操体会（2025-07-15）。跟着榜单到站点、页面和关键词的链条实践，核对成本与收益。",
+      "note": "作者当时尚未开单，包含失败复盘。", "featured": false
+    },
+    {
+      "id": "research-r03", "name": "R03 哥飞：Stripe 流量估收入", "url": "https://new.web.cafe/topic/wlzf10yky8", "group": "methods", "source_key": "xiaoketang:162",
+      "summary": "从榜单找到产品，再用Stripe收银台流量估算收入并观察获客渠道。",
+      "observe": "原文：怎么通过 Stripe 收银台流量估算产品收入（2024-04-25）。理解估算依据，区分支付页访问、成功付款和实际收入。",
+      "note": "2024年方法；支付页访问不等于成功付款。", "featured": false
+    },
+    {
+      "id": "research-r04", "name": "R04 子木：从选品到营销", "url": "https://scys.com/deepsea/2001/note/5338", "group": "methods", "source_key": "scys:5338",
+      "summary": "从用户差评、平台周边和新趋势寻找需求，结合成本与获客做产品。",
+      "observe": "原文：独立开发如何赚得比工资多：从选品到营销，干就完了！（2025-03-17）。先找现有方案的缺口，再核对成本和获取用户的方法。",
+      "note": "访谈整理；低排名代表低竞争的说法仍需验证。", "featured": false
+    },
+    {
+      "id": "toolify", "name": "Toolify", "url": "https://www.toolify.ai/zh/", "group": "directories",
+      "summary": "按类目浏览AI工具，结合工具详情与流量榜单认识产品方向和用户任务。",
+      "observe": "先选一个类目，比较工具解决的任务、官网收费方式与榜单指标。",
+      "note": "", "featured": true
+    },
+    {
+      "id": "taaft", "name": "TAAFT", "url": "https://theresanaiforthat.com/", "group": "directories",
+      "summary": "There's An AI For That以任务为入口，帮助发现解决具体问题的AI工具。",
+      "observe": "用一个实际任务查找工具，观察任务描述及同类方案之间的差别。",
+      "note": "", "featured": false
+    },
+    {
+      "id": "futurepedia", "name": "Futurepedia", "url": "https://www.futurepedia.io/", "group": "directories",
+      "summary": "汇集AI工具与学习内容，可从分类入口浏览工具并了解其使用方向。",
+      "observe": "比较同一类目中的工具用途，查看详情如何引导用户了解和使用产品。",
+      "note": "", "featured": false
+    },
+    {
+      "id": "topai-tools", "name": "TopAI.tools", "url": "https://topai.tools/", "group": "directories",
+      "summary": "通过类目与任务搜索AI工具，为认识同类产品和寻找替代方案提供入口。",
+      "observe": "按任务检索同类工具，记录各自的功能描述、使用场景与官网入口。",
+      "note": "", "featured": false
+    },
+    {
+      "id": "aixploria", "name": "AIxploria", "url": "https://www.aixploria.com/en/", "group": "directories",
+      "summary": "按类目整理AI工具，适合浏览不同用途的产品并继续访问各工具官网。",
+      "observe": "浏览一个熟悉的类目，比较它的分类方式和收录工具所解决的任务。",
+      "note": "", "featured": false
+    },
+    {
+      "id": "ai-tools-fyi", "name": "AI Tools FYI", "url": "https://aitools.fyi/", "group": "directories",
+      "summary": "提供AI工具发现、对比与替代工具入口，便于从多个方案理解同一任务。",
+      "observe": "选择一款工具查看对比与替代入口，识别各方案强调的功能差异。",
+      "note": "", "featured": false
+    },
+    {
+      "id": "ai-tools-directory", "name": "AI Tools Directory", "url": "https://aitoolsdirectory.com/", "group": "directories",
+      "summary": "整理AI工具及分类入口，可用来浏览产品用途并寻找进一步了解的官网。",
+      "observe": "按类目阅读工具介绍，记录反复出现的任务及值得继续查看的产品。",
+      "note": "", "featured": false
+    },
+    {
+      "id": "all-things-ai", "name": "All Things AI", "url": null, "group": "directories",
+      "summary": "在第三方目录对照资料中出现的AI工具目录名称，保留为后续核对线索。",
+      "observe": "先确认当前官网与品牌对应关系，再核对分类入口和工具收录方式。",
+      "note": "官网入口待核，暂不提供外链。", "featured": false
+    },
+    {
+      "id": "show-hn", "name": "Show HN", "url": "https://news.ycombinator.com/show", "group": "launch",
+      "summary": "Hacker News的作品展示入口，开发者发布自己的项目并与社区交流反馈。",
+      "observe": "看作品解决什么问题，再读评论中的使用反馈、疑问和替代方案。",
+      "note": "", "featured": false
+    },
+    {
+      "id": "product-hunt", "name": "Product Hunt", "url": "https://www.producthunt.com/", "group": "launch",
+      "summary": "新产品发布与发现平台，可浏览产品介绍、发布内容及相关用户讨论。",
+      "observe": "比较产品的一句话介绍与实际用途，阅读评论中用户关注的问题。",
+      "note": "", "featured": false
+    },
+    {
+      "id": "indie-hackers", "name": "Indie Hackers", "url": "https://www.indiehackers.com/", "group": "launch",
+      "summary": "创业者交流项目与经营经验的社区，可寻找产品故事、收入分享及实践讨论。",
+      "observe": "关注作者描述的用户、获客方式与经营过程，区分经验分享和可核数据。",
+      "note": "", "featured": false
+    },
+    {
+      "id": "toolify-revenue", "name": "Toolify 收入榜", "url": "https://www.toolify.ai/zh/Best-AI-Tools-revenue", "group": "signals",
+      "summary": "按支付平台排名与网站月流量推算AI产品收入排名，用于发现商业化产品。",
+      "observe": "看支付平台、月流量与产品用途，再到官网核对价格和收费方式。",
+      "note": "排名不代表经验证的实际收入。", "featured": false
+    },
+    {
+      "id": "indie-hackers-revenue", "name": "Indie Hackers 收入榜", "url": "https://www.indiehackers.com/products?sorting=highest-revenue", "group": "signals",
+      "summary": "按月收入排序的独立创业产品库，可结合产品介绍与经营记录认识生意。",
+      "observe": "核对收入口径、更新时间、产品客户与收费方式。",
+      "note": "区分自报与验证收入，异常数字需单独核对。", "featured": false
+    },
+    {
+      "id": "trustmrr", "name": "TrustMRR", "url": "https://trustmrr.com/", "group": "signals",
+      "summary": "通过支付平台验证收入的创业产品榜单，可从MRR、近30天收入与增长发现生意。",
+      "observe": "比较MRR、近30天收入、增长与更新时间，再去产品官网核对客户和收费方式。",
+      "note": "收入验证不等于利润验证，留意统计周期和数据更新时间。", "featured": false
+    },
+    {
+      "id": "seo-box-referring", "name": "seo.box/referring", "url": "https://seo.box/referring/", "group": "signals",
+      "summary": "展示Stripe结账页的来源网站榜，可从来源访问信息发现进一步研究的产品。",
+      "observe": "查看来源网站、份额和访问量，进入产品官网核对用途与收费方式。",
+      "note": "来源访问量不等于实际收入，也不能直接代表利润。", "featured": false
+    },
+    {
+      "id": "traffic-cv", "name": "Traffic.cv", "url": "https://traffic.cv/", "group": "signals",
+      "summary": "提供网站流量与增长信息入口，可用来发现变化中的网站并寻找研究线索。",
+      "observe": "查看网站增长及统计周期，再对照产品官网理解增长所对应的业务。",
+      "note": "流量和收入信号涉及估算，使用前需核对指标口径。", "featured": false
+    },
+    {
+      "id": "a16z-consumer-ai-top-100", "name": "a16z Consumer AI Top 100", "url": "https://a16z.com/100-gen-ai-apps-6/", "group": "signals",
+      "summary": "消费级AI产品榜单报告，通过报告中的产品与分类观察阶段性的行业变化。",
+      "observe": "先看报告日期与统计口径，再比较榜单产品所属任务及类目变化。",
+      "note": "这是特定版本的报告，非实时工具目录。", "featured": false
+    },
+    {
+      "id": "sensor-tower", "name": "Sensor Tower", "url": "https://sensortower.com/", "group": "apps",
+      "summary": "提供全球App的下载、收入与使用趋势估算，可按国家和类目比较竞品。",
+      "observe": "选择国家、应用商店和类目，对比下载、收入与增长趋势。",
+      "note": "下载与收入为估算，需核对统计范围。", "featured": false
+    },
+    {
+      "id": "diandian", "name": "点点数据", "url": "https://www.diandian.com/zh", "group": "apps",
+      "summary": "查看应用与游戏榜单、预估下载及收入，寻找增长中的市场与产品。",
+      "observe": "按国家、商店和类目查看下载收入榜，再核对产品功能、内购和订阅。",
+      "note": "预估下载、收入与商店排名是不同指标。", "featured": false
+    },
+    {
+      "id": "qimai", "name": "七麦数据", "url": "https://www.qimai.cn/", "group": "apps",
+      "summary": "查看应用商店免费、付费与畅销榜，并研究下载、收入预估与关键词。",
+      "observe": "比较免费榜、付费榜和畅销榜，核对收费方式、排名变化与用户评论。",
+      "note": "付费榜看付费下载排名，畅销榜看收入表现。", "featured": false
+    },
+    {
+      "id": "data-ai", "name": "Data.ai（原 App Annie）", "url": "https://www.data.ai/en/", "group": "apps",
+      "summary": "移动应用市场分析平台，已被Sensor Tower收购，保留供查找旧资料与产品案例。",
+      "observe": "结合旧资料追溯App案例，当前数据与服务以官方登录入口及Sensor Tower说明为准。",
+      "note": "已并入Sensor Tower；当前入口跳转登录页。", "featured": false
+    },
+    {
+      "id": "inode-ai", "name": "iNODE AI", "url": "https://inode-ai.com/", "group": "marketplaces",
+      "summary": "AI模型与工具市场，兼有产品发现功能，可浏览不同模型及工具的用途。",
+      "observe": "查看模型和工具的用途描述，比较它们如何呈现能力与提供使用入口。",
+      "note": "", "featured": false
+    },
+    {
+      "id": "appsumo", "name": "AppSumo", "url": "https://appsumo.com/", "group": "marketplaces",
+      "summary": "软件交易与优惠平台，可浏览软件方案、交易说明及面向用户的价值描述。",
+      "observe": "看软件针对的任务、套餐限制及购买说明，理解它如何表达购买理由。",
+      "note": "", "featured": false
+    },
+    {
+      "id": "hugging-face-spaces", "name": "Hugging Face Spaces", "url": "https://huggingface.co/spaces", "group": "marketplaces",
+      "summary": "AI应用与模型演示入口，可体验不同任务的交互示例并观察能力的呈现方式。",
+      "observe": "选择一个任务体验演示，观察输入、输出和交互如何形成可用的功能。",
+      "note": "", "featured": false
+    }
+  ]
+}

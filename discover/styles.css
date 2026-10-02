@@ -1,0 +1,50 @@
+.page-links {
+  width: 98%;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.page-meta {
+  color: #888;
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.site-summary,
+.site-note {
+  color: #888;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 4px 8px;
+}
+
+.site-note {
+  color: #999;
+}
+
+.site-unverified {
+  display: inline-block;
+  color: #888;
+  padding: 4px 8px;
+}
+
+.site-unverified small {
+  font-size: 12px;
+}
+
+.scope-note {
+  width: 98%;
+  margin: 12px auto;
+  color: #888;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .page-meta {
+    width: 100%;
+    margin-left: 0;
+  }
+}

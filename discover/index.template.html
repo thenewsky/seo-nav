@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="翻石地图：先读调研方法，再浏览 AI 工具目录、产品社区、流量与收入榜单、App 数据与软件市场。">
+  <title>翻石地图 · S 计划</title>
+  <link rel="icon" type="image/svg+xml" href="../logo.svg?v=2">
+  <link rel="stylesheet" href="../assets/navigation.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="../assets/navigation.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <img class="logo" src="../logo.svg?v=2" width="40" height="40" alt="">
+    <h1>翻石地图</h1>
+  </header>
+  <p class="page-slogan"><q cite="https://www.pbs.org/wgbh/pages/frontline/shows/betting/pros/lynch.html" title="译自 PBS FRONTLINE 彼得·林奇访谈">翻石头最多的人，赢得游戏。</q>——彼得·林奇</p>
+  <main>
+    <nav class="page-links" aria-label="页面导航">
+      <a href="../">返回 S 计划</a>
+      <span class="page-meta">{{SITE_COUNT}} 个入口 · {{GROUP_COUNT}} 个分类 · 更新于 <time datetime="{{UPDATED}}">{{UPDATED_DISPLAY}}</time></span>
+    </nav>
+    <div class="tool-table-wrap" role="region" aria-label="翻石地图网站列表" tabindex="0">
+      <table id="site-table" aria-label="翻石地图网站，按分类排列，每行四个入口">
+        {{TABLE_BODY}}
+      </table>
+    </div>
+    <p class="scope-note">从 Toolify 开始认识类目和生意。流量及榜单名次是线索，真实收入与付费意愿需要进一步核对。</p>
+  </main>
+</body>
+</html>
