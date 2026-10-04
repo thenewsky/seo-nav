@@ -6,6 +6,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const directory = path.join(root, 'start');
 const check = process.argv.includes('--check');
 if (process.argv.slice(2).some(argument => argument !== '--check')) throw new Error('用法：node tools/build-start.mjs [--check]');
+const practiceIds = ['first-site', 'ranking', 'expansion', 'product'];
 const ids = ['purpose', 'domain', 'build', 'deploy', 'indexing', 'on-page', 'traffic', 'revenue'];
 const fail = message => { throw new Error(`上站路线数据：${message}`); };
 const html = value => String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
@@ -41,6 +42,46 @@ function link(value, field) {
 function array(value, field, nonempty = false) {
   if (!Array.isArray(value) || (nonempty && !value.length)) fail(`${field} 必须为${nonempty ? '非空' : ''}数组`);
 }
+function references(value, field) {
+  array(value, field);
+  value.forEach((reference, offset) => {
+    const prefix = `${field}[${offset}]`;
+    object(reference, prefix);
+    for (const key of ['title', 'author', 'platform']) text(reference[key], `${prefix}.${key}`);
+    link(reference.url, `${prefix}.url`);
+    date(reference.date, `${prefix}.date`, true);
+    if (reference.source_key !== undefined) {
+      text(reference.source_key, `${prefix}.source_key`);
+      if (!/^[a-z][a-z0-9-]*:[a-z0-9]+$/.test(reference.source_key)) fail(`${prefix}.source_key 必须为资料源短键`);
+    }
+  });
+}
+function validatePractices(data) {
+  object(data, '练习数据');
+  date(data.updated, '练习.updated');
+  array(data.levels, 'levels', true);
+  if (data.levels.length !== practiceIds.length) fail('必须包含约定的四种练习');
+  data.levels.forEach((level, index) => {
+    const prefix = `levels[${index}]`;
+    object(level, prefix);
+    for (const key of ['id', 'title', 'alias', 'summary', 'entry', 'focus', 'done', 'defer', 'route', 'record']) text(level[key], `${prefix}.${key}`);
+    if (level.id !== practiceIds[index]) fail(`练习 ID 重复、未知或顺序不正确：${level.id}`);
+    array(level.steps, `${prefix}.steps`, true);
+    level.steps.forEach((step, offset) => {
+      object(step, `${prefix}.steps[${offset}]`);
+      for (const key of ['title', 'action', 'check', 'pitfall']) text(step[key], `${prefix}.steps[${offset}].${key}`);
+    });
+    array(level.modules, `${prefix}.modules`, true);
+    const modules = new Set();
+    level.modules.forEach((module, offset) => {
+      object(module, `${prefix}.modules[${offset}]`);
+      text(module.description, `${prefix}.modules[${offset}].description`);
+      if (!ids.includes(module.id) || modules.has(module.id)) fail(`${level.id} 引用重复或未知的环节：${module.id}`);
+      modules.add(module.id);
+    });
+    references(level.references, `${prefix}.references`);
+  });
+}
 function validate(data) {
   object(data, '顶层');
   date(data.updated, 'updated');
@@ -64,17 +105,7 @@ function validate(data) {
       link(tool.url, `${stage.id}.tools[${offset}].url`);
       if (typeof tool.primary !== 'boolean') fail(`${stage.id}.tools[${offset}].primary 必须为布尔值`);
     });
-    array(stage.references, `${stage.id}.references`);
-    stage.references.forEach((reference, offset) => {
-      object(reference, `${stage.id}.references[${offset}]`);
-      for (const field of ['title', 'author', 'platform']) text(reference[field], `${stage.id}.references[${offset}].${field}`);
-      link(reference.url, `${stage.id}.references[${offset}].url`);
-      date(reference.date, `${stage.id}.references[${offset}].date`, true);
-      if (reference.source_key !== undefined) {
-        text(reference.source_key, `${stage.id}.references[${offset}].source_key`);
-        if (!/^[a-z][a-z0-9-]*:[a-z0-9]+$/.test(reference.source_key)) fail(`${stage.id}.references[${offset}].source_key 必须为资料源短键`);
-      }
-    });
+    references(stage.references, `${stage.id}.references`);
   });
 }
 function anchor(url, title, nested = false) {
@@ -110,19 +141,42 @@ function sourcesTable(references) {
 }
 
 function stageRows(stages, offset) {
-  return stages.map((stage, index) => `<tr><th scope="row">${String(index + offset + 1).padStart(2, '0')}<br><a class="category-link" href="./${html(stage.id)}/">${html(stage.title)}</a></th><td>${html(stage.goal)}<p class="route-summary">${html(stage.summary)}</p></td><td>${html(stage.done)}</td><td>${anchor(`./${stage.id}/`, '进入阶段')}</td></tr>`).join('\n        ');
+  return stages.map((stage, index) => `<tr><th scope="row">${String(index + offset + 1).padStart(2, '0')}<br><a class="category-link" href="../${html(stage.id)}/">${html(stage.title)}</a></th><td>${html(stage.goal)}<p class="route-summary">${html(stage.summary)}</p></td><td>${html(stage.done)}</td><td>${anchor(`../${stage.id}/`, '查看环节')}</td></tr>`).join('\n        ');
 }
 
 const data = JSON.parse(await readFile(path.join(directory, 'guide.json'), 'utf8'));
 validate(data);
-const [indexTemplate, stageTemplate] = await Promise.all(['index.template.html', 'stage.template.html'].map(filename => readFile(path.join(directory, filename), 'utf8')));
+const practices = JSON.parse(await readFile(path.join(directory, 'practice.json'), 'utf8'));
+validatePractices(practices);
+const [indexTemplate, stageTemplate, workflowTemplate, practiceTemplate] = await Promise.all(['index.template.html', 'stage.template.html', 'workflow.template.html', 'practice.template.html'].map(filename => readFile(path.join(directory, filename), 'utf8')));
 const updated = { UPDATED: html(data.updated), UPDATED_DISPLAY: html(data.updated.replace(/-/g, '.')) };
 const outputs = new Map();
-outputs.set('index.html', render(indexTemplate, {
+outputs.set('workflow/index.html', render(workflowTemplate, {
   ...updated,
   FIRST_SITE_ROWS: stageRows(data.stages.slice(0, 5), 0),
   GROWTH_ROWS: stageRows(data.stages.slice(5), 5),
 }));
+const practiceUpdated = { UPDATED: html(practices.updated), UPDATED_DISPLAY: html(practices.updated.replace(/-/g, '.')) };
+const practiceReferences = ['daily-summary:26', 'xiaoketang:61'].map(key => practices.levels.flatMap(level => level.references).find(reference => reference.source_key === key));
+if (practiceReferences.some(reference => !reference)) fail('练习路线缺少已核对的群聊总结或 GSC 小课堂来源');
+outputs.set('index.html', render(indexTemplate, {
+  ...practiceUpdated,
+  PRACTICE_ROWS: practices.levels.map((level, index) => `<tr><th scope="row"><span class="practice-alias">${html(level.alias)}</span><br>${anchor(`./${level.id}/`, level.title)}<br><span class="practice-order">练习 ${index + 1}</span></th><td>${html(level.entry)}</td><td>${html(level.focus)}<p class="route-summary">${html(level.defer)}</p></td><td>${html(level.done)}<p class="route-summary">${anchor(`./${level.id}/`, '查看本轮动作 →')}</p></td></tr>`).join('\n        '),
+  PRACTICE_SOURCES: sourcesTable(practiceReferences),
+}));
+practices.levels.forEach((level, index) => {
+  const previous = practices.levels[index - 1];
+  const next = practices.levels[index + 1];
+  outputs.set(`${level.id}/index.html`, render(practiceTemplate, {
+    ...practiceUpdated,
+    TITLE: html(level.title), ALIAS: html(level.alias), SUMMARY: html(level.summary), ENTRY: html(level.entry),
+    FOCUS: html(level.focus), DONE: html(level.done), ROUTE: html(level.route), DEFER: html(level.defer), RECORD: html(level.record),
+    STEP_ROWS: level.steps.map((step, offset) => `<tr><th scope="row">${String(offset + 1).padStart(2, '0')} · ${html(step.title)}</th><td>${html(step.action)}</td><td>${html(step.check)}</td><td>${html(step.pitfall)}</td></tr>`).join('\n        '),
+    MODULE_ROWS: level.modules.map(module => `<tr><th scope="row">${anchor(`../${module.id}/`, data.stages.find(stage => stage.id === module.id).title)}</th><td>${html(module.description)}</td></tr>`).join('\n        '),
+    SOURCE_ROWS: sourcesTable(level.references),
+    PRACTICE_NAVIGATION: [previous ? anchor(`../${previous.id}/`, `← ${previous.title}`) : '', anchor('../', '按能力重新选练习'), next ? anchor(`../${next.id}/`, `${next.title} →`) : anchor('../workflow/', '查通用环节手册')].filter(Boolean).join('\n      '),
+  }));
+});
 data.stages.forEach((stage, index) => {
   const previous = data.stages[index - 1];
   const next = data.stages[index + 1];
@@ -132,7 +186,7 @@ data.stages.forEach((stage, index) => {
     GOAL: html(stage.goal), ROUTE: html(stage.route), DONE: html(stage.done), NEXT_TIP: html(stage.nextTip),
     STEP_ROWS: stage.steps.map((step, offset) => `<tr><th scope="row">${String(offset + 1).padStart(2, '0')} · ${html(step.title)}</th><td>${html(step.action)}</td><td>${html(step.check)}</td><td>${html(step.pitfall)}</td></tr>`).join('\n        '),
     TOOL_ROWS: toolsTable(stage.tools), SOURCE_ROWS: sourcesTable(stage.references),
-    STAGE_NAVIGATION: [previous ? anchor(`../${previous.id}/`, `← ${previous.title}`) : '', anchor('../', '路线总览'), next ? anchor(`../${next.id}/`, `${next.title} →`) : anchor('../../', '返回 S 计划')].filter(Boolean).join('\n      '),
+    STAGE_NAVIGATION: [previous ? anchor(`../${previous.id}/`, `← ${previous.title}`) : '', anchor('../workflow/', '环节手册'), next ? anchor(`../${next.id}/`, `${next.title} →`) : anchor('../../', '返回 S 计划')].filter(Boolean).join('\n      '),
   }));
 });
 // Check all destinations before writing anything; --check never creates directories or files.
@@ -155,4 +209,4 @@ if (check) {
     await writeFile(destination, contents, 'utf8');
   }
 }
-console.log(`${check ? '校验通过' : '已生成'}：8 个阶段，start/index.html 与 8 个阶段页面`);
+console.log(`${check ? '校验通过' : '已生成'}：4 种练习、8 个环节，共 14 个路线页面`);

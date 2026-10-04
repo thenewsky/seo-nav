@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{SUMMARY}}">
+  <title>{{TITLE}} · S 计划</title>
+  <link rel="icon" type="image/svg+xml" href="../../logo.svg?v=2">
+  <link rel="stylesheet" href="../../assets/navigation.css">
+  <link rel="stylesheet" href="../../assets/compact.css">
+  <link rel="stylesheet" href="../styles.css?v=learning5">
+  <script src="../../assets/navigation.js" defer></script>
+</head>
+<body>
+  <header class="header"><img class="logo" src="../../logo.svg?v=2" width="40" height="40" alt=""><h1>{{TITLE}}</h1></header>
+  <p class="page-slogan">{{SUMMARY}}</p>
+  <main class="practice-page">
+    <nav class="page-links" aria-label="页面导航">
+      <a href="../../">返回 S 计划</a><a href="../">练习路线</a><a href="../workflow/">环节手册</a>
+      <span class="page-meta">{{ALIAS}} · 按能力选练习 · <time datetime="{{UPDATED}}">{{UPDATED_DISPLAY}}</time></span>
+    </nav>
+    <div class="tool-table-wrap brief-wrap" role="region" aria-label="当前能力与练习目标">
+      <table class="brief-table"><tbody>
+        <tr><th scope="row">适合现在的你</th><td>{{ENTRY}}</td></tr>
+        <tr><th scope="row">本轮重点</th><td>{{FOCUS}}</td></tr>
+        <tr><th scope="row">下一层前的证据</th><td>{{DONE}}</td></tr>
+      </tbody></table>
+    </div>
+    <p class="guide-intro"><strong>本轮路线：</strong>{{ROUTE}}<br><strong>这轮暂缓：</strong>{{DEFER}}</p>
+    <nav class="compact-shortcuts" aria-label="本页快速定位"><a href="#steps">练习动作</a><a href="#modules">环节入口</a><a href="#sources">资料依据</a></nav>
+    <div class="stage-content">
+      <section class="guide-section" aria-labelledby="steps">
+        <h2 id="steps">本轮练习 · 每一步留证据</h2>
+        <div class="tool-table-wrap" role="region" aria-label="本轮练习动作" tabindex="0"><table class="steps-table"><thead><tr><th scope="col">练习</th><th scope="col">做什么</th><th scope="col">留下什么</th><th scope="col">注意</th></tr></thead><tbody>{{STEP_ROWS}}</tbody></table></div>
+        <p class="guide-note"><strong>练习记录：</strong>{{RECORD}}</p>
+      </section>
+      <aside class="stage-resources" aria-label="本轮需要的环节与资料">
+        <section class="guide-section" aria-labelledby="modules"><h2 id="modules">只查本轮需要的环节</h2><div class="tool-table-wrap" role="region" aria-label="本轮需要的环节"><table class="modules-table"><tbody>{{MODULE_ROWS}}</tbody></table></div></section>
+        <section class="guide-section" aria-labelledby="sources"><h2 id="sources">原文与官方资料</h2><div class="tool-table-wrap" role="region" aria-label="练习的资料依据"><table class="sources-table"><tbody>{{SOURCE_ROWS}}</tbody></table></div></section>
+        <p class="guide-note">练习安排为本站整理，引用链接回原文。论坛阅读可能需要登录。</p>
+      </aside>
+    </div>
+    <nav class="page-links stage-navigation" aria-label="练习路线导航">{{PRACTICE_NAVIGATION}}</nav>
+  </main>
+</body>
+</html>

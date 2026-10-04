@@ -3,45 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="从确定用途到上线、收录与持续经营，按八个阶段完成第一站；各阶段提供步骤、工具、完成标准和原文出处。">
-  <title>上站路线 · S 计划</title>
+  <meta name="description" content="按当前能力选择上线与收录、出词与点击、内页扩展、用户与经营练习，明确本轮目标与完成证据。">
+  <title>上站练习路线 · S 计划</title>
   <link rel="icon" type="image/svg+xml" href="../logo.svg?v=2">
   <link rel="stylesheet" href="../assets/navigation.css">
   <link rel="stylesheet" href="../assets/compact.css">
-  <link rel="stylesheet" href="./styles.css?v=compact4">
+  <link rel="stylesheet" href="./styles.css?v=learning5">
   <script src="../assets/navigation.js" defer></script>
 </head>
 <body>
-  <header class="header">
-    <img class="logo" src="../logo.svg?v=2" width="40" height="40" alt="">
-    <h1>上站路线</h1>
-  </header>
-  <p class="page-slogan">先做出一站，再用真实访问和使用反馈继续改进。</p>
+  <header class="header"><img class="logo" src="../logo.svg?v=2" width="40" height="40" alt=""><h1>上站练习路线</h1></header>
+  <p class="page-slogan">先知道自己会什么，再决定这轮练什么。</p>
   <main>
     <nav class="page-links" aria-label="页面导航">
-      <a href="../">返回 S 计划</a><a href="../discover/">翻石地图</a>
-      <span class="page-meta">8 个阶段 · 更新于 <time datetime="{{UPDATED}}">{{UPDATED_DISPLAY}}</time></span>
+      <a href="../">返回 S 计划</a><a href="./workflow/">八个环节手册</a><a href="../discover/">翻石地图</a>
+      <span class="page-meta">4 种练习 · 更新于 <time datetime="{{UPDATED}}">{{UPDATED_DISPLAY}}</time></span>
     </nav>
-    <p class="guide-intro">先完成 01–05，跑通第一站；06–08 随使用反馈逐步推进。点击阶段名称，从当前卡住的环节开始。</p>
-    <section class="guide-section" aria-labelledby="first-site">
-      <h2 id="first-site">01–05 · 第一站上线</h2>
-      <div class="tool-table-wrap" role="region" aria-label="第一站上线的五个阶段" tabindex="0">
-        <table class="route-table">
-          <thead><tr><th scope="col">阶段</th><th scope="col">要完成的事</th><th scope="col">完成标准</th><th scope="col">进入</th></tr></thead>
-          <tbody>{{FIRST_SITE_ROWS}}</tbody>
+    <p class="guide-intro">从上往下，选第一个还不能独立完成的目标。“第一站、第二站、第三站”表示练习进阶；本站按能力组织，也可在已有站上补练。</p>
+    <section class="guide-section" aria-labelledby="practice">
+      <h2 id="practice">当前能力 → 本轮练习 → 完成证据</h2>
+      <div class="tool-table-wrap" role="region" aria-label="按能力选择练习路线" tabindex="0">
+        <table class="practice-table"><thead><tr><th scope="col">练习</th><th scope="col">适合现在的你</th><th scope="col">本轮重点 / 暂缓</th><th scope="col">下一层前留下的证据</th></tr></thead>
+          <tbody>{{PRACTICE_ROWS}}</tbody>
         </table>
       </div>
     </section>
-    <section class="guide-section" aria-labelledby="growth">
-      <h2 id="growth">06–08 · 上线后经营</h2>
-      <div class="tool-table-wrap" role="region" aria-label="上线后经营的三个阶段" tabindex="0">
-        <table class="route-table">
-          <thead><tr><th scope="col">阶段</th><th scope="col">要完成的事</th><th scope="col">完成标准</th><th scope="col">进入</th></tr></thead>
-          <tbody>{{GROWTH_ROWS}}</tbody>
-        </table>
-      </div>
+    <p class="guide-intro">会用 AI 写代码、买了域名或提交了站点地图，都不能代替这张表的完成证据。每条路线只列本轮所需环节；正式产品的需求验证可并行开始。</p>
+    <section class="guide-section" aria-labelledby="basis">
+      <h2 id="basis">资料依据 · 练习路线为本站整理</h2>
+      <div class="tool-table-wrap" role="region" aria-label="练习方法的原文依据"><table class="sources-table practice-sources"><tbody>{{PRACTICE_SOURCES}}</tbody></table></div>
     </section>
-    <p class="guide-note">练手帮助掌握流程，正式产品仍需验证需求与付费意愿。步骤为本站整理，方法与案例链接回原文；工具按需要选用。</p>
+    <p class="guide-note">历史 <a href="https://seo.web.cafe/chat/c/002585cd53704a59baa8c1e69d423469" target="_blank" rel="noopener noreferrer">SaaS 工具站对话</a> 与 <a href="https://seo.web.cafe/chat/c/35a2e85d5779442caea22a5986448e25" target="_blank" rel="noopener noreferrer">第一站对话</a> 提到三站练习；群聊总结另有七站目标。本站按能力重组，第四层补充经营练习，不称为原作者的统一标准。论坛原文可能需要登录。</p>
   </main>
 </body>
 </html>

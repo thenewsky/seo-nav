@@ -59,3 +59,27 @@
   .brief-table td { border-top: 1px solid #e8e8e8; }
   .stage-navigation { justify-content: flex-start; }
 }
+
+/* 训练目标与通用环节分别展示，保留专题的紧凑表格。 */
+.practice-table { table-layout: fixed; }
+.practice-table th, .practice-table td { width: auto; padding: 8px 10px; font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
+.practice-table th:first-child { width: 160px; }
+.practice-table td { text-align: left; color: #333; }
+.practice-table th a { color: inherit; text-decoration: none; display: inline-block; padding: 3px 0; }
+.practice-table th a:hover { text-decoration: underline; }
+.practice-table a:focus-visible, .guide-note a:focus-visible { outline: 2px solid #1890ff; outline-offset: 2px; }
+.practice-alias { font-size: 12px; font-weight: 400; }
+.practice-order { font-size: 11px; font-weight: 400; color: #777; }
+.practice-sources td { padding: 5px 8px; }
+.practice-sources .source-meta { display: inline; margin-left: 8px; }
+.modules-table { table-layout: fixed; }
+.modules-table th, .modules-table td { width: auto; padding: 5px 6px; font-size: 12px; line-height: 1.4; }
+.modules-table th { width: 102px; }
+.modules-table th a { color: inherit; text-decoration: none; }
+.modules-table th a:hover { text-decoration: underline; }
+.modules-table th a:focus-visible { outline: 2px solid #1890ff; outline-offset: 2px; }
+.modules-table td { color: #555; text-align: left; overflow-wrap: anywhere; }
+.guide-note a { color: #666; text-decoration: underline; text-underline-offset: 2px; }
+@media (max-width: 600px) {
+  .practice-sources .source-meta { display: block; margin: 2px; }
+}
