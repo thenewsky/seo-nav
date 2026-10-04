@@ -100,10 +100,10 @@ function toolsTable(tools) {
   return groups.map(([title, entries]) => {
     const rows = [];
     for (let offset = 0; offset < entries.length; offset += 4) {
-      const heading = offset === 0 ? `<th scope="rowgroup" rowspan="${Math.ceil(entries.length / 4)}">${html(title)}</th>` : '';
+      const heading = offset === 0 ? `<th scope="rowgroup" rowspan="${Math.ceil(entries.length / 4)}">工具与网站<br>${html(title)}</th>` : '';
       const cells = Array.from({ length: 4 }, (_, column) => {
         const tool = entries[offset + column];
-        return tool ? `<td>${tool.primary ? '<span class="tool-primary">最小路线</span>' : ''}${anchor(tool.url, tool.name, true)}<p class="tool-description">${html(tool.description)}</p></td>` : '<td></td>';
+        return tool ? `<td>${anchor(tool.url, tool.name, true)}<p class="tool-description">${html(tool.description)}</p></td>` : '<td></td>';
       }).join('');
       rows.push(`<tr>${heading}${cells}</tr>`);
     }
@@ -111,8 +111,8 @@ function toolsTable(tools) {
   }).join('\n        ');
 }
 function sourcesTable(references) {
-  if (!references.length) return '<tr><th scope="row">资料</th><td>本阶段暂无参考原文</td><td></td><td></td><td></td></tr>';
-  return references.map((reference, index) => `<tr><th scope="row">${String(index + 1).padStart(2, '0')}</th><td>${anchor(reference.url, reference.title, true)}</td><td>${html(reference.author)}</td><td>${html(reference.platform)}</td><td>${reference.date ? `<time datetime="${html(reference.date)}">${html(reference.date)}</time>` : '未标注'}</td></tr>`).join('\n        ');
+  if (!references.length) return '<tr><th scope="row">原文资料</th><td>本阶段暂无参考原文</td><td></td><td></td><td></td></tr>';
+  return references.map((reference, index) => `<tr>${index === 0 ? `<th scope="rowgroup" rowspan="${references.length}">原文与<br>官方资料</th>` : ''}<td class="source-title">${anchor(reference.url, reference.title, true)}</td><td><span class="entry-label">作者</span><p class="entry-description">${html(reference.author)}</p></td><td><span class="entry-label">平台</span><p class="entry-description">${html(reference.platform)}</p></td><td><span class="entry-label">日期</span><p class="entry-description">${reference.date ? `<time datetime="${html(reference.date)}">${html(reference.date)}</time>` : '以官网更新为准'}</p></td></tr>`).join('\n        ');
 }
 
 const data = JSON.parse(await readFile(path.join(directory, 'guide.json'), 'utf8'));
@@ -122,7 +122,7 @@ const updated = { UPDATED: html(data.updated), UPDATED_DISPLAY: html(data.update
 const outputs = new Map();
 outputs.set('index.html', render(indexTemplate, {
   ...updated,
-  STAGE_ROWS: `<tbody>${data.stages.map((stage, index) => `<tr><th scope="row">${String(index + 1).padStart(2, '0')}<br>${anchor(`./${stage.id}/`, stage.title)}</th><td>${html(stage.summary)}</td><td>${html(stage.route)}</td><td>${html(stage.done)}</td><td>${anchor(`./${stage.id}/`, '进入阶段')}</td></tr>`).join('\n        ')}</tbody>`,
+  STAGE_ROWS: `<tbody>${data.stages.map((stage, index) => `<tr><th scope="row">${String(index + 1).padStart(2, '0')}<br><a class="category-link" href="./${html(stage.id)}/">${html(stage.title)}</a></th><td><span class="entry-label">这一阶段做什么</span><p class="entry-description">${html(stage.summary)}</p></td><td><span class="entry-label">最小路线</span><p class="entry-description">${html(stage.route)}</p></td><td><span class="entry-label">完成标准</span><p class="entry-description">${html(stage.done)}</p></td><td>${anchor(`./${stage.id}/`, '进入阶段')}</td></tr>`).join('\n        ')}</tbody>`,
 }));
 data.stages.forEach((stage, index) => {
   const previous = data.stages[index - 1];
@@ -131,9 +131,9 @@ data.stages.forEach((stage, index) => {
     ...updated,
     TITLE: html(stage.title), SUMMARY: html(stage.summary), STAGE_NUMBER: String(index + 1).padStart(2, '0'),
     GOAL: html(stage.goal), ROUTE: html(stage.route), DONE: html(stage.done), NEXT_TIP: html(stage.nextTip),
-    STEP_ROWS: stage.steps.map(step => `<tr><th scope="row">${html(step.title)}</th><td>${html(step.action)}</td><td>${html(step.check)}</td><td>${html(step.pitfall)}</td></tr>`).join('\n        '),
+    STEP_ROWS: stage.steps.map((step, offset) => `<tr>${offset === 0 ? `<th scope="rowgroup" rowspan="${stage.steps.length}">操作步骤</th>` : ''}<td><span class="entry-label">${String(offset + 1).padStart(2, '0')} · ${html(step.title)}</span></td><td><span class="entry-label">做什么</span><p class="entry-description">${html(step.action)}</p></td><td><span class="entry-label">完成判据</span><p class="entry-description">${html(step.check)}</p></td><td><span class="entry-label">常见卡点</span><p class="entry-description">${html(step.pitfall)}</p></td></tr>`).join('\n        '),
     TOOL_ROWS: toolsTable(stage.tools), SOURCE_ROWS: sourcesTable(stage.references),
-    STAGE_NAVIGATION: [previous ? anchor(`../${previous.id}/`, `← ${previous.title}`) : '', anchor('../', '路线总览'), next ? anchor(`../${next.id}/`, `${next.title} →`) : anchor('../../', '返回 S 计划')].filter(Boolean).join('\n      '),
+    STAGE_NAVIGATION: [previous ? anchor(`../${previous.id}/`, `← ${previous.title}`) : '', anchor('../', '路线总览'), next ? anchor(`../${next.id}/`, `${next.title} →`) : '', anchor('../../', '返回 S 计划')].map(link => `<td>${link}</td>`).join(''),
   }));
 });
 // Check all destinations before writing anything; --check never creates directories or files.

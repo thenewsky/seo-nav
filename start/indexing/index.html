@@ -7,34 +7,49 @@
   <title>统计与搜索收录 · 上站路线 · S 计划</title>
   <link rel="icon" type="image/svg+xml" href="../../logo.svg?v=2">
   <link rel="stylesheet" href="../../assets/navigation.css">
+  <link rel="stylesheet" href="../../assets/topic.css">
   <link rel="stylesheet" href="../styles.css">
   <script src="../../assets/navigation.js" defer></script>
 </head>
 <body>
-  <header class="header"><img class="logo" src="../../logo.svg?v=2" width="40" height="40" alt=""><h1>统计与搜索收录</h1></header>
-  <p class="page-slogan">分开看访问、抓取、收录、曝光和点击。</p>
-  <main>
-    <nav class="page-links" aria-label="页面导航"><a href="../../">S 计划</a><a href="../">上站路线</a><span class="page-meta">05 / 08 · 更新于 <time datetime="2026-10-04">2026.10.04</time></span></nav>
-    <div class="guide-intro"><p><strong>本阶段目标：</strong>能够观察用户访问，并让搜索系统发现正式页面。</p><p><strong>最小路线：</strong>接入一套访问统计和 Google Search Console；核对正式地址、抓取限制与 sitemap，再检查主页面；记录提交日期，随后定期观察，不把提交成功当作已经收录。</p><p><strong>完成标准：</strong>统计可见一次测试访问，GSC 验证成功，主页面检查及 sitemap 提交有记录。</p></div>
-    <h2 class="guide-heading">操作步骤</h2>
-    <div class="tool-table-wrap" role="region" aria-label="操作步骤" tabindex="0"><table class="steps-table"><thead><tr><th scope="col">步骤</th><th scope="col" class="column-heading">做什么</th><th scope="col" class="column-heading">完成判据</th><th scope="col" class="column-heading">常见卡点</th></tr></thead><tbody><tr><th scope="row">接上访问统计</th><td>创建统计项目并安装代码，按实际用户地区及平台要求处理必要的告知与选择，再用测试访问核对。</td><td>能在统计后台看到测试访问，知道自己的测试应如何识别。</td><td>不要同时接多套统计增加噪声，也不要把测试访问当真实增长。</td></tr>
-        <tr><th scope="row">验证 GSC 所有权</th><td>选择适合的域名或网址前缀资源，按提示添加 DNS 或验证文件，保留验证配置。</td><td>后台显示验证成功，资源覆盖实际正式网址。</td><td>http、https、www 和子路径范围不同，别在错误资源里看数据。</td></tr>
-        <tr><th scope="row">检查页面可抓取</th><td>检查 robots.txt、noindex、canonical、状态码及无需登录的正文；测试环境与正式环境分开处理。</td><td>主页面可访问，未误设禁止索引，规范地址指向正式页面。</td><td>抓取允许、索引允许与已被收录是三件事。</td></tr>
-        <tr><th scope="row">提交 sitemap 与主页面</th><td>生成只含正式可索引网址的 sitemap，在 GSC 提交并用网址检查查看主页面状态。</td><td>提交和检查结果已记录，发现错误有具体修复项。</td><td>sitemap 被读取不等于全部页面收录，也不承诺收录时间。</td></tr>
-        <tr><th scope="row">建立观察记录</th><td>定期记录索引状态、搜索词、曝光、点击和统计中的功能使用；注明时间范围与更新延迟。</td><td>能区分没被发现、未索引、有曝光无点击和访问后不用功能。</td><td>新站数据不足时先记录，别据一天波动大改整站。</td></tr></tbody></table></div>
-    <h2 class="guide-heading">工具与网站</h2>
-    <p class="guide-note">“最小路线”标记表示先从这里开始，其余入口按需要使用。</p>
-    <div class="tool-table-wrap" role="region" aria-label="工具与网站列表" tabindex="0"><table class="tools-table" aria-label="每行四个工具入口"><tbody><tr><th scope="rowgroup" rowspan="1">最小路线</th><td><span class="tool-primary">最小路线</span><a href="https://search.google.com/search-console/" target="_blank" rel="noopener noreferrer">Google Search Console</a><p class="tool-description">验证网站、检查网址、提交 sitemap 和观察搜索表现。</p></td><td><span class="tool-primary">最小路线</span><a href="https://analytics.google.com/" target="_blank" rel="noopener noreferrer">Google Analytics</a><p class="tool-description">查看访问来源与功能使用，先确认采集正确。</p></td><td></td><td></td></tr></tbody>
-        <tbody><tr><th scope="rowgroup" rowspan="1">按需使用</th><td><a href="https://developers.google.com/search/docs" target="_blank" rel="noopener noreferrer">Search Central 文档</a><p class="tool-description">核对抓取、索引、robots 与 sitemap 的官方说明。</p></td><td><a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a><p class="tool-description">检查线上页面性能和体验问题。</p></td><td></td><td></td></tr></tbody></table></div>
-    <h2 class="guide-heading">原文与官方资料</h2>
-    <p class="guide-note">方法与案例链接回原文，正文为本页整理。论坛原文可能需要登录或会员权限，访问条件以原站为准。</p>
-    <div class="tool-table-wrap" role="region" aria-label="原文与官方资料" tabindex="0"><table class="sources-table"><thead><tr><th scope="col">来源</th><th scope="col" class="column-heading">标题与原链接</th><th scope="col" class="column-heading">作者</th><th scope="col" class="column-heading">平台</th><th scope="col" class="column-heading">日期</th></tr></thead><tbody><tr><th scope="row">01</th><td><a href="https://new.web.cafe/topic/of0n5pz09s" target="_blank" rel="noopener noreferrer">每天看GSC，及时发现网址和低质量页面的问题</a></td><td>哥飞</td><td>哥飞社群 · 小课堂</td><td><time datetime="2024-06-24">2024-06-24</time></td></tr>
-        <tr><th scope="row">02</th><td><a href="https://support.google.com/webmasters/answer/9008080" target="_blank" rel="noopener noreferrer">验证网站所有权</a></td><td>Google</td><td>官方文档</td><td>未标注</td></tr>
-        <tr><th scope="row">03</th><td><a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap" target="_blank" rel="noopener noreferrer">构建和提交 sitemap</a></td><td>Google</td><td>官方文档</td><td>未标注</td></tr></tbody></table></div>
-    <p class="guide-note"><strong>下一步：</strong>有了反馈，再优先修影响用户完成任务的问题。</p>
-    <nav class="page-links stage-navigation" aria-label="阶段导航"><a href="../deploy/">← 部署上线</a>
-      <a href="../">路线总览</a>
-      <a href="../on-page/">页面优化与内页扩展 →</a></nav>
+  <header class="header">
+    <img class="logo" src="../../logo.svg?v=2" width="40" height="40" alt="">
+    <h1>S 计划</h1>
+  </header>
+  <p class="page-slogan">用 AI 做网站、应用或智能体，满足有付费意愿的需求。<br>Use AI to build websites, apps, or agents that meet needs people are willing to pay for.</p>
+  <main aria-label="统计与搜索收录">
+    <h2 class="visually-hidden">统计与搜索收录</h2>
+    <div class="tool-table-wrap" role="region" aria-label="阶段动作、工具与原文资料" tabindex="0">
+      <table class="guide-table" aria-label="统计与搜索收录，每行四列内容">
+        <tbody class="topic-nav"><tr>
+          <th scope="row">专题导航</th>
+          <td><a href="../../"><img src="../../logo.svg?v=2" alt="">S 计划首页</a></td>
+          <td><a href="../" aria-current="page"><img src="../../logo.svg?v=2" alt="">上站路线</a></td>
+          <td><a href="../../discover/"><img src="../../logo.svg?v=2" alt="">翻石地图</a></td>
+          <td><span class="page-meta">更新于 <time datetime="2026-10-04">2026.10.04</time></span></td>
+        </tr></tbody>
+        <tbody><tr>
+          <th scope="row">05 / 08<br>统计与搜索收录</th>
+          <td><span class="entry-label">本阶段目标</span><p class="entry-description">能够观察用户访问，并让搜索系统发现正式页面。</p></td>
+          <td><span class="entry-label">最小路线</span><p class="entry-description">接入一套访问统计和 Google Search Console；核对正式地址、抓取限制与 sitemap，再检查主页面；记录提交日期，随后定期观察，不把提交成功当作已经收录。</p></td>
+          <td><span class="entry-label">完成标准</span><p class="entry-description">统计可见一次测试访问，GSC 验证成功，主页面检查及 sitemap 提交有记录。</p></td>
+          <td><span class="entry-label">这一阶段</span><p class="entry-description">分开看访问、抓取、收录、曝光和点击。</p></td>
+        </tr></tbody>
+        <tbody><tr><th scope="rowgroup" rowspan="5">操作步骤</th><td><span class="entry-label">01 · 接上访问统计</span></td><td><span class="entry-label">做什么</span><p class="entry-description">创建统计项目并安装代码，按实际用户地区及平台要求处理必要的告知与选择，再用测试访问核对。</p></td><td><span class="entry-label">完成判据</span><p class="entry-description">能在统计后台看到测试访问，知道自己的测试应如何识别。</p></td><td><span class="entry-label">常见卡点</span><p class="entry-description">不要同时接多套统计增加噪声，也不要把测试访问当真实增长。</p></td></tr>
+        <tr><td><span class="entry-label">02 · 验证 GSC 所有权</span></td><td><span class="entry-label">做什么</span><p class="entry-description">选择适合的域名或网址前缀资源，按提示添加 DNS 或验证文件，保留验证配置。</p></td><td><span class="entry-label">完成判据</span><p class="entry-description">后台显示验证成功，资源覆盖实际正式网址。</p></td><td><span class="entry-label">常见卡点</span><p class="entry-description">http、https、www 和子路径范围不同，别在错误资源里看数据。</p></td></tr>
+        <tr><td><span class="entry-label">03 · 检查页面可抓取</span></td><td><span class="entry-label">做什么</span><p class="entry-description">检查 robots.txt、noindex、canonical、状态码及无需登录的正文；测试环境与正式环境分开处理。</p></td><td><span class="entry-label">完成判据</span><p class="entry-description">主页面可访问，未误设禁止索引，规范地址指向正式页面。</p></td><td><span class="entry-label">常见卡点</span><p class="entry-description">抓取允许、索引允许与已被收录是三件事。</p></td></tr>
+        <tr><td><span class="entry-label">04 · 提交 sitemap 与主页面</span></td><td><span class="entry-label">做什么</span><p class="entry-description">生成只含正式可索引网址的 sitemap，在 GSC 提交并用网址检查查看主页面状态。</p></td><td><span class="entry-label">完成判据</span><p class="entry-description">提交和检查结果已记录，发现错误有具体修复项。</p></td><td><span class="entry-label">常见卡点</span><p class="entry-description">sitemap 被读取不等于全部页面收录，也不承诺收录时间。</p></td></tr>
+        <tr><td><span class="entry-label">05 · 建立观察记录</span></td><td><span class="entry-label">做什么</span><p class="entry-description">定期记录索引状态、搜索词、曝光、点击和统计中的功能使用；注明时间范围与更新延迟。</p></td><td><span class="entry-label">完成判据</span><p class="entry-description">能区分没被发现、未索引、有曝光无点击和访问后不用功能。</p></td><td><span class="entry-label">常见卡点</span><p class="entry-description">新站数据不足时先记录，别据一天波动大改整站。</p></td></tr></tbody>
+        <tbody><tr><th scope="rowgroup" rowspan="1">工具与网站<br>最小路线</th><td><a href="https://search.google.com/search-console/" target="_blank" rel="noopener noreferrer">Google Search Console</a><p class="tool-description">验证网站、检查网址、提交 sitemap 和观察搜索表现。</p></td><td><a href="https://analytics.google.com/" target="_blank" rel="noopener noreferrer">Google Analytics</a><p class="tool-description">查看访问来源与功能使用，先确认采集正确。</p></td><td></td><td></td></tr></tbody>
+        <tbody><tr><th scope="rowgroup" rowspan="1">工具与网站<br>按需使用</th><td><a href="https://developers.google.com/search/docs" target="_blank" rel="noopener noreferrer">Search Central 文档</a><p class="tool-description">核对抓取、索引、robots 与 sitemap 的官方说明。</p></td><td><a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a><p class="tool-description">检查线上页面性能和体验问题。</p></td><td></td><td></td></tr></tbody>
+        <tbody><tr><th scope="rowgroup" rowspan="3">原文与<br>官方资料</th><td class="source-title"><a href="https://new.web.cafe/topic/of0n5pz09s" target="_blank" rel="noopener noreferrer">每天看GSC，及时发现网址和低质量页面的问题</a></td><td><span class="entry-label">作者</span><p class="entry-description">哥飞</p></td><td><span class="entry-label">平台</span><p class="entry-description">哥飞社群 · 小课堂</p></td><td><span class="entry-label">日期</span><p class="entry-description"><time datetime="2024-06-24">2024-06-24</time></p></td></tr>
+        <tr><td class="source-title"><a href="https://support.google.com/webmasters/answer/9008080" target="_blank" rel="noopener noreferrer">验证网站所有权</a></td><td><span class="entry-label">作者</span><p class="entry-description">Google</p></td><td><span class="entry-label">平台</span><p class="entry-description">官方文档</p></td><td><span class="entry-label">日期</span><p class="entry-description">以官网更新为准</p></td></tr>
+        <tr><td class="source-title"><a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap" target="_blank" rel="noopener noreferrer">构建和提交 sitemap</a></td><td><span class="entry-label">作者</span><p class="entry-description">Google</p></td><td><span class="entry-label">平台</span><p class="entry-description">官方文档</p></td><td><span class="entry-label">日期</span><p class="entry-description">以官网更新为准</p></td></tr></tbody>
+        <tbody><tr><th scope="row">继续推进</th><td><a href="../deploy/">← 部署上线</a></td><td><a href="../">路线总览</a></td><td><a href="../on-page/">页面优化与内页扩展 →</a></td><td><a href="../../">返回 S 计划</a></td></tr></tbody>
+      </table>
+    </div>
+    <p class="scope-note">下一步：有了反馈，再优先修影响用户完成任务的问题。</p>
+    <p class="scope-note">步骤说明为本站整理，方法与案例链接回原文。论坛原文可能需要登录或会员权限，访问条件以原站为准；平台操作以官方文档为准。</p>
   </main>
 </body>
 </html>

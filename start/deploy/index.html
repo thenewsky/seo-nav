@@ -7,34 +7,49 @@
   <title>部署上线 · 上站路线 · S 计划</title>
   <link rel="icon" type="image/svg+xml" href="../../logo.svg?v=2">
   <link rel="stylesheet" href="../../assets/navigation.css">
+  <link rel="stylesheet" href="../../assets/topic.css">
   <link rel="stylesheet" href="../styles.css">
   <script src="../../assets/navigation.js" defer></script>
 </head>
 <body>
-  <header class="header"><img class="logo" src="../../logo.svg?v=2" width="40" height="40" alt=""><h1>部署上线</h1></header>
-  <p class="page-slogan">把本地可用的版本变成可访问、可回退的网站。</p>
-  <main>
-    <nav class="page-links" aria-label="页面导航"><a href="../../">S 计划</a><a href="../">上站路线</a><span class="page-meta">04 / 08 · 更新于 <time datetime="2026-10-04">2026.10.04</time></span></nav>
-    <div class="guide-intro"><p><strong>本阶段目标：</strong>获得稳定可访问的正式网址。</p><p><strong>最小路线：</strong>先提交代码到 GitHub，再用熟悉的平台发布静态站；可从 Cloudflare Pages 的 Git 集成开始，验证平台地址后再绑定自有域名；有后端的项目按 Vercel 或 Cloudflare 对应运行时文档部署。</p><p><strong>完成标准：</strong>正式地址的 HTTPS、资源、功能、内页与手机验收通过，并记录可回退版本。</p></div>
-    <h2 class="guide-heading">操作步骤</h2>
-    <div class="tool-table-wrap" role="region" aria-label="操作步骤" tabindex="0"><table class="steps-table"><thead><tr><th scope="col">步骤</th><th scope="col" class="column-heading">做什么</th><th scope="col" class="column-heading">完成判据</th><th scope="col" class="column-heading">常见卡点</th></tr></thead><tbody><tr><th scope="row">保存待发布版本</th><td>确认本地验收通过，提交本次相关文件，记录版本和主要修改内容。</td><td>能定位本次发布的代码版本，并找回上一版。</td><td>不要把密钥、缓存或与任务无关的文件一起提交。</td></tr>
-        <tr><th scope="row">选择适合的部署入口</th><td>静态文件选静态托管；需要构建时按项目实际命令填写；后端、登录、数据库另核平台支持。</td><td>部署方式符合代码运行要求，构建命令与输出目录有依据。</td><td>GitHub Pages 只提供静态托管，不能直接运行通用后端。</td></tr>
-        <tr><th scope="row">先验平台地址</th><td>连接仓库，执行部署，打开平台地址检查首页、资源和直接访问内页。</td><td>部署记录成功，刷新内页与核心功能均正常。</td><td>子路径、大小写、构建输出目录出错时先看部署日志，不急着改域名。</td></tr>
-        <tr><th scope="row">绑定域名与 HTTPS</th><td>按平台说明添加域名及 DNS 记录，等待验证，确定一个正式地址并核对其他地址的跳转。</td><td>正式网址证书正常，没有混合内容，页面资源完整。</td><td>不要在证书或解析未完成时反复改配置；记录变更时间便于排查。</td></tr>
-        <tr><th scope="row">完成上线验收</th><td>换手机或浏览器访问正式地址，再跑验收例子，检查外链、新窗口、404 与页面返回。</td><td>留下一份地址、版本、验收结果和回退办法。</td><td>本地通过不等于线上通过；实际用户应拿到正式链接。</td></tr></tbody></table></div>
-    <h2 class="guide-heading">工具与网站</h2>
-    <p class="guide-note">“最小路线”标记表示先从这里开始，其余入口按需要使用。</p>
-    <div class="tool-table-wrap" role="region" aria-label="工具与网站列表" tabindex="0"><table class="tools-table" aria-label="每行四个工具入口"><tbody><tr><th scope="rowgroup" rowspan="1">最小路线</th><td><span class="tool-primary">最小路线</span><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a><p class="tool-description">保存发布版本并连接部署平台。</p></td><td><span class="tool-primary">最小路线</span><a href="https://developers.cloudflare.com/pages/" target="_blank" rel="noopener noreferrer">Cloudflare Pages 文档</a><p class="tool-description">静态站部署、Git 集成与域名设置。</p></td><td></td><td></td></tr></tbody>
-        <tbody><tr><th scope="rowgroup" rowspan="1">按需使用</th><td><a href="https://vercel.com/docs/deployments" target="_blank" rel="noopener noreferrer">Vercel 文档</a><p class="tool-description">需要框架或后端时核对构建、运行时和部署配置。</p></td><td><a href="https://docs.github.com/en/pages" target="_blank" rel="noopener noreferrer">GitHub Pages 文档</a><p class="tool-description">学习静态发布与仓库子路径；使用前核对平台使用限制。</p></td><td></td><td></td></tr></tbody></table></div>
-    <h2 class="guide-heading">原文与官方资料</h2>
-    <p class="guide-note">方法与案例链接回原文，正文为本页整理。论坛原文可能需要登录或会员权限，访问条件以原站为准。</p>
-    <div class="tool-table-wrap" role="region" aria-label="原文与官方资料" tabindex="0"><table class="sources-table"><thead><tr><th scope="col">来源</th><th scope="col" class="column-heading">标题与原链接</th><th scope="col" class="column-heading">作者</th><th scope="col" class="column-heading">平台</th><th scope="col" class="column-heading">日期</th></tr></thead><tbody><tr><th scope="row">01</th><td><a href="https://new.web.cafe/topic/aoe8h613hh" target="_blank" rel="noopener noreferrer">网站要改版，先把测试和规划做在上线前</a></td><td>哥飞</td><td>哥飞社群 · 小课堂</td><td><time datetime="2026-03-23">2026-03-23</time></td></tr>
-        <tr><th scope="row">02</th><td><a href="https://developers.cloudflare.com/pages/" target="_blank" rel="noopener noreferrer">Cloudflare Pages 文档</a></td><td>Cloudflare</td><td>官方文档</td><td>未标注</td></tr>
-        <tr><th scope="row">03</th><td><a href="https://vercel.com/docs/deployments" target="_blank" rel="noopener noreferrer">Vercel 部署文档</a></td><td>Vercel</td><td>官方文档</td><td>未标注</td></tr></tbody></table></div>
-    <p class="guide-note"><strong>下一步：</strong>上线是起点，下一步建立统计与搜索反馈。</p>
-    <nav class="page-links stage-navigation" aria-label="阶段导航"><a href="../build/">← 建站与功能验证</a>
-      <a href="../">路线总览</a>
-      <a href="../indexing/">统计与搜索收录 →</a></nav>
+  <header class="header">
+    <img class="logo" src="../../logo.svg?v=2" width="40" height="40" alt="">
+    <h1>S 计划</h1>
+  </header>
+  <p class="page-slogan">用 AI 做网站、应用或智能体，满足有付费意愿的需求。<br>Use AI to build websites, apps, or agents that meet needs people are willing to pay for.</p>
+  <main aria-label="部署上线">
+    <h2 class="visually-hidden">部署上线</h2>
+    <div class="tool-table-wrap" role="region" aria-label="阶段动作、工具与原文资料" tabindex="0">
+      <table class="guide-table" aria-label="部署上线，每行四列内容">
+        <tbody class="topic-nav"><tr>
+          <th scope="row">专题导航</th>
+          <td><a href="../../"><img src="../../logo.svg?v=2" alt="">S 计划首页</a></td>
+          <td><a href="../" aria-current="page"><img src="../../logo.svg?v=2" alt="">上站路线</a></td>
+          <td><a href="../../discover/"><img src="../../logo.svg?v=2" alt="">翻石地图</a></td>
+          <td><span class="page-meta">更新于 <time datetime="2026-10-04">2026.10.04</time></span></td>
+        </tr></tbody>
+        <tbody><tr>
+          <th scope="row">04 / 08<br>部署上线</th>
+          <td><span class="entry-label">本阶段目标</span><p class="entry-description">获得稳定可访问的正式网址。</p></td>
+          <td><span class="entry-label">最小路线</span><p class="entry-description">先提交代码到 GitHub，再用熟悉的平台发布静态站；可从 Cloudflare Pages 的 Git 集成开始，验证平台地址后再绑定自有域名；有后端的项目按 Vercel 或 Cloudflare 对应运行时文档部署。</p></td>
+          <td><span class="entry-label">完成标准</span><p class="entry-description">正式地址的 HTTPS、资源、功能、内页与手机验收通过，并记录可回退版本。</p></td>
+          <td><span class="entry-label">这一阶段</span><p class="entry-description">把本地可用的版本变成可访问、可回退的网站。</p></td>
+        </tr></tbody>
+        <tbody><tr><th scope="rowgroup" rowspan="5">操作步骤</th><td><span class="entry-label">01 · 保存待发布版本</span></td><td><span class="entry-label">做什么</span><p class="entry-description">确认本地验收通过，提交本次相关文件，记录版本和主要修改内容。</p></td><td><span class="entry-label">完成判据</span><p class="entry-description">能定位本次发布的代码版本，并找回上一版。</p></td><td><span class="entry-label">常见卡点</span><p class="entry-description">不要把密钥、缓存或与任务无关的文件一起提交。</p></td></tr>
+        <tr><td><span class="entry-label">02 · 选择适合的部署入口</span></td><td><span class="entry-label">做什么</span><p class="entry-description">静态文件选静态托管；需要构建时按项目实际命令填写；后端、登录、数据库另核平台支持。</p></td><td><span class="entry-label">完成判据</span><p class="entry-description">部署方式符合代码运行要求，构建命令与输出目录有依据。</p></td><td><span class="entry-label">常见卡点</span><p class="entry-description">GitHub Pages 只提供静态托管，不能直接运行通用后端。</p></td></tr>
+        <tr><td><span class="entry-label">03 · 先验平台地址</span></td><td><span class="entry-label">做什么</span><p class="entry-description">连接仓库，执行部署，打开平台地址检查首页、资源和直接访问内页。</p></td><td><span class="entry-label">完成判据</span><p class="entry-description">部署记录成功，刷新内页与核心功能均正常。</p></td><td><span class="entry-label">常见卡点</span><p class="entry-description">子路径、大小写、构建输出目录出错时先看部署日志，不急着改域名。</p></td></tr>
+        <tr><td><span class="entry-label">04 · 绑定域名与 HTTPS</span></td><td><span class="entry-label">做什么</span><p class="entry-description">按平台说明添加域名及 DNS 记录，等待验证，确定一个正式地址并核对其他地址的跳转。</p></td><td><span class="entry-label">完成判据</span><p class="entry-description">正式网址证书正常，没有混合内容，页面资源完整。</p></td><td><span class="entry-label">常见卡点</span><p class="entry-description">不要在证书或解析未完成时反复改配置；记录变更时间便于排查。</p></td></tr>
+        <tr><td><span class="entry-label">05 · 完成上线验收</span></td><td><span class="entry-label">做什么</span><p class="entry-description">换手机或浏览器访问正式地址，再跑验收例子，检查外链、新窗口、404 与页面返回。</p></td><td><span class="entry-label">完成判据</span><p class="entry-description">留下一份地址、版本、验收结果和回退办法。</p></td><td><span class="entry-label">常见卡点</span><p class="entry-description">本地通过不等于线上通过；实际用户应拿到正式链接。</p></td></tr></tbody>
+        <tbody><tr><th scope="rowgroup" rowspan="1">工具与网站<br>最小路线</th><td><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a><p class="tool-description">保存发布版本并连接部署平台。</p></td><td><a href="https://developers.cloudflare.com/pages/" target="_blank" rel="noopener noreferrer">Cloudflare Pages 文档</a><p class="tool-description">静态站部署、Git 集成与域名设置。</p></td><td></td><td></td></tr></tbody>
+        <tbody><tr><th scope="rowgroup" rowspan="1">工具与网站<br>按需使用</th><td><a href="https://vercel.com/docs/deployments" target="_blank" rel="noopener noreferrer">Vercel 文档</a><p class="tool-description">需要框架或后端时核对构建、运行时和部署配置。</p></td><td><a href="https://docs.github.com/en/pages" target="_blank" rel="noopener noreferrer">GitHub Pages 文档</a><p class="tool-description">学习静态发布与仓库子路径；使用前核对平台使用限制。</p></td><td></td><td></td></tr></tbody>
+        <tbody><tr><th scope="rowgroup" rowspan="3">原文与<br>官方资料</th><td class="source-title"><a href="https://new.web.cafe/topic/aoe8h613hh" target="_blank" rel="noopener noreferrer">网站要改版，先把测试和规划做在上线前</a></td><td><span class="entry-label">作者</span><p class="entry-description">哥飞</p></td><td><span class="entry-label">平台</span><p class="entry-description">哥飞社群 · 小课堂</p></td><td><span class="entry-label">日期</span><p class="entry-description"><time datetime="2026-03-23">2026-03-23</time></p></td></tr>
+        <tr><td class="source-title"><a href="https://developers.cloudflare.com/pages/" target="_blank" rel="noopener noreferrer">Cloudflare Pages 文档</a></td><td><span class="entry-label">作者</span><p class="entry-description">Cloudflare</p></td><td><span class="entry-label">平台</span><p class="entry-description">官方文档</p></td><td><span class="entry-label">日期</span><p class="entry-description">以官网更新为准</p></td></tr>
+        <tr><td class="source-title"><a href="https://vercel.com/docs/deployments" target="_blank" rel="noopener noreferrer">Vercel 部署文档</a></td><td><span class="entry-label">作者</span><p class="entry-description">Vercel</p></td><td><span class="entry-label">平台</span><p class="entry-description">官方文档</p></td><td><span class="entry-label">日期</span><p class="entry-description">以官网更新为准</p></td></tr></tbody>
+        <tbody><tr><th scope="row">继续推进</th><td><a href="../build/">← 建站与功能验证</a></td><td><a href="../">路线总览</a></td><td><a href="../indexing/">统计与搜索收录 →</a></td><td><a href="../../">返回 S 计划</a></td></tr></tbody>
+      </table>
+    </div>
+    <p class="scope-note">下一步：上线是起点，下一步建立统计与搜索反馈。</p>
+    <p class="scope-note">步骤说明为本站整理，方法与案例链接回原文。论坛原文可能需要登录或会员权限，访问条件以原站为准；平台操作以官方文档为准。</p>
   </main>
 </body>
 </html>

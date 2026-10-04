@@ -7,33 +7,48 @@
   <title>建站与功能验证 · 上站路线 · S 计划</title>
   <link rel="icon" type="image/svg+xml" href="../../logo.svg?v=2">
   <link rel="stylesheet" href="../../assets/navigation.css">
+  <link rel="stylesheet" href="../../assets/topic.css">
   <link rel="stylesheet" href="../styles.css">
   <script src="../../assets/navigation.js" defer></script>
 </head>
 <body>
-  <header class="header"><img class="logo" src="../../logo.svg?v=2" width="40" height="40" alt=""><h1>建站与功能验证</h1></header>
-  <p class="page-slogan">一个可用的小功能，加上说明清楚的英文主页面。</p>
-  <main>
-    <nav class="page-links" aria-label="页面导航"><a href="../../">S 计划</a><a href="../">上站路线</a><span class="page-meta">03 / 08 · 更新于 <time datetime="2026-10-04">2026.10.04</time></span></nav>
-    <div class="guide-intro"><p><strong>本阶段目标：</strong>让用户从输入到结果完成一次真实任务。</p><p><strong>最小路线：</strong>优先用浏览器本地计算的小工具练手：HTML、CSS、JavaScript 即可；首页直接提供输入与结果，再补英文用途说明；需要私密 API、登录或数据存储时再选择后端方案。</p><p><strong>完成标准：</strong>三组验收例子通过，手机上可操作，代码可本地预览且没有公开密钥。</p></div>
-    <h2 class="guide-heading">操作步骤</h2>
-    <div class="tool-table-wrap" role="region" aria-label="操作步骤" tabindex="0"><table class="steps-table"><thead><tr><th scope="col">步骤</th><th scope="col" class="column-heading">做什么</th><th scope="col" class="column-heading">完成判据</th><th scope="col" class="column-heading">常见卡点</th></tr></thead><tbody><tr><th scope="row">写给 AI 的任务说明</th><td>提供需求卡、三组例子与页面结构，要求先做输入、处理、结果，说明首版不需要的功能。</td><td>生成结果与预期一致，功能边界没有被扩成完整 SaaS。</td><td>没有验收例子时，AI 容易补出看起来完整但不能用的页面。</td></tr>
-        <tr><th scope="row">建立代码与本地预览</th><td>把源文件放进独立项目，请 AI 给出适合本机的预览命令及停止、重启方法；打开返回的 localhost 地址，每次只修改一个可检查的点。</td><td>本地地址能打开，知道停止和重启预览的方法。</td><td>不要直接双击文件后就假定部署也能正常；资源路径要用实际预览核对。</td></tr>
-        <tr><th scope="row">做英文主页面</th><td>首屏展示输入与操作；下方用自己的文字写用途、操作步骤、示例、限制与常见问题。</td><td>第一次来的用户能知道输入什么、结果有什么用。</td><td>不要复制对标站文案、会员正文或品牌素材；工具与介绍必须一致。</td></tr>
-        <tr><th scope="row">验收功能边界</th><td>逐项跑正常、空白、异常与较大输入，检查错误提示、复制或下载结果及重复操作。</td><td>每项都有可观察结果，失败时用户知道如何修正。</td><td>按钮有动画不等于功能有效，不能只测试一个演示样本。</td></tr>
-        <tr><th scope="row">检查手机与私密信息</th><td>用窄屏检查表单、结果和长文本；检查仓库里是否有密钥、密码、个人文件。</td><td>手机能完成任务，公开文件不含秘密，必要的 API 在服务端调用。</td><td>静态网页里的密钥会被访问者读取；这类功能要转到支持后端的平台。</td></tr></tbody></table></div>
-    <h2 class="guide-heading">工具与网站</h2>
-    <p class="guide-note">“最小路线”标记表示先从这里开始，其余入口按需要使用。</p>
-    <div class="tool-table-wrap" role="region" aria-label="工具与网站列表" tabindex="0"><table class="tools-table" aria-label="每行四个工具入口"><tbody><tr><th scope="rowgroup" rowspan="1">最小路线</th><td><span class="tool-primary">最小路线</span><a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer">Google AI Studio</a><p class="tool-description">辅助生成和修改代码，用验收例子逐项核对。</p></td><td><span class="tool-primary">最小路线</span><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio Code</a><p class="tool-description">管理文件、查看代码与运行本地项目。</p></td><td></td><td></td></tr></tbody>
-        <tbody><tr><th scope="rowgroup" rowspan="1">按需使用</th><td><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a><p class="tool-description">保存代码版本与修改记录。</p></td><td><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a><p class="tool-description">查 HTML、CSS、JavaScript 的具体用法。</p></td><td></td><td></td></tr></tbody></table></div>
-    <h2 class="guide-heading">原文与官方资料</h2>
-    <p class="guide-note">方法与案例链接回原文，正文为本页整理。论坛原文可能需要登录或会员权限，访问条件以原站为准。</p>
-    <div class="tool-table-wrap" role="region" aria-label="原文与官方资料" tabindex="0"><table class="sources-table"><thead><tr><th scope="col">来源</th><th scope="col" class="column-heading">标题与原链接</th><th scope="col" class="column-heading">作者</th><th scope="col" class="column-heading">平台</th><th scope="col" class="column-heading">日期</th></tr></thead><tbody><tr><th scope="row">01</th><td><a href="https://new.web.cafe/topic/fn5nzozep2" target="_blank" rel="noopener noreferrer">工具站首页别只放 CTA，第一屏就让用户开始用</a></td><td>哥飞</td><td>哥飞社群 · 小课堂</td><td><time datetime="2026-03-19">2026-03-19</time></td></tr>
-        <tr><th scope="row">02</th><td><a href="https://new.web.cafe/topic/za408lc1q9" target="_blank" rel="noopener noreferrer">再聊基于精品工具页面思路，如何做精品工具站</a></td><td>哥飞</td><td>哥飞社群 · 小课堂</td><td><time datetime="2025-03-07">2025-03-07</time></td></tr></tbody></table></div>
-    <p class="guide-note"><strong>下一步：</strong>功能真正可用后，再发布一个可以回退的版本。</p>
-    <nav class="page-links stage-navigation" aria-label="阶段导航"><a href="../domain/">← 命名、域名与基础设置</a>
-      <a href="../">路线总览</a>
-      <a href="../deploy/">部署上线 →</a></nav>
+  <header class="header">
+    <img class="logo" src="../../logo.svg?v=2" width="40" height="40" alt="">
+    <h1>S 计划</h1>
+  </header>
+  <p class="page-slogan">用 AI 做网站、应用或智能体，满足有付费意愿的需求。<br>Use AI to build websites, apps, or agents that meet needs people are willing to pay for.</p>
+  <main aria-label="建站与功能验证">
+    <h2 class="visually-hidden">建站与功能验证</h2>
+    <div class="tool-table-wrap" role="region" aria-label="阶段动作、工具与原文资料" tabindex="0">
+      <table class="guide-table" aria-label="建站与功能验证，每行四列内容">
+        <tbody class="topic-nav"><tr>
+          <th scope="row">专题导航</th>
+          <td><a href="../../"><img src="../../logo.svg?v=2" alt="">S 计划首页</a></td>
+          <td><a href="../" aria-current="page"><img src="../../logo.svg?v=2" alt="">上站路线</a></td>
+          <td><a href="../../discover/"><img src="../../logo.svg?v=2" alt="">翻石地图</a></td>
+          <td><span class="page-meta">更新于 <time datetime="2026-10-04">2026.10.04</time></span></td>
+        </tr></tbody>
+        <tbody><tr>
+          <th scope="row">03 / 08<br>建站与功能验证</th>
+          <td><span class="entry-label">本阶段目标</span><p class="entry-description">让用户从输入到结果完成一次真实任务。</p></td>
+          <td><span class="entry-label">最小路线</span><p class="entry-description">优先用浏览器本地计算的小工具练手：HTML、CSS、JavaScript 即可；首页直接提供输入与结果，再补英文用途说明；需要私密 API、登录或数据存储时再选择后端方案。</p></td>
+          <td><span class="entry-label">完成标准</span><p class="entry-description">三组验收例子通过，手机上可操作，代码可本地预览且没有公开密钥。</p></td>
+          <td><span class="entry-label">这一阶段</span><p class="entry-description">一个可用的小功能，加上说明清楚的英文主页面。</p></td>
+        </tr></tbody>
+        <tbody><tr><th scope="rowgroup" rowspan="5">操作步骤</th><td><span class="entry-label">01 · 写给 AI 的任务说明</span></td><td><span class="entry-label">做什么</span><p class="entry-description">提供需求卡、三组例子与页面结构，要求先做输入、处理、结果，说明首版不需要的功能。</p></td><td><span class="entry-label">完成判据</span><p class="entry-description">生成结果与预期一致，功能边界没有被扩成完整 SaaS。</p></td><td><span class="entry-label">常见卡点</span><p class="entry-description">没有验收例子时，AI 容易补出看起来完整但不能用的页面。</p></td></tr>
+        <tr><td><span class="entry-label">02 · 建立代码与本地预览</span></td><td><span class="entry-label">做什么</span><p class="entry-description">把源文件放进独立项目，请 AI 给出适合本机的预览命令及停止、重启方法；打开返回的 localhost 地址，每次只修改一个可检查的点。</p></td><td><span class="entry-label">完成判据</span><p class="entry-description">本地地址能打开，知道停止和重启预览的方法。</p></td><td><span class="entry-label">常见卡点</span><p class="entry-description">不要直接双击文件后就假定部署也能正常；资源路径要用实际预览核对。</p></td></tr>
+        <tr><td><span class="entry-label">03 · 做英文主页面</span></td><td><span class="entry-label">做什么</span><p class="entry-description">首屏展示输入与操作；下方用自己的文字写用途、操作步骤、示例、限制与常见问题。</p></td><td><span class="entry-label">完成判据</span><p class="entry-description">第一次来的用户能知道输入什么、结果有什么用。</p></td><td><span class="entry-label">常见卡点</span><p class="entry-description">不要复制对标站文案、会员正文或品牌素材；工具与介绍必须一致。</p></td></tr>
+        <tr><td><span class="entry-label">04 · 验收功能边界</span></td><td><span class="entry-label">做什么</span><p class="entry-description">逐项跑正常、空白、异常与较大输入，检查错误提示、复制或下载结果及重复操作。</p></td><td><span class="entry-label">完成判据</span><p class="entry-description">每项都有可观察结果，失败时用户知道如何修正。</p></td><td><span class="entry-label">常见卡点</span><p class="entry-description">按钮有动画不等于功能有效，不能只测试一个演示样本。</p></td></tr>
+        <tr><td><span class="entry-label">05 · 检查手机与私密信息</span></td><td><span class="entry-label">做什么</span><p class="entry-description">用窄屏检查表单、结果和长文本；检查仓库里是否有密钥、密码、个人文件。</p></td><td><span class="entry-label">完成判据</span><p class="entry-description">手机能完成任务，公开文件不含秘密，必要的 API 在服务端调用。</p></td><td><span class="entry-label">常见卡点</span><p class="entry-description">静态网页里的密钥会被访问者读取；这类功能要转到支持后端的平台。</p></td></tr></tbody>
+        <tbody><tr><th scope="rowgroup" rowspan="1">工具与网站<br>最小路线</th><td><a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer">Google AI Studio</a><p class="tool-description">辅助生成和修改代码，用验收例子逐项核对。</p></td><td><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio Code</a><p class="tool-description">管理文件、查看代码与运行本地项目。</p></td><td></td><td></td></tr></tbody>
+        <tbody><tr><th scope="rowgroup" rowspan="1">工具与网站<br>按需使用</th><td><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a><p class="tool-description">保存代码版本与修改记录。</p></td><td><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a><p class="tool-description">查 HTML、CSS、JavaScript 的具体用法。</p></td><td></td><td></td></tr></tbody>
+        <tbody><tr><th scope="rowgroup" rowspan="2">原文与<br>官方资料</th><td class="source-title"><a href="https://new.web.cafe/topic/fn5nzozep2" target="_blank" rel="noopener noreferrer">工具站首页别只放 CTA，第一屏就让用户开始用</a></td><td><span class="entry-label">作者</span><p class="entry-description">哥飞</p></td><td><span class="entry-label">平台</span><p class="entry-description">哥飞社群 · 小课堂</p></td><td><span class="entry-label">日期</span><p class="entry-description"><time datetime="2026-03-19">2026-03-19</time></p></td></tr>
+        <tr><td class="source-title"><a href="https://new.web.cafe/topic/za408lc1q9" target="_blank" rel="noopener noreferrer">再聊基于精品工具页面思路，如何做精品工具站</a></td><td><span class="entry-label">作者</span><p class="entry-description">哥飞</p></td><td><span class="entry-label">平台</span><p class="entry-description">哥飞社群 · 小课堂</p></td><td><span class="entry-label">日期</span><p class="entry-description"><time datetime="2025-03-07">2025-03-07</time></p></td></tr></tbody>
+        <tbody><tr><th scope="row">继续推进</th><td><a href="../domain/">← 命名、域名与基础设置</a></td><td><a href="../">路线总览</a></td><td><a href="../deploy/">部署上线 →</a></td><td><a href="../../">返回 S 计划</a></td></tr></tbody>
+      </table>
+    </div>
+    <p class="scope-note">下一步：功能真正可用后，再发布一个可以回退的版本。</p>
+    <p class="scope-note">步骤说明为本站整理，方法与案例链接回原文。论坛原文可能需要登录或会员权限，访问条件以原站为准；平台操作以官方文档为准。</p>
   </main>
 </body>
 </html>
