@@ -182,7 +182,7 @@ const practiceText = ['# 上站练习路线（个人自用 · 出海 SaaS 工具
   '本轮动作：', ...level.steps.map((step, index) => `${index + 1}. ${step.title}\n   做什么：${step.action}\n   留下什么：${step.check}\n   注意：${step.pitfall}`), '',
   '原文与官方资料：', ...level.references.map(reference => `- ${reference.title} | ${reference.author} | ${reference.platform} | ${reference.date || '以官网更新为准'} | ${reference.url}`), '',
 ].join('\n')).join('\n');
-outputs.set('practice.md', `${practiceText}\n`);
+outputs.set('practice.md', `${practiceText.trimEnd()}\n`);
 data.stages.forEach((stage, index) => {
   const previous = data.stages[index - 1];
   const next = data.stages[index + 1];
