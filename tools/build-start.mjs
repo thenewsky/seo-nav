@@ -114,6 +114,17 @@ function anchor(url, title, nested = false) {
   const href = external || !nested ? url : `../${url}`;
   return `<a href="${html(href)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${html(title)}</a>`;
 }
+function listItems(value) {
+  return value.split(/[；;]/u).map(item => item.trim()).filter(Boolean);
+}
+function listText(value) {
+  const items = listItems(value);
+  return items.length > 1 ? `<ul class="cell-list">${items.map(item => `<li>${html(item)}</li>`).join('')}</ul>` : html(value);
+}
+function markdownField(label, value) {
+  const items = listItems(value);
+  return items.length > 1 ? `${label}：\n\n${items.map(item => `- ${item}`).join('\n')}\n` : `${label}：${value}\n`;
+}
 function render(template, values) {
   const rendered = template.replace(/\{\{([A-Z_]+)\}\}/g, (marker, key) => {
     if (!(key in values)) fail(`模板使用未知标记 ${marker}`);
@@ -161,7 +172,7 @@ const practiceUpdated = { UPDATED: html(practices.updated), UPDATED_DISPLAY: htm
 const practiceReferences = practices.basis;
 outputs.set('index.html', render(indexTemplate, {
   ...practiceUpdated,
-  PRACTICE_ROWS: practices.levels.map(level => `<tr><th scope="row"><span class="practice-alias">${html(level.alias)}</span><br>${anchor(`./${level.id}/`, level.title)}</th><td>${html(level.entry)}</td><td><strong class="scope-label">本轮做：</strong>${html(level.focus)}<p class="route-summary"><strong>先放：</strong>${html(level.defer)}</p></td><td>${html(level.goal)}</td><td>${html(level.skills)}</td><td>${html(level.artifacts)}</td></tr>`).join('\n        '),
+  PRACTICE_ROWS: practices.levels.map(level => `<tr><th scope="row"><span class="practice-alias">${html(level.alias)}</span><br>${anchor(`./${level.id}/`, level.title)}</th><td>${listText(level.entry)}</td><td><strong class="scope-label">本轮做：</strong>${listText(level.focus)}<div class="route-summary"><strong>先放：</strong>${listText(level.defer)}</div></td><td>${listText(level.goal)}</td><td>${listText(level.skills)}</td><td>${listText(level.artifacts)}</td></tr>`).join('\n        '),
   PRACTICE_SOURCES: sourcesTable(practiceReferences),
 }));
 practices.levels.forEach((level, index) => {
@@ -169,19 +180,30 @@ practices.levels.forEach((level, index) => {
   const next = practices.levels[index + 1];
   outputs.set(`${level.id}/index.html`, render(practiceTemplate, {
     ...practiceUpdated,
-    TITLE: html(level.title), ALIAS: html(level.alias), SUMMARY: html(level.summary), ENTRY: html(level.entry),
-    FOCUS: html(level.focus), GOAL: html(level.goal), SKILLS: html(level.skills), ROUTE: html(level.route), DEFER: html(level.defer), ARTIFACTS: html(level.artifacts),
-    STEP_ROWS: level.steps.map((step, offset) => `<tr><th scope="row">${String(offset + 1).padStart(2, '0')} · ${html(step.title)}</th><td>${html(step.action)}</td><td>${html(step.check)}</td><td>${html(step.pitfall)}</td></tr>`).join('\n        '),
+    TITLE: html(level.title), ALIAS: html(level.alias), SUMMARY: html(level.summary), ENTRY: listText(level.entry),
+    FOCUS: listText(level.focus), GOAL: listText(level.goal), SKILLS: listText(level.skills), ROUTE: html(level.route), DEFER: listText(level.defer), ARTIFACTS: listText(level.artifacts),
+    STEP_ROWS: level.steps.map((step, offset) => `<tr><th scope="row">${String(offset + 1).padStart(2, '0')} · ${html(step.title)}</th><td>${listText(step.action)}</td><td>${listText(step.check)}</td><td>${listText(step.pitfall)}</td></tr>`).join('\n        '),
     MODULE_ROWS: level.modules.map(module => `<tr><th scope="row">${anchor(`../${module.id}/`, data.stages.find(stage => stage.id === module.id).title)}</th><td>${html(module.description)}</td></tr>`).join('\n        '),
     SOURCE_ROWS: sourcesTable(level.references),
     PRACTICE_NAVIGATION: [previous ? anchor(`../${previous.id}/`, `← ${previous.title}`) : '', anchor('../', '按能力重新选练习'), next ? anchor(`../${next.id}/`, `${next.title} →`) : anchor('../workflow/', '查通用环节手册')].filter(Boolean).join('\n      '),
   }));
 });
-const practiceText = ['# 上站练习路线（个人自用 · 出海 SaaS 工具站）', '', '背景：独立开发者，会用 AI 做网页，SEO 与上站经验不足；主线是出海 SaaS 工具站。', '用途：掌握上站流程与对应能力，按尚未掌握的能力选练习，可在已有站补练。', '本轮做什么是本次执行范围；先放什么表示暂时不投入，不代表永远不做。', '目标是网站或项目达到的状态；能力是能独立完成的动作与判断；证据和产出物由本人在站外人工处理，页面只列预期材料。', '正式 SaaS 的需求验证可并行开始；同主题可在已有站补练，无关需求先评估站点边界。账号/限额/计费按实际验证需要引入。各层为本站整理，不称原作者统一标准。', ''].join('\n') + practices.levels.map(level => [
-  `## ${level.alias} · ${level.title}`, `现在你的特征：${level.entry}`, `本轮做什么：${level.focus}`, `先放什么：${level.defer}`, `目标：${level.goal}`, `补齐的能力点：${level.skills}`, `本轮证据和产出物：${level.artifacts}`, `本轮路线：${level.route}`, '',
-  '本轮动作：', ...level.steps.map((step, index) => `${index + 1}. ${step.title}\n   做什么：${step.action}\n   留下什么：${step.check}\n   注意：${step.pitfall}`), '',
-  '原文与官方资料：', ...level.references.map(reference => `- ${reference.title} | ${reference.author} | ${reference.platform} | ${reference.date || '以官网更新为准'} | ${reference.url}`), '',
-].join('\n')).join('\n');
+const practiceText = [
+  '# 上站练习路线（个人自用 · 出海 SaaS 工具站）', '',
+  '背景：独立开发者，会用 AI 做网页，SEO 与上站经验不足。主线是出海 SaaS 工具站。', '',
+  '用途：掌握上站流程与对应能力，按尚未掌握的能力选练习，可在已有站补练。', '',
+  '本轮做什么是本次执行范围。先放什么表示暂时不投入，不代表永远不做。', '',
+  '目标是网站或项目达到的状态。能力是能独立完成的动作与判断。证据和产出物由本人在站外人工处理，页面只列预期材料。', '',
+  '正式 SaaS 的需求验证可并行开始。同主题可在已有站补练，无关需求先评估站点边界。账号/限额/计费按实际验证需要引入。各层为本站整理，不称原作者统一标准。', '',
+  ...practices.levels.flatMap(level => [
+    `## ${level.alias} · ${level.title}`, '',
+    ...[['现在你的特征', 'entry'], ['本轮做什么', 'focus'], ['先放什么', 'defer'], ['目标', 'goal'], ['补齐的能力点', 'skills'], ['本轮证据和产出物', 'artifacts'], ['本轮路线', 'route']].map(([label, field]) => markdownField(label, level[field])),
+    '### 本轮动作', '',
+    ...level.steps.map((step, index) => `${index + 1}. **${step.title}**\n\n${[['做什么', 'action'], ['留下什么', 'check'], ['注意', 'pitfall']].map(([label, field]) => markdownField(label, step[field]).split('\n').map(line => line ? `   ${line}` : '').join('\n')).join('\n')}`), '',
+    '### 原文与官方资料', '',
+    ...level.references.map(reference => `- [${reference.title}](${reference.url}) · ${reference.author} · ${reference.platform} · ${reference.date || '以官网更新为准'}`), '',
+  ]),
+].join('\n');
 outputs.set('practice.md', `${practiceText.trimEnd()}\n`);
 data.stages.forEach((stage, index) => {
   const previous = data.stages[index - 1];

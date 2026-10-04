@@ -85,3 +85,15 @@
 
 .scope-label { font-weight: 500; }
 .practice-table .route-summary { font-size: 12px; }
+
+/* 并列事项用原生列表，保持表格中的紧凑阅读节奏。 */
+.cell-list { margin: 0; padding-left: 15px; line-height: 1.35; text-align: left; }
+.cell-list li { padding-left: 0; margin: 0; }
+.cell-list li::marker { color: #888; }
+.list-summary .cell-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; margin-top: 3px; }
+@media (max-width: 600px) { .list-summary .cell-list { grid-template-columns: minmax(0, 1fr); } }
+
+.practice-overview .practice-table th, .practice-overview .practice-table td { padding-top: 4px; padding-bottom: 4px; line-height: 1.4; }
+.practice-overview .guide-section { margin-top: 8px; }
+.practice-page .steps-table th, .practice-page .steps-table td { padding-top: 5px; padding-bottom: 5px; }
+.practice-page .guide-section { margin-top: 10px; }
