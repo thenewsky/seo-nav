@@ -92,23 +92,23 @@ function render(template, values) {
   return rendered;
 }
 function toolsTable(tools) {
-  if (!tools.length) return '<tbody><tr><th scope="row">工具入口</th><td>本阶段暂无工具入口</td><td></td><td></td><td></td></tr></tbody>';
+  if (!tools.length) return '<tbody><tr><td>本阶段暂无工具入口</td><td></td><td></td><td></td></tr></tbody>';
   const entries = [...tools.filter(tool => tool.primary), ...tools.filter(tool => !tool.primary)];
   const rows = [];
   for (let offset = 0; offset < entries.length; offset += 4) {
-    const heading = offset === 0 ? `<th scope="rowgroup" rowspan="${Math.ceil(entries.length / 4)}">工具入口</th>` : '';
     const cells = Array.from({ length: 4 }, (_, column) => {
       const tool = entries[offset + column];
       return tool ? `<td><span class="tool-priority${tool.primary ? ' primary' : ''}">${tool.primary ? '先从这里开始' : '按需使用'}</span>${anchor(tool.url, tool.name, true)}<p class="tool-description">${html(tool.description)}</p></td>` : '<td></td>';
     }).join('');
-    rows.push(`<tr>${heading}${cells}</tr>`);
+    rows.push(`<tr>${cells}</tr>`);
   }
   return `<tbody>${rows.join('\n        ')}</tbody>`;
 }
 function sourcesTable(references) {
-  if (!references.length) return '<tr><td>本阶段暂无参考原文</td><td></td><td></td><td></td></tr>';
-  return references.map(reference => `<tr><td>${anchor(reference.url, reference.title, true)}</td><td>${html(reference.author)}</td><td>${html(reference.platform)}</td><td>${reference.date ? `<time datetime="${html(reference.date)}">${html(reference.date)}</time>` : '以官网更新为准'}</td></tr>`).join('\n        ');
+  if (!references.length) return '<tr><td>本阶段暂无参考原文</td></tr>';
+  return references.map(reference => `<tr><td>${anchor(reference.url, reference.title, true)}<p class="source-meta">${html(reference.author)} · ${html(reference.platform)} · ${reference.date ? `<time datetime="${html(reference.date)}">${html(reference.date)}</time>` : '以官网更新为准'}</p></td></tr>`).join('\n        ');
 }
+
 function stageRows(stages, offset) {
   return stages.map((stage, index) => `<tr><th scope="row">${String(index + offset + 1).padStart(2, '0')}<br><a class="category-link" href="./${html(stage.id)}/">${html(stage.title)}</a></th><td>${html(stage.goal)}<p class="route-summary">${html(stage.summary)}</p></td><td>${html(stage.done)}</td><td>${anchor(`./${stage.id}/`, '进入阶段')}</td></tr>`).join('\n        ');
 }

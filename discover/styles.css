@@ -48,3 +48,12 @@
     margin-left: 0;
   }
 }
+
+/* 保留原布局，只压缩间距和说明文字占用。 */
+.page-links { margin-bottom: 8px; font-size: 13px; }
+.page-links a { padding: 2px 6px; }
+#site-table th { padding: 6px; font-size: 14px; }
+#site-table td a, .site-unverified { font-size: 14px; padding: 1px 5px; }
+.site-summary, .site-note { font-size: 12px; line-height: 1.35; margin: 2px 6px; }
+.scope-note { margin-top: 6px; margin-bottom: 0; }
+#site-table td { padding: 2px; }

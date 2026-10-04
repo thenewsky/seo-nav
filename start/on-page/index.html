@@ -7,7 +7,8 @@
   <title>页面优化与内页扩展 · S 计划</title>
   <link rel="icon" type="image/svg+xml" href="../../logo.svg?v=2">
   <link rel="stylesheet" href="../../assets/navigation.css">
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../../assets/compact.css">
+  <link rel="stylesheet" href="../styles.css?v=compact4">
   <script src="../../assets/navigation.js" defer></script>
 </head>
 <body>
@@ -16,7 +17,7 @@
     <h1>页面优化与内页扩展</h1>
   </header>
   <p class="page-slogan">先改已有页面，再为不同任务增加有用内页。</p>
-  <main>
+  <main class="stage-page">
     <nav class="page-links" aria-label="页面导航">
       <a href="../../">返回 S 计划</a><a href="../">路线总览</a>
       <span class="page-meta">第 06 / 08 阶段 · 更新于 <time datetime="2026-10-04">2026.10.04</time></span>
@@ -28,7 +29,8 @@
         <tr><th scope="row">完成标准</th><td>一次具体问题已修复，新增页面有独立价值且能通过内链访问。</td></tr>
       </tbody></table>
     </div>
-    <nav class="section-links" aria-label="本页内容"><a href="#steps">操作步骤</a><a href="#tools">工具与网站</a><a href="#sources">原文与官方资料</a></nav>
+    <nav class="compact-shortcuts" aria-label="本页快速定位"><a href="#steps">操作步骤</a><a href="#tools">工具入口</a><a href="#sources">原文资料</a></nav>
+    <div class="stage-content">
     <section class="guide-section" aria-labelledby="steps">
       <h2 id="steps">操作步骤</h2>
       <div class="tool-table-wrap" role="region" aria-label="操作步骤" tabindex="0">
@@ -38,18 +40,20 @@
         <tr><th scope="row">04 · 验证并观察</th><td>上线前检查手机、速度、链接与规范地址；记录版本，按相同口径观察效果。</td><td>功能未回退，新增网址进入 sitemap，后续反馈可比较。</td><td>一次改太多无法知道哪项有效，旧网址变更需先规划承接。</td></tr></tbody></table>
       </div>
     </section>
+    <aside class="stage-resources" aria-label="工具与原文资料">
     <section class="guide-section" aria-labelledby="tools">
       <h2 id="tools">工具与网站</h2>
-      <p class="guide-note">先用标有“先从这里开始”的入口，其余工具按需要选用。</p>
-      <div class="tool-table-wrap" role="region" aria-label="工具与网站" tabindex="0"><table class="tools-table" aria-label="每行四个工具入口"><tbody><tr><th scope="rowgroup" rowspan="1">工具入口</th><td><span class="tool-priority primary">先从这里开始</span><a href="https://search.google.com/search-console/" target="_blank" rel="noopener noreferrer">GSC 搜索表现</a><p class="tool-description">按页面与搜索词找具体改进点。</p></td><td><span class="tool-priority primary">先从这里开始</span><a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a><p class="tool-description">定位性能问题，按实际影响排序。</p></td><td><span class="tool-priority">按需使用</span><a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer">Search Central SEO 入门</a><p class="tool-description">核对页面组织、标题、内容和链接基础。</p></td><td><span class="tool-priority">按需使用</span><a href="https://developer.chrome.com/docs/devtools/" target="_blank" rel="noopener noreferrer">Chrome DevTools</a><p class="tool-description">检查窄屏、资源和运行错误。</p></td></tr></tbody></table></div>
+      <div class="tool-table-wrap" role="region" aria-label="工具与网站" tabindex="0"><table class="tools-table" aria-label="工具入口"><tbody><tr><td><span class="tool-priority primary">先从这里开始</span><a href="https://search.google.com/search-console/" target="_blank" rel="noopener noreferrer">GSC 搜索表现</a><p class="tool-description">按页面与搜索词找具体改进点。</p></td><td><span class="tool-priority primary">先从这里开始</span><a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a><p class="tool-description">定位性能问题，按实际影响排序。</p></td><td><span class="tool-priority">按需使用</span><a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer">Search Central SEO 入门</a><p class="tool-description">核对页面组织、标题、内容和链接基础。</p></td><td><span class="tool-priority">按需使用</span><a href="https://developer.chrome.com/docs/devtools/" target="_blank" rel="noopener noreferrer">Chrome DevTools</a><p class="tool-description">检查窄屏、资源和运行错误。</p></td></tr></tbody></table></div>
     </section>
     <section class="guide-section" aria-labelledby="sources">
       <h2 id="sources">原文与官方资料</h2>
-      <p class="guide-note">步骤为本站整理，方法与案例链接回原文。论坛原文可能需要登录或会员权限，访问条件以原站为准。</p>
-      <div class="tool-table-wrap" role="region" aria-label="原文与官方资料" tabindex="0"><table class="sources-table"><thead><tr><th scope="col">参考原文</th><th scope="col">作者</th><th scope="col">平台</th><th scope="col">日期</th></tr></thead><tbody><tr><td><a href="https://new.web.cafe/topic/za408lc1q9" target="_blank" rel="noopener noreferrer">再聊基于精品工具页面思路，如何做精品工具站</a></td><td>哥飞</td><td>哥飞社群 · 小课堂</td><td><time datetime="2025-03-07">2025-03-07</time></td></tr>
-        <tr><td><a href="https://new.web.cafe/topic/lqxrxz4wux" target="_blank" rel="noopener noreferrer">再聊内链和内页，以及如何做好一个内容型工具站。</a></td><td>哥飞</td><td>哥飞社群 · 小课堂归档</td><td><time datetime="2025-01-15">2025-01-15</time></td></tr>
-        <tr><td><a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer">SEO 入门指南</a></td><td>Google</td><td>官方文档</td><td>以官网更新为准</td></tr></tbody></table></div>
+      <div class="tool-table-wrap" role="region" aria-label="原文与官方资料" tabindex="0"><table class="sources-table" aria-label="原文标题与作者、平台、日期"><tbody><tr><td><a href="https://new.web.cafe/topic/za408lc1q9" target="_blank" rel="noopener noreferrer">再聊基于精品工具页面思路，如何做精品工具站</a><p class="source-meta">哥飞 · 哥飞社群 · 小课堂 · <time datetime="2025-03-07">2025-03-07</time></p></td></tr>
+        <tr><td><a href="https://new.web.cafe/topic/lqxrxz4wux" target="_blank" rel="noopener noreferrer">再聊内链和内页，以及如何做好一个内容型工具站。</a><p class="source-meta">哥飞 · 哥飞社群 · 小课堂归档 · <time datetime="2025-01-15">2025-01-15</time></p></td></tr>
+        <tr><td><a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer">SEO 入门指南</a><p class="source-meta">Google · 官方文档 · 以官网更新为准</p></td></tr></tbody></table></div>
     </section>
+    <p class="guide-note">步骤为本站整理；论坛原文可能需要登录或会员权限。</p>
+    </aside>
+    </div>
     <p class="next-step"><strong>下一步：</strong>页面值得使用和推荐后，再去适合的人群入口介绍它。</p>
     <nav class="page-links stage-navigation" aria-label="阶段导航"><a href="../indexing/">← 统计与搜索收录</a>
       <a href="../">路线总览</a>
