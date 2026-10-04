@@ -3,49 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="从确定用途到上线、收录与持续经营，用八个阶段完成第一站。每个阶段提供最小路线、完成标准、工具和原文参考。">
+  <meta name="description" content="从确定用途到上线、收录与持续经营，按八个阶段完成第一站；各阶段提供步骤、工具、完成标准和原文出处。">
   <title>上站路线 · S 计划</title>
   <link rel="icon" type="image/svg+xml" href="../logo.svg?v=2">
   <link rel="stylesheet" href="../assets/navigation.css">
-  <link rel="stylesheet" href="../assets/topic.css">
   <link rel="stylesheet" href="./styles.css">
   <script src="../assets/navigation.js" defer></script>
 </head>
 <body>
   <header class="header">
     <img class="logo" src="../logo.svg?v=2" width="40" height="40" alt="">
-    <h1>S 计划</h1>
+    <h1>上站路线</h1>
   </header>
-  <p class="page-slogan">用 AI 做网站、应用或智能体，满足有付费意愿的需求。<br>Use AI to build websites, apps, or agents that meet needs people are willing to pay for.</p>
-  <main aria-label="上站路线">
-    <h2 class="visually-hidden">上站路线</h2>
-    <div class="tool-table-wrap" role="region" aria-label="八阶段上站路线" tabindex="0">
-      <table class="route-table" aria-label="上站路线阶段总览，每行四列内容">
-        <tbody class="topic-nav"><tr>
-          <th scope="row">专题导航</th>
-          <td><a href="../"><img src="../logo.svg?v=2" alt="">S 计划首页</a></td>
-          <td><a href="./" aria-current="page"><img src="../logo.svg?v=2" alt="">上站路线</a></td>
-          <td><a href="../discover/"><img src="../logo.svg?v=2" alt="">翻石地图</a></td>
-          <td><span class="page-meta">更新于 <time datetime="2026-10-04">2026.10.04</time></span></td>
-        </tr></tbody>
-        <tbody><tr>
-          <th scope="row">第一站<br>怎么开始</th>
-          <td><span class="entry-label">第一站目标</span><p class="entry-description">做出一个能用的网站，上线可访问，接上统计和搜索站长工具。</p></td>
-          <td><span class="entry-label">先完成 01–05</span><p class="entry-description">从确定用途到上线和收录，先跑通第一站。</p></td>
-          <td><span class="entry-label">再推进 06–08</span><p class="entry-description">随真实使用反馈，逐步优化、获客和经营。</p></td>
-          <td><span class="entry-label">从卡住的阶段进入</span><p class="entry-description">点击左侧阶段或右侧入口；用 ⌘F / Ctrl+F 查找。</p></td>
-        </tr></tbody>
-        <tbody><tr><th scope="row">01<br><a class="category-link" href="./purpose/">定用途、看需求、选词</a></th><td><span class="entry-label">这一阶段做什么</span><p class="entry-description">先选一件小事做完，分清练手目标与商业需求。</p></td><td><span class="entry-label">最小路线</span><p class="entry-description">先选一个你自己今天就能使用的小功能，用一个英文页面承载；练手先跑通流程，正式经营再补用户行为、替代方案和付费证据，不把练手完成当作需求成立。</p></td><td><span class="entry-label">完成标准</span><p class="entry-description">留下一张需求卡或标为探索性验证的练手卡，明确输入、输出和验收例子。</p></td><td><a href="./purpose/">进入阶段</a></td></tr>
-        <tr><th scope="row">02<br><a class="category-link" href="./domain/">命名、域名与基础设置</a></th><td><span class="entry-label">这一阶段做什么</span><p class="entry-description">先让名称清楚、资产可管理，再决定是否购买域名。</p></td><td><span class="entry-label">最小路线</span><p class="entry-description">练手可先用部署平台提供的地址；需要自有域名时，比较注册与续费条件，检查名称及域名历史，购买后保留解析配置给部署阶段使用。</p></td><td><span class="entry-label">完成标准</span><p class="entry-description">保存名称、域名候选、注册及续费信息与账号归属，或明确先使用平台地址。</p></td><td><a href="./domain/">进入阶段</a></td></tr>
-        <tr><th scope="row">03<br><a class="category-link" href="./build/">建站与功能验证</a></th><td><span class="entry-label">这一阶段做什么</span><p class="entry-description">一个可用的小功能，加上说明清楚的英文主页面。</p></td><td><span class="entry-label">最小路线</span><p class="entry-description">优先用浏览器本地计算的小工具练手：HTML、CSS、JavaScript 即可；首页直接提供输入与结果，再补英文用途说明；需要私密 API、登录或数据存储时再选择后端方案。</p></td><td><span class="entry-label">完成标准</span><p class="entry-description">三组验收例子通过，手机上可操作，代码可本地预览且没有公开密钥。</p></td><td><a href="./build/">进入阶段</a></td></tr>
-        <tr><th scope="row">04<br><a class="category-link" href="./deploy/">部署上线</a></th><td><span class="entry-label">这一阶段做什么</span><p class="entry-description">把本地可用的版本变成可访问、可回退的网站。</p></td><td><span class="entry-label">最小路线</span><p class="entry-description">先提交代码到 GitHub，再用熟悉的平台发布静态站；可从 Cloudflare Pages 的 Git 集成开始，验证平台地址后再绑定自有域名；有后端的项目按 Vercel 或 Cloudflare 对应运行时文档部署。</p></td><td><span class="entry-label">完成标准</span><p class="entry-description">正式地址的 HTTPS、资源、功能、内页与手机验收通过，并记录可回退版本。</p></td><td><a href="./deploy/">进入阶段</a></td></tr>
-        <tr><th scope="row">05<br><a class="category-link" href="./indexing/">统计与搜索收录</a></th><td><span class="entry-label">这一阶段做什么</span><p class="entry-description">分开看访问、抓取、收录、曝光和点击。</p></td><td><span class="entry-label">最小路线</span><p class="entry-description">接入一套访问统计和 Google Search Console；核对正式地址、抓取限制与 sitemap，再检查主页面；记录提交日期，随后定期观察，不把提交成功当作已经收录。</p></td><td><span class="entry-label">完成标准</span><p class="entry-description">统计可见一次测试访问，GSC 验证成功，主页面检查及 sitemap 提交有记录。</p></td><td><a href="./indexing/">进入阶段</a></td></tr>
-        <tr><th scope="row">06<br><a class="category-link" href="./on-page/">页面优化与内页扩展</a></th><td><span class="entry-label">这一阶段做什么</span><p class="entry-description">先改已有页面，再为不同任务增加有用内页。</p></td><td><span class="entry-label">最小路线</span><p class="entry-description">先看真实反馈和搜索词，修正文案、功能与速度；只为不同输入、场景或问题增加内容扎实的页面，保留已有效的网址与结构。</p></td><td><span class="entry-label">完成标准</span><p class="entry-description">一次具体问题已修复，新增页面有独立价值且能通过内链访问。</p></td><td><a href="./on-page/">进入阶段</a></td></tr>
-        <tr><th scope="row">07<br><a class="category-link" href="./traffic/">外链与获客</a></th><td><span class="entry-label">这一阶段做什么</span><p class="entry-description">到目标用户已经出现的地方提供有用的介绍。</p></td><td><span class="entry-label">最小路线</span><p class="entry-description">挑一个与任务相关的社区或目录，先读规则与讨论，再用真实示例介绍网站；记录来源、反馈与实际使用，逐个验证渠道。</p></td><td><span class="entry-label">完成标准</span><p class="entry-description">完成一次符合平台规则的发布，并记录访问、使用与反馈。</p></td><td><a href="./traffic/">进入阶段</a></td></tr>
-        <tr><th scope="row">08<br><a class="category-link" href="./revenue/">变现与持续经营</a></th><td><span class="entry-label">这一阶段做什么</span><p class="entry-description">按使用方式选择收入模式，同时核对成本与维护。</p></td><td><span class="entry-label">最小路线</span><p class="entry-description">先看真实使用：持续任务可测试订阅，偶发任务可测试按次，内容或游戏站可研究广告、联盟；选择一种路径验证，先核平台资格和交付成本再接入。</p></td><td><span class="entry-label">完成标准</span><p class="entry-description">有一个变现假设和最小测试，持续记录收入、成本、问题与续费。</p></td><td><a href="./revenue/">进入阶段</a></td></tr></tbody>
-      </table>
-    </div>
-    <p class="scope-note">练手帮助掌握流程，正式产品仍需验证需求与付费意愿。步骤说明为本站整理，方法与案例链接回原文；工具按需要选用。</p>
+  <p class="page-slogan">先做出一站，再用真实访问和使用反馈继续改进。</p>
+  <main>
+    <nav class="page-links" aria-label="页面导航">
+      <a href="../">返回 S 计划</a><a href="../discover/">翻石地图</a>
+      <span class="page-meta">8 个阶段 · 更新于 <time datetime="2026-10-04">2026.10.04</time></span>
+    </nav>
+    <p class="guide-intro">先完成 01–05，跑通第一站；06–08 随使用反馈逐步推进。点击阶段名称，从当前卡住的环节开始。</p>
+    <section class="guide-section" aria-labelledby="first-site">
+      <h2 id="first-site">01–05 · 第一站上线</h2>
+      <div class="tool-table-wrap" role="region" aria-label="第一站上线的五个阶段" tabindex="0">
+        <table class="route-table">
+          <thead><tr><th scope="col">阶段</th><th scope="col">要完成的事</th><th scope="col">完成标准</th><th scope="col">进入</th></tr></thead>
+          <tbody><tr><th scope="row">01<br><a class="category-link" href="./purpose/">定用途、看需求、选词</a></th><td>写清首站为谁完成哪一件事。<p class="route-summary">先选一件小事做完，分清练手目标与商业需求。</p></td><td>留下一张需求卡或标为探索性验证的练手卡，明确输入、输出和验收例子。</td><td><a href="./purpose/">进入阶段</a></td></tr>
+        <tr><th scope="row">02<br><a class="category-link" href="./domain/">命名、域名与基础设置</a></th><td>确定一个可用名称和首站访问地址方案。<p class="route-summary">先让名称清楚、资产可管理，再决定是否购买域名。</p></td><td>保存名称、域名候选、注册及续费信息与账号归属，或明确先使用平台地址。</td><td><a href="./domain/">进入阶段</a></td></tr>
+        <tr><th scope="row">03<br><a class="category-link" href="./build/">建站与功能验证</a></th><td>让用户从输入到结果完成一次真实任务。<p class="route-summary">一个可用的小功能，加上说明清楚的英文主页面。</p></td><td>三组验收例子通过，手机上可操作，代码可本地预览且没有公开密钥。</td><td><a href="./build/">进入阶段</a></td></tr>
+        <tr><th scope="row">04<br><a class="category-link" href="./deploy/">部署上线</a></th><td>获得稳定可访问的正式网址。<p class="route-summary">把本地可用的版本变成可访问、可回退的网站。</p></td><td>正式地址的 HTTPS、资源、功能、内页与手机验收通过，并记录可回退版本。</td><td><a href="./deploy/">进入阶段</a></td></tr>
+        <tr><th scope="row">05<br><a class="category-link" href="./indexing/">统计与搜索收录</a></th><td>能够观察用户访问，并让搜索系统发现正式页面。<p class="route-summary">分开看访问、抓取、收录、曝光和点击。</p></td><td>统计可见一次测试访问，GSC 验证成功，主页面检查及 sitemap 提交有记录。</td><td><a href="./indexing/">进入阶段</a></td></tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="guide-section" aria-labelledby="growth">
+      <h2 id="growth">06–08 · 上线后经营</h2>
+      <div class="tool-table-wrap" role="region" aria-label="上线后经营的三个阶段" tabindex="0">
+        <table class="route-table">
+          <thead><tr><th scope="col">阶段</th><th scope="col">要完成的事</th><th scope="col">完成标准</th><th scope="col">进入</th></tr></thead>
+          <tbody><tr><th scope="row">06<br><a class="category-link" href="./on-page/">页面优化与内页扩展</a></th><td>让每个页面都准确承接一个明确任务。<p class="route-summary">先改已有页面，再为不同任务增加有用内页。</p></td><td>一次具体问题已修复，新增页面有独立价值且能通过内链访问。</td><td><a href="./on-page/">进入阶段</a></td></tr>
+        <tr><th scope="row">07<br><a class="category-link" href="./traffic/">外链与获客</a></th><td>找到一个能带来相关用户的获客入口。<p class="route-summary">到目标用户已经出现的地方提供有用的介绍。</p></td><td>完成一次符合平台规则的发布，并记录访问、使用与反馈。</td><td><a href="./traffic/">进入阶段</a></td></tr>
+        <tr><th scope="row">08<br><a class="category-link" href="./revenue/">变现与持续经营</a></th><td>找到与用户价值匹配、能够实际验证的收入方式。<p class="route-summary">按使用方式选择收入模式，同时核对成本与维护。</p></td><td>有一个变现假设和最小测试，持续记录收入、成本、问题与续费。</td><td><a href="./revenue/">进入阶段</a></td></tr></tbody>
+        </table>
+      </div>
+    </section>
+    <p class="guide-note">练手帮助掌握流程，正式产品仍需验证需求与付费意愿。步骤为本站整理，方法与案例链接回原文；工具按需要选用。</p>
   </main>
 </body>
 </html>

@@ -1,5 +1,42 @@
-/* 所有基础视觉继承 assets/navigation.css 和 assets/topic.css。 */
-.route-table td, .guide-table td { vertical-align: middle; }
-.tool-description { color: #888; font-size: 13px; line-height: 1.5; margin: 4px 8px; }
-.source-title { text-align: left; }
-.source-title a { display: inline-flex; text-align: left; line-height: 1.5; }
+/* 路线继承站点的字体、背景和蓝色；按阅读任务组织独立内页。 */
+.page-links { width: 98%; margin: 0 auto 14px; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.page-meta { color: #888; font-size: 12px; margin-left: auto; }
+.guide-intro, .guide-note, .next-step, .section-links { width: 98%; margin: 12px auto; box-sizing: border-box; }
+.guide-intro, .next-step { color: #555; font-size: 14px; line-height: 1.7; }
+.guide-note { color: #777; font-size: 12px; line-height: 1.6; }
+.guide-section { margin-top: 22px; }
+.guide-section h2 { width: 98%; margin: 0 auto 10px; font-size: 17px; font-weight: 500; color: #333; }
+.route-table, .steps-table, .sources-table { table-layout: fixed; }
+.route-table th, .steps-table th, .sources-table th, .brief-table th { width: auto; font-size: 14px; }
+.route-table td, .steps-table td, .sources-table td, .brief-table td { width: auto; color: #333; text-align: left; font-size: 14px; line-height: 1.65; padding: 10px 12px; overflow-wrap: anywhere; }
+.route-table thead th, .steps-table thead th, .sources-table thead th { padding: 10px 12px; }
+.route-table th:first-child { width: 180px; }
+.route-table th:last-child { width: 90px; }
+.route-table td:last-child { text-align: center; }
+.category-link { color: inherit; text-decoration: none; display: inline-block; padding: 3px 0; }
+.category-link:hover { text-decoration: underline; }
+.category-link:focus-visible { outline: 2px solid #1890ff; outline-offset: 2px; }
+.route-summary { margin: 4px 0 0; color: #777; font-size: 12px; line-height: 1.6; }
+.steps-table th:first-child { width: 180px; }
+.brief-wrap table { min-width: 0; }
+.brief-table th { width: 110px; }
+.brief-table td { width: auto; }
+.tools-table th { font-size: 14px; }
+.tools-table td { vertical-align: top; }
+.tool-description { color: #777; font-size: 12px; line-height: 1.6; margin: 4px 8px; }
+.tool-priority { display: block; font-size: 12px; color: #888; margin: 6px 8px 0; }
+.tool-priority.primary { color: #1890ff; }
+.sources-table th:first-child { width: 44%; }
+.sources-table th:last-child { width: 110px; }
+.sources-table a { display: inline-flex; text-align: left; }
+.section-links { display: flex; gap: 18px; flex-wrap: wrap; }
+.section-links a { color: #666; font-size: 13px; text-decoration: none; padding: 3px 0; }
+.section-links a:hover { color: #1890ff; }
+.section-links a:focus-visible { outline: 2px solid #1890ff; outline-offset: 2px; }
+.stage-navigation { margin-top: 18px; margin-bottom: 0; justify-content: space-between; }
+@media (max-width: 600px) {
+  .page-meta { width: 100%; margin-left: 0; }
+  .brief-table th { width: 78px; }
+  .brief-table td { padding: 8px 10px; }
+  .stage-navigation { justify-content: flex-start; }
+}

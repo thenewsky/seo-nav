@@ -4,45 +4,49 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{SUMMARY}}">
-  <title>{{TITLE}} · 上站路线 · S 计划</title>
+  <title>{{TITLE}} · S 计划</title>
   <link rel="icon" type="image/svg+xml" href="../../logo.svg?v=2">
   <link rel="stylesheet" href="../../assets/navigation.css">
-  <link rel="stylesheet" href="../../assets/topic.css">
   <link rel="stylesheet" href="../styles.css">
   <script src="../../assets/navigation.js" defer></script>
 </head>
 <body>
   <header class="header">
     <img class="logo" src="../../logo.svg?v=2" width="40" height="40" alt="">
-    <h1>S 计划</h1>
+    <h1>{{TITLE}}</h1>
   </header>
-  <p class="page-slogan">用 AI 做网站、应用或智能体，满足有付费意愿的需求。<br>Use AI to build websites, apps, or agents that meet needs people are willing to pay for.</p>
-  <main aria-label="{{TITLE}}">
-    <h2 class="visually-hidden">{{TITLE}}</h2>
-    <div class="tool-table-wrap" role="region" aria-label="阶段动作、工具与原文资料" tabindex="0">
-      <table class="guide-table" aria-label="{{TITLE}}，每行四列内容">
-        <tbody class="topic-nav"><tr>
-          <th scope="row">专题导航</th>
-          <td><a href="../../"><img src="../../logo.svg?v=2" alt="">S 计划首页</a></td>
-          <td><a href="../" aria-current="page"><img src="../../logo.svg?v=2" alt="">上站路线</a></td>
-          <td><a href="../../discover/"><img src="../../logo.svg?v=2" alt="">翻石地图</a></td>
-          <td><span class="page-meta">更新于 <time datetime="{{UPDATED}}">{{UPDATED_DISPLAY}}</time></span></td>
-        </tr></tbody>
-        <tbody><tr>
-          <th scope="row">{{STAGE_NUMBER}} / 08<br>{{TITLE}}</th>
-          <td><span class="entry-label">本阶段目标</span><p class="entry-description">{{GOAL}}</p></td>
-          <td><span class="entry-label">最小路线</span><p class="entry-description">{{ROUTE}}</p></td>
-          <td><span class="entry-label">完成标准</span><p class="entry-description">{{DONE}}</p></td>
-          <td><span class="entry-label">这一阶段</span><p class="entry-description">{{SUMMARY}}</p></td>
-        </tr></tbody>
-        <tbody>{{STEP_ROWS}}</tbody>
-        {{TOOL_ROWS}}
-        <tbody>{{SOURCE_ROWS}}</tbody>
-        <tbody><tr><th scope="row">继续推进</th>{{STAGE_NAVIGATION}}</tr></tbody>
-      </table>
+  <p class="page-slogan">{{SUMMARY}}</p>
+  <main>
+    <nav class="page-links" aria-label="页面导航">
+      <a href="../../">返回 S 计划</a><a href="../">路线总览</a>
+      <span class="page-meta">第 {{STAGE_NUMBER}} / 08 阶段 · 更新于 <time datetime="{{UPDATED}}">{{UPDATED_DISPLAY}}</time></span>
+    </nav>
+    <div class="tool-table-wrap brief-wrap" role="region" aria-label="阶段目标与完成标准">
+      <table class="brief-table"><tbody>
+        <tr><th scope="row">本阶段目标</th><td>{{GOAL}}</td></tr>
+        <tr><th scope="row">最小路线</th><td>{{ROUTE}}</td></tr>
+        <tr><th scope="row">完成标准</th><td>{{DONE}}</td></tr>
+      </tbody></table>
     </div>
-    <p class="scope-note">下一步：{{NEXT_TIP}}</p>
-    <p class="scope-note">步骤说明为本站整理，方法与案例链接回原文。论坛原文可能需要登录或会员权限，访问条件以原站为准；平台操作以官方文档为准。</p>
+    <nav class="section-links" aria-label="本页内容"><a href="#steps">操作步骤</a><a href="#tools">工具与网站</a><a href="#sources">原文与官方资料</a></nav>
+    <section class="guide-section" aria-labelledby="steps">
+      <h2 id="steps">操作步骤</h2>
+      <div class="tool-table-wrap" role="region" aria-label="操作步骤" tabindex="0">
+        <table class="steps-table"><thead><tr><th scope="col">步骤</th><th scope="col">做什么</th><th scope="col">完成判据</th><th scope="col">常见卡点</th></tr></thead><tbody>{{STEP_ROWS}}</tbody></table>
+      </div>
+    </section>
+    <section class="guide-section" aria-labelledby="tools">
+      <h2 id="tools">工具与网站</h2>
+      <p class="guide-note">先用标有“先从这里开始”的入口，其余工具按需要选用。</p>
+      <div class="tool-table-wrap" role="region" aria-label="工具与网站" tabindex="0"><table class="tools-table" aria-label="每行四个工具入口">{{TOOL_ROWS}}</table></div>
+    </section>
+    <section class="guide-section" aria-labelledby="sources">
+      <h2 id="sources">原文与官方资料</h2>
+      <p class="guide-note">步骤为本站整理，方法与案例链接回原文。论坛原文可能需要登录或会员权限，访问条件以原站为准。</p>
+      <div class="tool-table-wrap" role="region" aria-label="原文与官方资料" tabindex="0"><table class="sources-table"><thead><tr><th scope="col">参考原文</th><th scope="col">作者</th><th scope="col">平台</th><th scope="col">日期</th></tr></thead><tbody>{{SOURCE_ROWS}}</tbody></table></div>
+    </section>
+    <p class="next-step"><strong>下一步：</strong>{{NEXT_TIP}}</p>
+    <nav class="page-links stage-navigation" aria-label="阶段导航">{{STAGE_NAVIGATION}}</nav>
   </main>
 </body>
 </html>

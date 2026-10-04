@@ -7,33 +7,22 @@
   <title>翻石地图 · S 计划</title>
   <link rel="icon" type="image/svg+xml" href="../logo.svg?v=2">
   <link rel="stylesheet" href="../assets/navigation.css">
-  <link rel="stylesheet" href="../assets/topic.css">
   <link rel="stylesheet" href="./styles.css">
   <script src="../assets/navigation.js" defer></script>
 </head>
 <body>
   <header class="header">
     <img class="logo" src="../logo.svg?v=2" width="40" height="40" alt="">
-    <h1>S 计划</h1>
+    <h1>翻石地图</h1>
   </header>
-  <p class="page-slogan">用 AI 做网站、应用或智能体，满足有付费意愿的需求。<br>Use AI to build websites, apps, or agents that meet needs people are willing to pay for.</p>
-  <main aria-label="翻石地图">
-    <h2 class="visually-hidden">翻石地图</h2>
+  <p class="page-slogan"><q cite="https://www.pbs.org/wgbh/pages/frontline/shows/betting/pros/lynch.html" title="译自 PBS FRONTLINE 彼得·林奇访谈">翻石头最多的人，赢得游戏。</q>——彼得·林奇</p>
+  <main>
+    <nav class="page-links" aria-label="页面导航">
+      <a href="../">返回 S 计划</a>
+      <span class="page-meta">{{SITE_COUNT}} 个入口 · {{GROUP_COUNT}} 个分类 · 更新于 <time datetime="{{UPDATED}}">{{UPDATED_DISPLAY}}</time></span>
+    </nav>
     <div class="tool-table-wrap" role="region" aria-label="翻石地图网站列表" tabindex="0">
       <table id="site-table" aria-label="翻石地图网站，按分类排列，每行四个入口">
-        <tbody class="topic-nav"><tr>
-          <th scope="row">专题导航</th>
-          <td><a href="../"><img src="../logo.svg?v=2" alt="">S 计划首页</a></td>
-          <td><a href="../start/"><img src="../logo.svg?v=2" alt="">上站路线</a></td>
-          <td><a href="./" aria-current="page"><img src="../logo.svg?v=2" alt="">翻石地图</a></td>
-          <td><span class="page-meta">更新于 <time datetime="{{UPDATED}}">{{UPDATED_DISPLAY}}</time></span></td>
-        </tr></tbody>
-        <tbody><tr><th scope="row">翻石地图</th>
-          <td><span class="entry-label">{{SITE_COUNT}} 个入口</span><p class="entry-description">先读调研方法，再浏览产品与工具。</p></td>
-          <td><span class="entry-label">{{GROUP_COUNT}} 个分类</span><p class="entry-description">方法、目录、社区、榜单、App 与市场。</p></td>
-          <td><span class="entry-label">阅读起点</span><p class="entry-description">从 Toolify 开始认识类目和生意。</p></td>
-          <td><p class="entry-description"><q cite="https://www.pbs.org/wgbh/pages/frontline/shows/betting/pros/lynch.html" title="译自 PBS FRONTLINE 彼得·林奇访谈">翻石头最多的人，赢得游戏。</q>——彼得·林奇</p></td>
-        </tr></tbody>
         {{TABLE_BODY}}
       </table>
     </div>
