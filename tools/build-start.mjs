@@ -161,7 +161,7 @@ const practiceReferences = ['daily-summary:26', 'xiaoketang:61'].map(key => prac
 if (practiceReferences.some(reference => !reference)) fail('练习路线缺少已核对的群聊总结或 GSC 小课堂来源');
 outputs.set('index.html', render(indexTemplate, {
   ...practiceUpdated,
-  PRACTICE_ROWS: practices.levels.map((level, index) => `<tr><th scope="row"><span class="practice-alias">${html(level.alias)}</span><br>${anchor(`./${level.id}/`, level.title)}<br><span class="practice-order">练习 ${index + 1}</span></th><td>${html(level.entry)}</td><td>${html(level.focus)}<p class="route-summary">${html(level.defer)}</p></td><td>${html(level.done)}<p class="route-summary">${anchor(`./${level.id}/`, '查看本轮动作 →')}</p></td></tr>`).join('\n        '),
+  PRACTICE_ROWS: practices.levels.map(level => `<tr><th scope="row"><span class="practice-alias">${html(level.alias)}</span><br>${anchor(`./${level.id}/`, level.title)}</th><td>${html(level.entry)}</td><td>${html(level.focus)}<p class="route-summary">${html(level.defer)}</p></td><td>${html(level.done)}<p class="route-summary">${anchor(`./${level.id}/`, '查看本轮动作 →')}</p></td></tr>`).join('\n        '),
   PRACTICE_SOURCES: sourcesTable(practiceReferences),
 }));
 practices.levels.forEach((level, index) => {
