@@ -1,0 +1,16 @@
+.page-meta { color: #888; font-size: 12px; }
+.guide-intro, .guide-note, .guide-heading { width: 98%; margin-left: auto; margin-right: auto; box-sizing: border-box; }
+.guide-intro { color: #555; font-size: 13px; line-height: 1.7; margin-bottom: 14px; }
+.guide-intro p { margin: 5px 0; }
+.guide-note { color: #777; font-size: 12px; line-height: 1.65; margin-top: 8px; margin-bottom: 12px; }
+.guide-heading { color: #333; font-size: 16px; font-weight: 500; margin-top: 20px; margin-bottom: 8px; }
+.route-table td, .steps-table td, .sources-table td { text-align: left; font-size: 13px; line-height: 1.65; padding: 8px 10px; overflow-wrap: anywhere; }
+.route-table th, .steps-table th, .sources-table th, .tools-table th { font-size: 13px; }
+.route-table .column-heading, .steps-table .column-heading, .sources-table .column-heading { text-align: center; color: #666; background: #fafafa; font-weight: 500; width: auto; }
+.tools-table td { vertical-align: top; font-size: 13px; }
+.tool-description { color: #666; font-size: 12px; line-height: 1.6; margin: 2px 8px 6px; }
+.tool-primary { display: block; color: #1890ff; font-size: 11px; margin: 3px 0 0; }
+.sources-table td:nth-child(2) { width: 360px; }
+.sources-table td:nth-child(2) a { display: inline; line-height: 1.8; }
+.stage-navigation { margin-top: 16px; margin-bottom: 0; font-size: 13px; }
+.route-table th a { display: inline; color: inherit; font-size: inherit; line-height: inherit; }

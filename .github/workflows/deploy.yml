@@ -24,6 +24,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Check generated pages
+        run: |
+          node tools/build-discover.mjs --check
+          node tools/build-start.mjs --check
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -36,4 +46,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

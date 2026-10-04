@@ -1,0 +1,678 @@
+{
+  "updated": "2026-10-04",
+  "stages": [
+    {
+      "id": "purpose",
+      "title": "定用途、看需求、选词",
+      "summary": "先选一件小事做完，分清练手目标与商业需求。",
+      "goal": "写清首站为谁完成哪一件事。",
+      "done": "留下一张需求卡或标为探索性验证的练手卡，明确输入、输出和验收例子。",
+      "route": "先选一个你自己今天就能使用的小功能，用一个英文页面承载；练手先跑通流程，正式经营再补用户行为、替代方案和付费证据，不把练手完成当作需求成立。",
+      "steps": [
+        {
+          "title": "选定这一站的任务",
+          "action": "写一句话：什么人，在什么场景，输入什么，获得什么结果；先只保留一个核心功能。",
+          "check": "可以拿一个真实例子演示结果，并说明它帮你省掉哪一步。",
+          "pitfall": "“做一个 AI 网站”太宽，先缩小到可验收的任务。"
+        },
+        {
+          "title": "标明练手还是正式项目",
+          "action": "练手写“探索性验证”；正式项目记录用户原话、现有替代方案、代价和收费线索。",
+          "check": "卡片上有类型、证据与未知项；未验证付费时明确写待验证。",
+          "pitfall": "自己的需要可以作为起点，不能直接外推所有人愿意付费。"
+        },
+        {
+          "title": "看三个相关页面",
+          "action": "用任务的英文说法搜索，体验相关页面，记录它们的输入、输出、收费入口及用户仍需绕路的地方。",
+          "check": "能说清第一版借鉴什么，以及要改善的一处问题。",
+          "pitfall": "榜单排名、流量和收入是不同信号，不要只看截图就判断赚钱。"
+        },
+        {
+          "title": "确定主页面主题",
+          "action": "选一个与功能一致的英文表达，记录用户搜索后期望看到工具、教程还是产品；正式项目再核竞争与需求。",
+          "check": "标题与功能一致，用户进站后能完成该任务。",
+          "pitfall": "不套统一搜索量阈值，也不为宽泛大词堆功能。"
+        },
+        {
+          "title": "留下最小验收卡",
+          "action": "记录正常输入、空输入、异常输入的预期结果，以及继续、改切口、停止的条件。",
+          "check": "开工前已有三组例子与一个明确的下一步。",
+          "pitfall": "不要为了收集更多资料无限推迟第一次可用版本。"
+        }
+      ],
+      "tools": [
+        {
+          "name": "翻石地图",
+          "url": "../discover/",
+          "description": "查看调研方法、产品目录和商业榜单。",
+          "primary": true
+        },
+        {
+          "name": "Google",
+          "url": "https://www.google.com/",
+          "description": "核对英文任务表达与搜索结果。",
+          "primary": true
+        },
+        {
+          "name": "Google Trends",
+          "url": "https://trends.google.com/",
+          "description": "观察搜索关注度的时间变化，不代表绝对需求或购买意愿。",
+          "primary": false
+        },
+        {
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/",
+          "description": "体验同类产品，阅读发布介绍与用户反馈。",
+          "primary": false
+        }
+      ],
+      "references": [
+        {
+          "title": "【生财认知】翻石头：独立开发者的日常修行",
+          "url": "https://scys.com/deepsea/2001/note/5021",
+          "author": "刘小排",
+          "platform": "生财有术 · 深海圈",
+          "date": "2024-11-05",
+          "source_key": "scys:5021"
+        },
+        {
+          "title": "独立开发如何赚得比工资多：从选品到营销，干就完了！",
+          "url": "https://scys.com/deepsea/2001/note/5338",
+          "author": "子木",
+          "platform": "生财有术 · 深海圈",
+          "date": "2025-03-17",
+          "source_key": "scys:5338"
+        }
+      ],
+      "nextTip": "先把任务边界定下来，再选择名称和网站地址。"
+    },
+    {
+      "id": "domain",
+      "title": "命名、域名与基础设置",
+      "summary": "先让名称清楚、资产可管理，再决定是否购买域名。",
+      "goal": "确定一个可用名称和首站访问地址方案。",
+      "done": "保存名称、域名候选、注册及续费信息与账号归属，或明确先使用平台地址。",
+      "route": "练手可先用部署平台提供的地址；需要自有域名时，比较注册与续费条件，检查名称及域名历史，购买后保留解析配置给部署阶段使用。",
+      "steps": [
+        {
+          "title": "挑选少量名称",
+          "action": "列出两三个容易拼写、与用途相关的名字，搜索同名产品，避开明显借用他人品牌的命名。",
+          "check": "能读、能拼、能解释用途，并记录同名检查结果。",
+          "pitfall": "可注册不代表没有名称或品牌冲突，拿不准就换一个。"
+        },
+        {
+          "title": "判断是否立即买域名",
+          "action": "先选平台地址或自有域名；购买前在注册商核对注册、续费、转移、退款与自动续费条件。",
+          "check": "有明确决定与预算，知道第二年的续费安排。",
+          "pitfall": "不要只看首年优惠，也不要把二手域名购买误认为普通注册。"
+        },
+        {
+          "title": "检查域名历史",
+          "action": "用域名查询与网页历史查看注册状态、旧用途和明显异常记录，保存结果。",
+          "check": "记录候选域名的查询时间、旧用途与仍不确定的事项。",
+          "pitfall": "历史为空不等于安全保证，发现明显不相关或异常用途可换候选。"
+        },
+        {
+          "title": "建立资产清单",
+          "action": "记录注册商、域名、到期日、部署账号与恢复方式；为重要账号启用可用的安全验证。",
+          "check": "能够找到谁管理、在哪里续费、如何恢复账号。",
+          "pitfall": "密码和恢复码放密码管理器，不要写进公开仓库或网页。"
+        },
+        {
+          "title": "准备解析",
+          "action": "先读部署平台绑定域名要求；需要改 DNS 时记下原记录，逐项添加并等待验证。",
+          "check": "知道要修改哪一条记录，且有原配置可恢复。",
+          "pitfall": "不要反复切换域名服务商或同时更改多项记录，邮件记录尤其要保留。"
+        }
+      ],
+      "tools": [
+        {
+          "name": "Cloudflare Registrar",
+          "url": "https://www.cloudflare.com/products/registrar/",
+          "description": "查看域名注册与管理入口。",
+          "primary": true
+        },
+        {
+          "name": "Namecheap",
+          "url": "https://www.namecheap.com/",
+          "description": "比较域名可用性与续费、转移条件。",
+          "primary": false
+        },
+        {
+          "name": "ICANN Lookup",
+          "url": "https://lookup.icann.org/",
+          "description": "查询域名注册数据。",
+          "primary": true
+        },
+        {
+          "name": "Wayback Machine",
+          "url": "https://web.archive.org/",
+          "description": "查看域名过去的页面记录。",
+          "primary": false
+        }
+      ],
+      "references": [
+        {
+          "title": "怎么从源头上去查询一个域名是否被注册了",
+          "url": "https://new.web.cafe/topic/ho54rc4o8f",
+          "author": "哥飞",
+          "platform": "哥飞社群 · 小课堂归档",
+          "date": "2025-01-16",
+          "source_key": "xiaoketang-archive:13"
+        },
+        {
+          "title": "用别人的品牌名注册域名，等于网站还没做，就先埋了一颗雷",
+          "url": "https://new.web.cafe/topic/vixezoqv9d",
+          "author": "哥飞",
+          "platform": "哥飞社群 · 小课堂",
+          "date": "2025-09-25",
+          "source_key": "xiaoketang:86"
+        }
+      ],
+      "nextTip": "域名不必阻挡练手进度，下一步先把核心功能做出来。"
+    },
+    {
+      "id": "build",
+      "title": "建站与功能验证",
+      "summary": "一个可用的小功能，加上说明清楚的英文主页面。",
+      "goal": "让用户从输入到结果完成一次真实任务。",
+      "done": "三组验收例子通过，手机上可操作，代码可本地预览且没有公开密钥。",
+      "route": "优先用浏览器本地计算的小工具练手：HTML、CSS、JavaScript 即可；首页直接提供输入与结果，再补英文用途说明；需要私密 API、登录或数据存储时再选择后端方案。",
+      "steps": [
+        {
+          "title": "写给 AI 的任务说明",
+          "action": "提供需求卡、三组例子与页面结构，要求先做输入、处理、结果，说明首版不需要的功能。",
+          "check": "生成结果与预期一致，功能边界没有被扩成完整 SaaS。",
+          "pitfall": "没有验收例子时，AI 容易补出看起来完整但不能用的页面。"
+        },
+        {
+          "title": "建立代码与本地预览",
+          "action": "把源文件放进独立项目，请 AI 给出适合本机的预览命令及停止、重启方法；打开返回的 localhost 地址，每次只修改一个可检查的点。",
+          "check": "本地地址能打开，知道停止和重启预览的方法。",
+          "pitfall": "不要直接双击文件后就假定部署也能正常；资源路径要用实际预览核对。"
+        },
+        {
+          "title": "做英文主页面",
+          "action": "首屏展示输入与操作；下方用自己的文字写用途、操作步骤、示例、限制与常见问题。",
+          "check": "第一次来的用户能知道输入什么、结果有什么用。",
+          "pitfall": "不要复制对标站文案、会员正文或品牌素材；工具与介绍必须一致。"
+        },
+        {
+          "title": "验收功能边界",
+          "action": "逐项跑正常、空白、异常与较大输入，检查错误提示、复制或下载结果及重复操作。",
+          "check": "每项都有可观察结果，失败时用户知道如何修正。",
+          "pitfall": "按钮有动画不等于功能有效，不能只测试一个演示样本。"
+        },
+        {
+          "title": "检查手机与私密信息",
+          "action": "用窄屏检查表单、结果和长文本；检查仓库里是否有密钥、密码、个人文件。",
+          "check": "手机能完成任务，公开文件不含秘密，必要的 API 在服务端调用。",
+          "pitfall": "静态网页里的密钥会被访问者读取；这类功能要转到支持后端的平台。"
+        }
+      ],
+      "tools": [
+        {
+          "name": "Google AI Studio",
+          "url": "https://aistudio.google.com/",
+          "description": "辅助生成和修改代码，用验收例子逐项核对。",
+          "primary": true
+        },
+        {
+          "name": "Visual Studio Code",
+          "url": "https://code.visualstudio.com/",
+          "description": "管理文件、查看代码与运行本地项目。",
+          "primary": true
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/",
+          "description": "保存代码版本与修改记录。",
+          "primary": false
+        },
+        {
+          "name": "MDN Web Docs",
+          "url": "https://developer.mozilla.org/",
+          "description": "查 HTML、CSS、JavaScript 的具体用法。",
+          "primary": false
+        }
+      ],
+      "references": [
+        {
+          "title": "工具站首页别只放 CTA，第一屏就让用户开始用",
+          "url": "https://new.web.cafe/topic/fn5nzozep2",
+          "author": "哥飞",
+          "platform": "哥飞社群 · 小课堂",
+          "date": "2026-03-19",
+          "source_key": "xiaoketang:46"
+        },
+        {
+          "title": "再聊基于精品工具页面思路，如何做精品工具站",
+          "url": "https://new.web.cafe/topic/za408lc1q9",
+          "author": "哥飞",
+          "platform": "哥飞社群 · 小课堂",
+          "date": "2025-03-07",
+          "source_key": "xiaoketang:123"
+        }
+      ],
+      "nextTip": "功能真正可用后，再发布一个可以回退的版本。"
+    },
+    {
+      "id": "deploy",
+      "title": "部署上线",
+      "summary": "把本地可用的版本变成可访问、可回退的网站。",
+      "goal": "获得稳定可访问的正式网址。",
+      "done": "正式地址的 HTTPS、资源、功能、内页与手机验收通过，并记录可回退版本。",
+      "route": "先提交代码到 GitHub，再用熟悉的平台发布静态站；可从 Cloudflare Pages 的 Git 集成开始，验证平台地址后再绑定自有域名；有后端的项目按 Vercel 或 Cloudflare 对应运行时文档部署。",
+      "steps": [
+        {
+          "title": "保存待发布版本",
+          "action": "确认本地验收通过，提交本次相关文件，记录版本和主要修改内容。",
+          "check": "能定位本次发布的代码版本，并找回上一版。",
+          "pitfall": "不要把密钥、缓存或与任务无关的文件一起提交。"
+        },
+        {
+          "title": "选择适合的部署入口",
+          "action": "静态文件选静态托管；需要构建时按项目实际命令填写；后端、登录、数据库另核平台支持。",
+          "check": "部署方式符合代码运行要求，构建命令与输出目录有依据。",
+          "pitfall": "GitHub Pages 只提供静态托管，不能直接运行通用后端。"
+        },
+        {
+          "title": "先验平台地址",
+          "action": "连接仓库，执行部署，打开平台地址检查首页、资源和直接访问内页。",
+          "check": "部署记录成功，刷新内页与核心功能均正常。",
+          "pitfall": "子路径、大小写、构建输出目录出错时先看部署日志，不急着改域名。"
+        },
+        {
+          "title": "绑定域名与 HTTPS",
+          "action": "按平台说明添加域名及 DNS 记录，等待验证，确定一个正式地址并核对其他地址的跳转。",
+          "check": "正式网址证书正常，没有混合内容，页面资源完整。",
+          "pitfall": "不要在证书或解析未完成时反复改配置；记录变更时间便于排查。"
+        },
+        {
+          "title": "完成上线验收",
+          "action": "换手机或浏览器访问正式地址，再跑验收例子，检查外链、新窗口、404 与页面返回。",
+          "check": "留下一份地址、版本、验收结果和回退办法。",
+          "pitfall": "本地通过不等于线上通过；实际用户应拿到正式链接。"
+        }
+      ],
+      "tools": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/",
+          "description": "保存发布版本并连接部署平台。",
+          "primary": true
+        },
+        {
+          "name": "Cloudflare Pages 文档",
+          "url": "https://developers.cloudflare.com/pages/",
+          "description": "静态站部署、Git 集成与域名设置。",
+          "primary": true
+        },
+        {
+          "name": "Vercel 文档",
+          "url": "https://vercel.com/docs/deployments",
+          "description": "需要框架或后端时核对构建、运行时和部署配置。",
+          "primary": false
+        },
+        {
+          "name": "GitHub Pages 文档",
+          "url": "https://docs.github.com/en/pages",
+          "description": "学习静态发布与仓库子路径；使用前核对平台使用限制。",
+          "primary": false
+        }
+      ],
+      "references": [
+        {
+          "title": "网站要改版，先把测试和规划做在上线前",
+          "url": "https://new.web.cafe/topic/aoe8h613hh",
+          "author": "哥飞",
+          "platform": "哥飞社群 · 小课堂",
+          "date": "2026-03-23",
+          "source_key": "xiaoketang:45"
+        },
+        {
+          "title": "Cloudflare Pages 文档",
+          "url": "https://developers.cloudflare.com/pages/",
+          "author": "Cloudflare",
+          "platform": "官方文档",
+          "date": ""
+        },
+        {
+          "title": "Vercel 部署文档",
+          "url": "https://vercel.com/docs/deployments",
+          "author": "Vercel",
+          "platform": "官方文档",
+          "date": ""
+        }
+      ],
+      "nextTip": "上线是起点，下一步建立统计与搜索反馈。"
+    },
+    {
+      "id": "indexing",
+      "title": "统计与搜索收录",
+      "summary": "分开看访问、抓取、收录、曝光和点击。",
+      "goal": "能够观察用户访问，并让搜索系统发现正式页面。",
+      "done": "统计可见一次测试访问，GSC 验证成功，主页面检查及 sitemap 提交有记录。",
+      "route": "接入一套访问统计和 Google Search Console；核对正式地址、抓取限制与 sitemap，再检查主页面；记录提交日期，随后定期观察，不把提交成功当作已经收录。",
+      "steps": [
+        {
+          "title": "接上访问统计",
+          "action": "创建统计项目并安装代码，按实际用户地区及平台要求处理必要的告知与选择，再用测试访问核对。",
+          "check": "能在统计后台看到测试访问，知道自己的测试应如何识别。",
+          "pitfall": "不要同时接多套统计增加噪声，也不要把测试访问当真实增长。"
+        },
+        {
+          "title": "验证 GSC 所有权",
+          "action": "选择适合的域名或网址前缀资源，按提示添加 DNS 或验证文件，保留验证配置。",
+          "check": "后台显示验证成功，资源覆盖实际正式网址。",
+          "pitfall": "http、https、www 和子路径范围不同，别在错误资源里看数据。"
+        },
+        {
+          "title": "检查页面可抓取",
+          "action": "检查 robots.txt、noindex、canonical、状态码及无需登录的正文；测试环境与正式环境分开处理。",
+          "check": "主页面可访问，未误设禁止索引，规范地址指向正式页面。",
+          "pitfall": "抓取允许、索引允许与已被收录是三件事。"
+        },
+        {
+          "title": "提交 sitemap 与主页面",
+          "action": "生成只含正式可索引网址的 sitemap，在 GSC 提交并用网址检查查看主页面状态。",
+          "check": "提交和检查结果已记录，发现错误有具体修复项。",
+          "pitfall": "sitemap 被读取不等于全部页面收录，也不承诺收录时间。"
+        },
+        {
+          "title": "建立观察记录",
+          "action": "定期记录索引状态、搜索词、曝光、点击和统计中的功能使用；注明时间范围与更新延迟。",
+          "check": "能区分没被发现、未索引、有曝光无点击和访问后不用功能。",
+          "pitfall": "新站数据不足时先记录，别据一天波动大改整站。"
+        }
+      ],
+      "tools": [
+        {
+          "name": "Google Search Console",
+          "url": "https://search.google.com/search-console/",
+          "description": "验证网站、检查网址、提交 sitemap 和观察搜索表现。",
+          "primary": true
+        },
+        {
+          "name": "Google Analytics",
+          "url": "https://analytics.google.com/",
+          "description": "查看访问来源与功能使用，先确认采集正确。",
+          "primary": true
+        },
+        {
+          "name": "Search Central 文档",
+          "url": "https://developers.google.com/search/docs",
+          "description": "核对抓取、索引、robots 与 sitemap 的官方说明。",
+          "primary": false
+        },
+        {
+          "name": "PageSpeed Insights",
+          "url": "https://pagespeed.web.dev/",
+          "description": "检查线上页面性能和体验问题。",
+          "primary": false
+        }
+      ],
+      "references": [
+        {
+          "title": "每天看GSC，及时发现网址和低质量页面的问题",
+          "url": "https://new.web.cafe/topic/of0n5pz09s",
+          "author": "哥飞",
+          "platform": "哥飞社群 · 小课堂",
+          "date": "2024-06-24",
+          "source_key": "xiaoketang:158"
+        },
+        {
+          "title": "验证网站所有权",
+          "url": "https://support.google.com/webmasters/answer/9008080",
+          "author": "Google",
+          "platform": "官方文档",
+          "date": ""
+        },
+        {
+          "title": "构建和提交 sitemap",
+          "url": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap",
+          "author": "Google",
+          "platform": "官方文档",
+          "date": ""
+        }
+      ],
+      "nextTip": "有了反馈，再优先修影响用户完成任务的问题。"
+    },
+    {
+      "id": "on-page",
+      "title": "页面优化与内页扩展",
+      "summary": "先改已有页面，再为不同任务增加有用内页。",
+      "goal": "让每个页面都准确承接一个明确任务。",
+      "done": "一次具体问题已修复，新增页面有独立价值且能通过内链访问。",
+      "route": "先看真实反馈和搜索词，修正文案、功能与速度；只为不同输入、场景或问题增加内容扎实的页面，保留已有效的网址与结构。",
+      "steps": [
+        {
+          "title": "选一个问题优化",
+          "action": "从操作失败、用户反馈或 GSC 数据选一处具体问题，记录修改前状态。",
+          "check": "有明确问题、修改动作和观察指标。",
+          "pitfall": "不要把换主题、加功能默认当成优化。"
+        },
+        {
+          "title": "核对页面主题",
+          "action": "检查标题、主标题、描述、示例与功能是否一致，用自己的文字补充适用场景与限制。",
+          "check": "页面能回答用户为什么来、怎么用、结果怎么理解。",
+          "pitfall": "堆关键词和批量改写不能代替可用功能。"
+        },
+        {
+          "title": "规划独立内页",
+          "action": "只为不同任务建立内页，写实际步骤或例子，从首页和相关页提供可理解的链接。",
+          "check": "每页有独立用途，可直接访问，用户能回到相关工具。",
+          "pitfall": "不要为同义词生成一批只有标题不同的薄页面。"
+        },
+        {
+          "title": "验证并观察",
+          "action": "上线前检查手机、速度、链接与规范地址；记录版本，按相同口径观察效果。",
+          "check": "功能未回退，新增网址进入 sitemap，后续反馈可比较。",
+          "pitfall": "一次改太多无法知道哪项有效，旧网址变更需先规划承接。"
+        }
+      ],
+      "tools": [
+        {
+          "name": "GSC 搜索表现",
+          "url": "https://search.google.com/search-console/",
+          "description": "按页面与搜索词找具体改进点。",
+          "primary": true
+        },
+        {
+          "name": "PageSpeed Insights",
+          "url": "https://pagespeed.web.dev/",
+          "description": "定位性能问题，按实际影响排序。",
+          "primary": true
+        },
+        {
+          "name": "Search Central SEO 入门",
+          "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+          "description": "核对页面组织、标题、内容和链接基础。",
+          "primary": false
+        },
+        {
+          "name": "Chrome DevTools",
+          "url": "https://developer.chrome.com/docs/devtools/",
+          "description": "检查窄屏、资源和运行错误。",
+          "primary": false
+        }
+      ],
+      "references": [
+        {
+          "title": "再聊基于精品工具页面思路，如何做精品工具站",
+          "url": "https://new.web.cafe/topic/za408lc1q9",
+          "author": "哥飞",
+          "platform": "哥飞社群 · 小课堂",
+          "date": "2025-03-07",
+          "source_key": "xiaoketang:123"
+        },
+        {
+          "title": "再聊内链和内页，以及如何做好一个内容型工具站。",
+          "url": "https://new.web.cafe/topic/lqxrxz4wux",
+          "author": "哥飞",
+          "platform": "哥飞社群 · 小课堂归档",
+          "date": "2025-01-15",
+          "source_key": "xiaoketang-archive:52"
+        },
+        {
+          "title": "SEO 入门指南",
+          "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+          "author": "Google",
+          "platform": "官方文档",
+          "date": ""
+        }
+      ],
+      "nextTip": "页面值得使用和推荐后，再去适合的人群入口介绍它。"
+    },
+    {
+      "id": "traffic",
+      "title": "外链与获客",
+      "summary": "到目标用户已经出现的地方提供有用的介绍。",
+      "goal": "找到一个能带来相关用户的获客入口。",
+      "done": "完成一次符合平台规则的发布，并记录访问、使用与反馈。",
+      "route": "挑一个与任务相关的社区或目录，先读规则与讨论，再用真实示例介绍网站；记录来源、反馈与实际使用，逐个验证渠道。",
+      "steps": [
+        {
+          "title": "选择相关入口",
+          "action": "看目标用户在哪讨论任务，也可查看同行的公开外链来源，筛选与自己产品相符的平台。",
+          "check": "留下少量入口与选择理由，知道发布规则。",
+          "pitfall": "同行有链接不代表你也能直接提交或适合这个社区。"
+        },
+        {
+          "title": "准备有用的介绍",
+          "action": "写清适合谁、解决什么、真实示例及限制，提供可直接试用的正式链接。",
+          "check": "介绍与实际功能一致，素材为自有或允许使用。",
+          "pitfall": "不要伪造使用者、收入或推荐评价。"
+        },
+        {
+          "title": "发布并参与反馈",
+          "action": "按规则完成一次发布，回答问题，记录不能使用、误解与建议。",
+          "check": "有发布时间、页面地址与反馈记录。",
+          "pitfall": "避免批量刷屏、付费垃圾链接和发完就走。"
+        },
+        {
+          "title": "比较实际结果",
+          "action": "记录来源访问、完成核心任务的人数及后续行为，按同一时间窗比较。",
+          "check": "能决定继续、改介绍或停止该渠道。",
+          "pitfall": "投票、浏览和外链数量不是付费或持续使用。"
+        }
+      ],
+      "tools": [
+        {
+          "name": "Show HN",
+          "url": "https://news.ycombinator.com/show",
+          "description": "面向开发者展示可体验作品，先读规则。",
+          "primary": true
+        },
+        {
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/",
+          "description": "准备产品发布与反馈，核对当前发布流程。",
+          "primary": false
+        },
+        {
+          "name": "Reddit",
+          "url": "https://www.reddit.com/",
+          "description": "找到相关任务讨论，遵守各社区推广规则。",
+          "primary": false
+        },
+        {
+          "name": "Ahrefs Backlink Checker",
+          "url": "https://ahrefs.com/backlink-checker",
+          "description": "查看同行公开外链，寻找相关渠道。",
+          "primary": true
+        }
+      ],
+      "references": [
+        {
+          "title": "聊聊怎么发外链",
+          "url": "https://new.web.cafe/topic/juy4lzis5p",
+          "author": "哥飞",
+          "platform": "哥飞社群 · 小课堂归档",
+          "date": "2025-01-16",
+          "source_key": "xiaoketang-archive:26"
+        }
+      ],
+      "nextTip": "把访问与使用反馈带到变现阶段，判断谁会为何付钱。"
+    },
+    {
+      "id": "revenue",
+      "title": "变现与持续经营",
+      "summary": "按使用方式选择收入模式，同时核对成本与维护。",
+      "goal": "找到与用户价值匹配、能够实际验证的收入方式。",
+      "done": "有一个变现假设和最小测试，持续记录收入、成本、问题与续费。",
+      "route": "先看真实使用：持续任务可测试订阅，偶发任务可测试按次，内容或游戏站可研究广告、联盟；选择一种路径验证，先核平台资格和交付成本再接入。",
+      "steps": [
+        {
+          "title": "选择一种收入假设",
+          "action": "写清谁付钱、为什么付、获得什么；广告或联盟另写付费方与转化路径。",
+          "check": "收入方式与使用频率、场景和用户价值对应。",
+          "pitfall": "不要求所有站订阅，也不把有搜索量当成广告收益成立。"
+        },
+        {
+          "title": "做最小收费测试",
+          "action": "用明确报价或小规模试付验证；需要收款时核平台支持地区、主体、产品类型、费用和退款流程。",
+          "check": "完成一次符合平台要求的收款与交付测试，或记录未成交原因。",
+          "pitfall": "不要先堆套餐；支付资格、税务等按实际情况核对专业资料。"
+        },
+        {
+          "title": "计算实际成本",
+          "action": "记录收款、平台扣费、模型用量、托管、推广与退款，分别核对交易额、收入和利润。",
+          "check": "能说清一笔使用或订单的成本，知道不可控用量如何限制。",
+          "pitfall": "自报收入、榜单估算或支付验证收入不能直接推出利润。"
+        },
+        {
+          "title": "建立维护节奏",
+          "action": "定期检查错误、用户反馈、流量、收款与成本，记录域名续费、依赖更新和备份恢复。",
+          "check": "有下一次检查时间，并据证据决定继续、调整或停止。",
+          "pitfall": "上线后只加新功能，容易忽略旧功能失败和持续成本。"
+        }
+      ],
+      "tools": [
+        {
+          "name": "Stripe",
+          "url": "https://stripe.com/",
+          "description": "核对收款资格、费用、订阅和退款能力。",
+          "primary": true
+        },
+        {
+          "name": "Google AdSense",
+          "url": "https://adsense.google.com/start/",
+          "description": "核对广告变现资格、内容要求与申请流程。",
+          "primary": false
+        },
+        {
+          "name": "Lemon Squeezy",
+          "url": "https://www.lemonsqueezy.com/",
+          "description": "比较数字产品收款模式与平台支持条件。",
+          "primary": false
+        },
+        {
+          "name": "GitHub Issues",
+          "url": "https://github.com/features/issues",
+          "description": "记录反馈、故障和维护任务。",
+          "primary": true
+        }
+      ],
+      "references": [
+        {
+          "title": "独立开发如何赚得比工资多：从选品到营销，干就完了！",
+          "url": "https://scys.com/deepsea/2001/note/5338",
+          "author": "子木",
+          "platform": "生财有术 · 深海圈",
+          "date": "2025-03-17",
+          "source_key": "scys:5338"
+        },
+        {
+          "title": "网站上线只完成了赚钱之旅的20%工作",
+          "url": "https://new.web.cafe/topic/qt0inzevmm",
+          "author": "哥飞",
+          "platform": "哥飞社群 · 小课堂",
+          "date": "2023-12-14",
+          "source_key": "xiaoketang:167"
+        }
+      ],
+      "nextTip": "每轮只推进一个最值得验证的问题，再回到对应阶段。"
+    }
+  ]
+}

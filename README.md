@@ -15,6 +15,7 @@ Use AI to build websites, apps, or agents that meet needs people are willing to 
 - 🔗 域名工具和AI工具
 - 💻 开发辅助工具
 - 🧭 翻石地图：调研方法、工具目录、发布社区、流量与收入榜单、App 数据与软件市场
+- 🪜 上站路线：从首站到持续经营，按阶段查看动作、工具、完成标准和原文资料
 
 ## 快速开始
 
@@ -32,6 +33,19 @@ python3 -m http.server 8765 --bind 127.0.0.1
 ```
 
 打开 <http://127.0.0.1:8765/> 查看首页，点击「翻石地图」进入专题；也可以直接访问 <http://127.0.0.1:8765/discover/>。
+
+### 上站路线
+
+从 [路线总览](./start/index.html) 开始，进入用途与需求、域名、建站、部署、统计与收录、页面优化、获客、变现 8 个阶段。前 5 阶段覆盖首站闭环，后 3 阶段承接上线后的经营。阶段页列出最小路线、动作、完成判据、卡点、工具用途与资料出处，沿用首页的表格和链接风格。
+
+内容唯一来源是 `start/guide.json`；两个模板生成总览与 8 个阶段的 `index.html`，不要单独修改生成产物。论坛资料标出作者、平台、日期和原帖链接，阅读需相应权限；步骤说明为本站整理，平台操作以官方文档为准。
+
+```bash
+node tools/build-start.mjs
+node tools/build-start.mjs --check
+```
+
+本地预览：<http://127.0.0.1:8765/start/>。每个阶段可返回首页和路线总览，也可按前后阶段继续阅读。无需 JavaScript 即可查看完整内容。
 
 ### 翻石地图
 
@@ -95,6 +109,14 @@ seo-nav/
 │   ├── sites.md            # 生成的Markdown清单
 │   └── styles.css          # 专题样式
 ├── tools/build-discover.mjs # 零依赖内容生成器
+├── start/                  # 上站路线总览与 8 个阶段页
+│   ├── guide.json          # 阶段、动作、工具与原文资料
+│   ├── index.template.html # 路线总览模板
+│   ├── stage.template.html # 阶段页模板
+│   ├── styles.css          # 路线专题样式
+│   ├── index.html          # 生成的路线总览
+│   └── <stage>/index.html  # 生成的阶段页
+├── tools/build-start.mjs   # 零依赖路线生成器（支持 --check）
 ├── .cursorrules            # Cursor命令规范
 ├── add-seo-links.md        # 命令文件
 ├── .cursor/                # Cursor配置目录
