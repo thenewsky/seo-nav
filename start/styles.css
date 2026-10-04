@@ -62,8 +62,8 @@
 
 /* 训练目标与通用环节分别展示，保留专题的紧凑表格。 */
 .practice-table { table-layout: fixed; }
-.practice-table th, .practice-table td { width: auto; padding: 8px 10px; font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
-.practice-table th:first-child { width: 160px; }
+.practice-table th, .practice-table td { width: auto; padding: 6px 8px; font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
+.practice-table th:first-child { width: 90px; }
 .practice-table td { text-align: left; color: #333; }
 .practice-table th a { color: inherit; text-decoration: none; display: inline-block; padding: 3px 0; }
 .practice-table th a:hover { text-decoration: underline; }
@@ -82,3 +82,6 @@
 @media (max-width: 600px) {
   .practice-sources .source-meta { display: block; margin: 2px; }
 }
+
+.scope-label { font-weight: 500; }
+.practice-table .route-summary { font-size: 12px; }

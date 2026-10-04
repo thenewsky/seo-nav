@@ -8,7 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="../../logo.svg?v=2">
   <link rel="stylesheet" href="../../assets/navigation.css">
   <link rel="stylesheet" href="../../assets/compact.css">
-  <link rel="stylesheet" href="../styles.css?v=learning5">
+  <link rel="stylesheet" href="../styles.css?v=sixcols4">
   <script src="../../assets/navigation.js" defer></script>
 </head>
 <body>
@@ -23,16 +23,17 @@
       <table class="brief-table"><tbody>
         <tr><th scope="row">适合现在的你</th><td>{{ENTRY}}</td></tr>
         <tr><th scope="row">本轮重点</th><td>{{FOCUS}}</td></tr>
-        <tr><th scope="row">下一层前的证据</th><td>{{DONE}}</td></tr>
+        <tr><th scope="row">本轮目标</th><td>{{GOAL}}</td></tr>
       </tbody></table>
     </div>
-    <p class="guide-intro"><strong>本轮路线：</strong>{{ROUTE}}<br><strong>这轮暂缓：</strong>{{DEFER}}</p>
+    <p class="guide-intro"><strong>本轮路线：</strong>{{ROUTE}}<br><strong>先放什么：</strong>{{DEFER}}</p>
     <nav class="compact-shortcuts" aria-label="本页快速定位"><a href="#steps">练习动作</a><a href="#modules">环节入口</a><a href="#sources">资料依据</a></nav>
     <div class="stage-content">
       <section class="guide-section" aria-labelledby="steps">
         <h2 id="steps">本轮练习 · 每一步留证据</h2>
         <div class="tool-table-wrap" role="region" aria-label="本轮练习动作" tabindex="0"><table class="steps-table"><thead><tr><th scope="col">练习</th><th scope="col">做什么</th><th scope="col">留下什么</th><th scope="col">注意</th></tr></thead><tbody>{{STEP_ROWS}}</tbody></table></div>
-        <p class="guide-note"><strong>练习记录：</strong>{{RECORD}}</p>
+        <p class="guide-note"><strong>补齐的能力点：</strong>{{SKILLS}}</p>
+        <p class="guide-note"><strong>本轮证据和产出物：</strong>{{ARTIFACTS}}（站外人工准备）</p>
       </section>
       <aside class="stage-resources" aria-label="本轮需要的环节与资料">
         <section class="guide-section" aria-labelledby="modules"><h2 id="modules">只查本轮需要的环节</h2><div class="tool-table-wrap" role="region" aria-label="本轮需要的环节"><table class="modules-table"><tbody>{{MODULE_ROWS}}</tbody></table></div></section>

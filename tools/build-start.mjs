@@ -59,12 +59,13 @@ function references(value, field) {
 function validatePractices(data) {
   object(data, '练习数据');
   date(data.updated, '练习.updated');
+  references(data.basis, 'basis');
   array(data.levels, 'levels', true);
   if (data.levels.length !== practiceIds.length) fail('必须包含约定的四种练习');
   data.levels.forEach((level, index) => {
     const prefix = `levels[${index}]`;
     object(level, prefix);
-    for (const key of ['id', 'title', 'alias', 'summary', 'entry', 'focus', 'done', 'defer', 'route', 'record']) text(level[key], `${prefix}.${key}`);
+    for (const key of ['id', 'title', 'alias', 'summary', 'entry', 'focus', 'defer', 'route', 'goal', 'skills', 'artifacts']) text(level[key], `${prefix}.${key}`);
     if (level.id !== practiceIds[index]) fail(`练习 ID 重复、未知或顺序不正确：${level.id}`);
     array(level.steps, `${prefix}.steps`, true);
     level.steps.forEach((step, offset) => {
@@ -157,11 +158,10 @@ outputs.set('workflow/index.html', render(workflowTemplate, {
   GROWTH_ROWS: stageRows(data.stages.slice(5), 5),
 }));
 const practiceUpdated = { UPDATED: html(practices.updated), UPDATED_DISPLAY: html(practices.updated.replace(/-/g, '.')) };
-const practiceReferences = ['daily-summary:26', 'xiaoketang:61'].map(key => practices.levels.flatMap(level => level.references).find(reference => reference.source_key === key));
-if (practiceReferences.some(reference => !reference)) fail('练习路线缺少已核对的群聊总结或 GSC 小课堂来源');
+const practiceReferences = practices.basis;
 outputs.set('index.html', render(indexTemplate, {
   ...practiceUpdated,
-  PRACTICE_ROWS: practices.levels.map(level => `<tr><th scope="row"><span class="practice-alias">${html(level.alias)}</span><br>${anchor(`./${level.id}/`, level.title)}</th><td>${html(level.entry)}</td><td>${html(level.focus)}<p class="route-summary">${html(level.defer)}</p></td><td>${html(level.done)}<p class="route-summary">${anchor(`./${level.id}/`, '查看本轮动作 →')}</p></td></tr>`).join('\n        '),
+  PRACTICE_ROWS: practices.levels.map(level => `<tr><th scope="row"><span class="practice-alias">${html(level.alias)}</span><br>${anchor(`./${level.id}/`, level.title)}</th><td>${html(level.entry)}</td><td><strong class="scope-label">本轮做：</strong>${html(level.focus)}<p class="route-summary"><strong>先放：</strong>${html(level.defer)}</p></td><td>${html(level.goal)}</td><td>${html(level.skills)}</td><td>${html(level.artifacts)}</td></tr>`).join('\n        '),
   PRACTICE_SOURCES: sourcesTable(practiceReferences),
 }));
 practices.levels.forEach((level, index) => {
@@ -170,13 +170,19 @@ practices.levels.forEach((level, index) => {
   outputs.set(`${level.id}/index.html`, render(practiceTemplate, {
     ...practiceUpdated,
     TITLE: html(level.title), ALIAS: html(level.alias), SUMMARY: html(level.summary), ENTRY: html(level.entry),
-    FOCUS: html(level.focus), DONE: html(level.done), ROUTE: html(level.route), DEFER: html(level.defer), RECORD: html(level.record),
+    FOCUS: html(level.focus), GOAL: html(level.goal), SKILLS: html(level.skills), ROUTE: html(level.route), DEFER: html(level.defer), ARTIFACTS: html(level.artifacts),
     STEP_ROWS: level.steps.map((step, offset) => `<tr><th scope="row">${String(offset + 1).padStart(2, '0')} · ${html(step.title)}</th><td>${html(step.action)}</td><td>${html(step.check)}</td><td>${html(step.pitfall)}</td></tr>`).join('\n        '),
     MODULE_ROWS: level.modules.map(module => `<tr><th scope="row">${anchor(`../${module.id}/`, data.stages.find(stage => stage.id === module.id).title)}</th><td>${html(module.description)}</td></tr>`).join('\n        '),
     SOURCE_ROWS: sourcesTable(level.references),
     PRACTICE_NAVIGATION: [previous ? anchor(`../${previous.id}/`, `← ${previous.title}`) : '', anchor('../', '按能力重新选练习'), next ? anchor(`../${next.id}/`, `${next.title} →`) : anchor('../workflow/', '查通用环节手册')].filter(Boolean).join('\n      '),
   }));
 });
+const practiceText = ['# 上站练习路线（个人自用 · 出海 SaaS 工具站）', '', '背景：独立开发者，会用 AI 做网页，SEO 与上站经验不足；主线是出海 SaaS 工具站。', '用途：掌握上站流程与对应能力，按尚未掌握的能力选练习，可在已有站补练。', '本轮做什么是本次执行范围；先放什么表示暂时不投入，不代表永远不做。', '目标是网站或项目达到的状态；能力是能独立完成的动作与判断；证据和产出物由本人在站外人工处理，页面只列预期材料。', '正式 SaaS 的需求验证可并行开始；同主题可在已有站补练，无关需求先评估站点边界。账号/限额/计费按实际验证需要引入。各层为本站整理，不称原作者统一标准。', ''].join('\n') + practices.levels.map(level => [
+  `## ${level.alias} · ${level.title}`, `现在你的特征：${level.entry}`, `本轮做什么：${level.focus}`, `先放什么：${level.defer}`, `目标：${level.goal}`, `补齐的能力点：${level.skills}`, `本轮证据和产出物：${level.artifacts}`, `本轮路线：${level.route}`, '',
+  '本轮动作：', ...level.steps.map((step, index) => `${index + 1}. ${step.title}\n   做什么：${step.action}\n   留下什么：${step.check}\n   注意：${step.pitfall}`), '',
+  '原文与官方资料：', ...level.references.map(reference => `- ${reference.title} | ${reference.author} | ${reference.platform} | ${reference.date || '以官网更新为准'} | ${reference.url}`), '',
+].join('\n')).join('\n');
+outputs.set('practice.md', `${practiceText}\n`);
 data.stages.forEach((stage, index) => {
   const previous = data.stages[index - 1];
   const next = data.stages[index + 1];
@@ -209,4 +215,4 @@ if (check) {
     await writeFile(destination, contents, 'utf8');
   }
 }
-console.log(`${check ? '校验通过' : '已生成'}：4 种练习、8 个环节，共 14 个路线页面`);
+console.log(`${check ? '校验通过' : '已生成'}：4 种练习、8 个环节，共 14 个路线页面与文字版`);
